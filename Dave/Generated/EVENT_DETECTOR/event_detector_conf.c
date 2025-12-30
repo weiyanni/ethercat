@@ -61,36 +61,11 @@
 /**
  * @brief Contents entered via GUI
  */
-const XMC_ERU_ETL_CONFIG_t ED_SYNC_0_ETL_Config =
-{
-  .input_a = (uint32_t)XMC_ERU_ETL_INPUT_A0, /* Event input selection for A(0-3) */
-  .input_b = (uint32_t)XMC_ERU_ETL_INPUT_B3, /* Event input selection for B(0-3) */
-  .enable_output_trigger = (uint32_t)0,
-  .status_flag_mode = (XMC_ERU_ETL_STATUS_FLAG_MODE_t)XMC_ERU_ETL_STATUS_FLAG_MODE_SWCTRL, /* enable the status flag 
-                                                                                                   auto clear for opposite edge */									 
-  .edge_detection = XMC_ERU_ETL_EDGE_DETECTION_RISING, /* Select the edge/s to convert as event */
-  .output_trigger_channel = XMC_ERU_ETL_OUTPUT_TRIGGER_CHANNEL0, /* Select the source for event */
-  .source = XMC_ERU_ETL_SOURCE_B
-};
-
-
-EVENT_DETECTOR_t ED_SYNC_0 = 
-{
-  .eru       = XMC_ERU1, /* ERU module assigned */    
-  .channel   = 2U,    /* ERU channel assigned(0-3) */
-  .config      = &ED_SYNC_0_ETL_Config, /* reference to hardware configuration */
-  .init_status = false /* Initialized status */
-};
-
-		
-/**
- * @brief Contents entered via GUI
- */
 const XMC_ERU_ETL_CONFIG_t ED_SYNC_1_ETL_Config =
 {
   .input_a = (uint32_t)XMC_ERU_ETL_INPUT_A3, /* Event input selection for A(0-3) */
   .input_b = (uint32_t)XMC_ERU_ETL_INPUT_B0, /* Event input selection for B(0-3) */
-  .enable_output_trigger = (uint32_t)0,
+  .enable_output_trigger = (uint32_t)1,
   .status_flag_mode = (XMC_ERU_ETL_STATUS_FLAG_MODE_t)XMC_ERU_ETL_STATUS_FLAG_MODE_SWCTRL, /* enable the status flag 
                                                                                                    auto clear for opposite edge */									 
   .edge_detection = XMC_ERU_ETL_EDGE_DETECTION_RISING, /* Select the edge/s to convert as event */

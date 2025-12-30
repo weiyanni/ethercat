@@ -96,9 +96,6 @@
   <nodes xsi:type="ApplicationModel:PeripheralNode">
     <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/port14/port14_14.dd#/"/>
   </nodes>
-  <nodes xsi:type="ApplicationModel:AppNode">
-    <resource xsi:type="ResourceModel:App" href="APPS/EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_0.app#/"/>
-  </nodes>
   <nodes xsi:type="ApplicationModel:PeripheralNode">
     <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/eru1/eru1_1.dd#/"/>
   </nodes>
@@ -111,6 +108,12 @@
   <nodes xsi:type="ApplicationModel:AppNode">
     <resource xsi:type="ResourceModel:App" href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_1.app#/"/>
   </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/INTERRUPT/v4_0_10/INTERRUPT_1.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/INTERRUPT/v4_0_10/INTERRUPT_3.app#/"/>
+  </nodes>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.21" target="//@nodes.13"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.21" target="//@nodes.22"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.22" target="//@nodes.20"/>
@@ -122,6 +125,8 @@
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.27" target="//@nodes.23"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.27" target="//@nodes.13"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.27" target="//@nodes.20"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.36" target="//@nodes.20"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.37" target="//@nodes.20"/>
   <hwConnections href="APPS/DIGITAL_IO/v4_0_18/DIGITAL_IO_0.app#//@connections.0"/>
   <hwConnections href="APPS/DIGITAL_IO/v4_0_18/DIGITAL_IO_0.app#//@connections.1"/>
   <hwConnections href="APPS/CLOCK_XMC4/v4_0_24/CLOCK_XMC4_0.app#//@connections.0"/>
@@ -276,5 +281,7 @@
   <hwConnections href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_0.app#//@connections.0"/>
   <hwConnections href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_1.app#//@connections.0"/>
   <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.111"/>
-  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.112"/>
+  <hwConnections href="APPS/EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_1.app#//@connections.0"/>
+  <hwConnections href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_0.app#//@connections.1"/>
+  <hwConnections href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_1.app#//@connections.1"/>
 </ApplicationModel:ApplicationData>

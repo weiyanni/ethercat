@@ -37,7 +37,7 @@ typedef struct {
     while (count--);
 }
 
- void process_app(TOBJ7000 *OUT_GENERIC, TOBJ6000 *IN_GENERIC)
+ void process_app(TOBJ7000 *Rxpdo, TOBJ6000 *Txpdo)
  {
    /* OUTPUT PROCESSING */
    XMC_GPIO_SetOutputLevel(P_LED3, MAP2LEVEL(OUT_GENERIC->OUT_GEN_Bit1));
@@ -187,3 +187,12 @@ int main(void)
   }
 }
 
+void SYNC0IRQHandler (void)
+{
+	Sync0_Isr();
+}
+
+void SYNC1IRQHandler (void)
+{
+	Sync1_Isr();
+}

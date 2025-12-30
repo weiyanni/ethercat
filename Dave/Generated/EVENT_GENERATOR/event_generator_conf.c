@@ -73,7 +73,7 @@ const XMC_ERU_OGU_CONFIG_t EG_SYNC_0_OGU_Config =
 EVENT_GENERATOR_t EG_SYNC_0 = 
 {
   .eru         = XMC_ERU1, /* ERU module assigned */    
-  .channel     = 0U,    /* ERU channel assigned(0-3) */
+  .channel     = 3U,    /* ERU channel assigned(0-3) */
   .config      = &EG_SYNC_0_OGU_Config, /* reference to hardware configuration */
   .nmi_eru_msk = 0U, /**< Mask to enable the NMI feature */
   .init_status = false /* Initialized status */
@@ -95,7 +95,7 @@ const XMC_ERU_OGU_CONFIG_t EG_SYNC_1_OGU_Config =
 EVENT_GENERATOR_t EG_SYNC_1 = 
 {
   .eru         = XMC_ERU1, /* ERU module assigned */    
-  .channel     = 3U,    /* ERU channel assigned(0-3) */
+  .channel     = 0U,    /* ERU channel assigned(0-3) */
   .config      = &EG_SYNC_1_OGU_Config, /* reference to hardware configuration */
   .nmi_eru_msk = 0U, /**< Mask to enable the NMI feature */
   .init_status = false /* Initialized status */

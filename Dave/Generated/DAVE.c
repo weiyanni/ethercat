@@ -99,11 +99,6 @@ __WEAK DAVE_STATUS_t DAVE_Init(void)
    } 
   if (init_status == DAVE_STATUS_SUCCESS)
   {
-	 /**  Initialization of EVENT_DETECTOR APP instance ED_SYNC_0 */
-	 init_status = (DAVE_STATUS_t)EVENT_DETECTOR_Init(&ED_SYNC_0); 
-   } 
-  if (init_status == DAVE_STATUS_SUCCESS)
-  {
 	 /**  Initialization of EVENT_DETECTOR APP instance ED_SYNC_1 */
 	 init_status = (DAVE_STATUS_t)EVENT_DETECTOR_Init(&ED_SYNC_1); 
    } 
@@ -116,6 +111,16 @@ __WEAK DAVE_STATUS_t DAVE_Init(void)
   {
 	 /**  Initialization of EVENT_GENERATOR APP instance EG_SYNC_1 */
 	 init_status = (DAVE_STATUS_t)EVENT_GENERATOR_Init(&EG_SYNC_1); 
+   } 
+  if (init_status == DAVE_STATUS_SUCCESS)
+  {
+	 /**  Initialization of INTERRUPT APP instance INT_SYNC_1 */
+	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&INT_SYNC_1); 
+   } 
+  if (init_status == DAVE_STATUS_SUCCESS)
+  {
+	 /**  Initialization of INTERRUPT APP instance INT_SYNC_0 */
+	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&INT_SYNC_0); 
    }  
   return init_status;
 } /**  End of function DAVE_Init */

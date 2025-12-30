@@ -24,18 +24,38 @@
   26 0001 3F       	 .byte 63
   27 0002 00       	 .byte 0
   28 0003 01       	 .byte 1
-  29              	 .text
-  30              	.Letext0:
-  31              	 .file 1 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
-  32              	 .file 2 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
-  33              	 .file 3 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
-  34              	 .file 4 "../Dave/Generated/INTERRUPT/interrupt.h"
-  35              	 .file 5 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
-  36              	 .file 6 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
-  37              	 .file 7 "../Dave/Generated/INTERRUPT/interrupt_conf.c"
+  29              	 .global INT_SYNC_1
+  30              	 .section .rodata.INT_SYNC_1,"a",%progbits
+  31              	 .align 2
+  34              	INT_SYNC_1:
+  35 0000 05       	 .byte 5
+  36 0001 3F       	 .byte 63
+  37 0002 00       	 .byte 0
+  38 0003 01       	 .byte 1
+  39              	 .global INT_SYNC_0
+  40              	 .section .rodata.INT_SYNC_0,"a",%progbits
+  41              	 .align 2
+  44              	INT_SYNC_0:
+  45 0000 08       	 .byte 8
+  46 0001 3F       	 .byte 63
+  47 0002 00       	 .byte 0
+  48 0003 01       	 .byte 1
+  49              	 .text
+  50              	.Letext0:
+  51              	 .file 1 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  52              	 .file 2 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  53              	 .file 3 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+  54              	 .file 4 "../Dave/Generated/INTERRUPT/interrupt.h"
+  55              	 .file 5 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
+  56              	 .file 6 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
+  57              	 .file 7 "../Dave/Generated/INTERRUPT/interrupt_conf.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 interrupt_conf.c
     {standard input}:24     .rodata.INTERRUPT_0:00000000 INTERRUPT_0
     {standard input}:21     .rodata.INTERRUPT_0:00000000 $d
+    {standard input}:34     .rodata.INT_SYNC_1:00000000 INT_SYNC_1
+    {standard input}:31     .rodata.INT_SYNC_1:00000000 $d
+    {standard input}:44     .rodata.INT_SYNC_0:00000000 INT_SYNC_0
+    {standard input}:41     .rodata.INT_SYNC_0:00000000 $d
 
 NO UNDEFINED SYMBOLS

@@ -392,10 +392,6 @@
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_p1_tx_clk/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_tx_clk" systemDefined="true" sourceSignal="p1_tx_clk_signal" targetSignal="port_pad_p1_tx_clk" srcVirtualSignal="//@virtualSignals.112" targetVirtualSignal="//@virtualSignals.35"/>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_tx_ena/http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_p1_tx_ena" systemDefined="true" sourceSignal="port_pad_p1_tx_ena" targetSignal="p1_tx_ena_signal" srcVirtualSignal="//@virtualSignals.36" targetVirtualSignal="//@virtualSignals.113"/>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_p1_tx_ena/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_tx_ena" systemDefined="true" sourceSignal="p1_tx_ena_signal" targetSignal="port_pad_p1_tx_ena" srcVirtualSignal="//@virtualSignals.113" targetVirtualSignal="//@virtualSignals.36"/>
-  <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_ecat_sync0/http://resources/4.0.8/app/EVENT_DETECTOR/0/vs_event_detector_input_B" sourceSignal="sync_out_0" targetSignal="signal_b" srcVirtualSignal="//@virtualSignals.48">
-    <downwardMapList xsi:type="ResourceModel:VirtualSignal" href="../../EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_0.app#//@virtualSignals.1"/>
-    <targetVirtualSignal href="../../EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_0.app#//@virtualSignals.1"/>
-  </connections>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_ecat_sync1/http://resources/4.0.8/app/EVENT_DETECTOR/1/vs_event_detector_input_A" sourceSignal="sync_out_1" targetSignal="signal_a" srcVirtualSignal="//@virtualSignals.49">
     <downwardMapList xsi:type="ResourceModel:VirtualSignal" href="../../EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_1.app#//@virtualSignals.0"/>
     <targetVirtualSignal href="../../EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_1.app#//@virtualSignals.0"/>

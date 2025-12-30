@@ -1091,235 +1091,252 @@
  732              	 .cfi_startproc
  733              	 
  734              	 
- 735              	 
- 736 0000 80B4     	 push {r7}
- 737              	.LCFI37:
- 738              	 .cfi_def_cfa_offset 4
- 739              	 .cfi_offset 7,-4
- 740 0002 83B0     	 sub sp,sp,#12
+ 735 0000 80B5     	 push {r7,lr}
+ 736              	.LCFI37:
+ 737              	 .cfi_def_cfa_offset 8
+ 738              	 .cfi_offset 7,-8
+ 739              	 .cfi_offset 14,-4
+ 740 0002 82B0     	 sub sp,sp,#8
  741              	.LCFI38:
  742              	 .cfi_def_cfa_offset 16
  743 0004 00AF     	 add r7,sp,#0
  744              	.LCFI39:
  745              	 .cfi_def_cfa_register 7
  746 0006 7860     	 str r0,[r7,#4]
- 272:../SSC/Src/ryhand.c **** #if _WIN32
- 273:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement input (Slave->Master) mapping")
- 274:../SSC/Src/ryhand.c **** #else
- 275:../SSC/Src/ryhand.c ****     #warning "Implement input (Slave->Master) mapping"
- 276:../SSC/Src/ryhand.c **** #endif
- 277:../SSC/Src/ryhand.c **** }
- 747              	 .loc 1 277 0
- 748 0008 0C37     	 adds r7,r7,#12
- 749              	.LCFI40:
- 750              	 .cfi_def_cfa_offset 4
- 751 000a BD46     	 mov sp,r7
- 752              	.LCFI41:
- 753              	 .cfi_def_cfa_register 13
- 754              	 
- 755 000c 5DF8047B 	 ldr r7,[sp],#4
- 756              	.LCFI42:
- 757              	 .cfi_restore 7
- 758              	 .cfi_def_cfa_offset 0
- 759 0010 7047     	 bx lr
- 760              	 .cfi_endproc
- 761              	.LFE183:
- 763 0012 00BF     	 .section .text.APPL_OutputMapping,"ax",%progbits
- 764              	 .align 2
- 765              	 .global APPL_OutputMapping
- 766              	 .thumb
- 767              	 .thumb_func
- 769              	APPL_OutputMapping:
- 770              	.LFB184:
+ 272:../SSC/Src/ryhand.c **** 	memcpy(pData,&(((UINT16 *)&Txpdo0x6000)[1]),SIZEOF(Txpdo0x6000)-2);
+ 747              	 .loc 1 272 0
+ 748 0008 7868     	 ldr r0,[r7,#4]
+ 749 000a 0349     	 ldr r1,.L35
+ 750 000c 9C22     	 movs r2,#156
+ 751 000e FFF7FEFF 	 bl memcpy
+ 273:../SSC/Src/ryhand.c **** }
+ 752              	 .loc 1 273 0
+ 753 0012 0837     	 adds r7,r7,#8
+ 754              	.LCFI40:
+ 755              	 .cfi_def_cfa_offset 8
+ 756 0014 BD46     	 mov sp,r7
+ 757              	.LCFI41:
+ 758              	 .cfi_def_cfa_register 13
+ 759              	 
+ 760 0016 80BD     	 pop {r7,pc}
+ 761              	.L36:
+ 762              	 .align 2
+ 763              	.L35:
+ 764 0018 02000000 	 .word Txpdo0x6000+2
+ 765              	 .cfi_endproc
+ 766              	.LFE183:
+ 768              	 .section .text.APPL_OutputMapping,"ax",%progbits
+ 769              	 .align 2
+ 770              	 .global APPL_OutputMapping
+ 771              	 .thumb
+ 772              	 .thumb_func
+ 774              	APPL_OutputMapping:
+ 775              	.LFB184:
+ 274:../SSC/Src/ryhand.c **** 
+ 275:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 276:../SSC/Src/ryhand.c **** /**
+ 277:../SSC/Src/ryhand.c **** \param      pData  pointer to output process data
  278:../SSC/Src/ryhand.c **** 
- 279:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
- 280:../SSC/Src/ryhand.c **** /**
- 281:../SSC/Src/ryhand.c **** \param      pData  pointer to output process data
- 282:../SSC/Src/ryhand.c **** 
- 283:../SSC/Src/ryhand.c **** \brief    This function will copies the outputs from the ESC memory to the local memory
- 284:../SSC/Src/ryhand.c ****             to the hardware
- 285:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
- 286:../SSC/Src/ryhand.c **** void APPL_OutputMapping(UINT16* pData)
- 287:../SSC/Src/ryhand.c **** {
- 771              	 .loc 1 287 0
- 772              	 .cfi_startproc
- 773              	 
- 774              	 
- 775              	 
- 776 0000 80B4     	 push {r7}
- 777              	.LCFI43:
- 778              	 .cfi_def_cfa_offset 4
- 779              	 .cfi_offset 7,-4
- 780 0002 83B0     	 sub sp,sp,#12
- 781              	.LCFI44:
- 782              	 .cfi_def_cfa_offset 16
- 783 0004 00AF     	 add r7,sp,#0
- 784              	.LCFI45:
- 785              	 .cfi_def_cfa_register 7
- 786 0006 7860     	 str r0,[r7,#4]
- 288:../SSC/Src/ryhand.c **** #if _WIN32
- 289:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement output (Master->Slave) mapping")
- 290:../SSC/Src/ryhand.c **** #else
- 291:../SSC/Src/ryhand.c ****     #warning "Implement output (Master->Slave) mapping"
- 292:../SSC/Src/ryhand.c **** #endif
- 293:../SSC/Src/ryhand.c **** }
- 787              	 .loc 1 293 0
- 788 0008 0C37     	 adds r7,r7,#12
- 789              	.LCFI46:
- 790              	 .cfi_def_cfa_offset 4
- 791 000a BD46     	 mov sp,r7
- 792              	.LCFI47:
- 793              	 .cfi_def_cfa_register 13
- 794              	 
- 795 000c 5DF8047B 	 ldr r7,[sp],#4
- 796              	.LCFI48:
- 797              	 .cfi_restore 7
- 798              	 .cfi_def_cfa_offset 0
- 799 0010 7047     	 bx lr
- 800              	 .cfi_endproc
- 801              	.LFE184:
- 803 0012 00BF     	 .section .text.APPL_Application,"ax",%progbits
- 804              	 .align 2
- 805              	 .global APPL_Application
- 806              	 .thumb
- 807              	 .thumb_func
- 809              	APPL_Application:
- 810              	.LFB185:
- 294:../SSC/Src/ryhand.c **** 
- 295:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
- 296:../SSC/Src/ryhand.c **** /**
- 297:../SSC/Src/ryhand.c **** \brief    This function will called from the synchronisation ISR 
- 298:../SSC/Src/ryhand.c ****             or from the mainloop if no synchronisation is supported
- 299:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
- 300:../SSC/Src/ryhand.c **** void APPL_Application(void)
- 301:../SSC/Src/ryhand.c **** {
- 811              	 .loc 1 301 0
- 812              	 .cfi_startproc
- 813              	 
- 814              	 
- 815              	 
- 816 0000 80B4     	 push {r7}
- 817              	.LCFI49:
- 818              	 .cfi_def_cfa_offset 4
- 819              	 .cfi_offset 7,-4
- 820 0002 00AF     	 add r7,sp,#0
- 821              	.LCFI50:
- 822              	 .cfi_def_cfa_register 7
- 302:../SSC/Src/ryhand.c **** #if _WIN32
- 303:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement the slave application")
- 304:../SSC/Src/ryhand.c **** #else
- 305:../SSC/Src/ryhand.c ****     #warning "Implement the slave application"
- 306:../SSC/Src/ryhand.c **** #endif
- 307:../SSC/Src/ryhand.c **** }
- 823              	 .loc 1 307 0
- 824 0004 BD46     	 mov sp,r7
- 825              	.LCFI51:
- 826              	 .cfi_def_cfa_register 13
- 827              	 
- 828 0006 5DF8047B 	 ldr r7,[sp],#4
- 829              	.LCFI52:
- 830              	 .cfi_restore 7
- 831              	 .cfi_def_cfa_offset 0
- 832 000a 7047     	 bx lr
- 833              	 .cfi_endproc
- 834              	.LFE185:
- 836              	 .section .text.WriteSimulateCANFD,"ax",%progbits
- 837              	 .align 2
- 838              	 .global WriteSimulateCANFD
- 839              	 .thumb
- 840              	 .thumb_func
- 842              	WriteSimulateCANFD:
- 843              	.LFB186:
- 308:../SSC/Src/ryhand.c **** 
- 309:../SSC/Src/ryhand.c **** #if EXPLICIT_DEVICE_ID
- 310:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
- 311:../SSC/Src/ryhand.c **** /**
- 312:../SSC/Src/ryhand.c ****  \return    The Explicit Device ID of the EtherCAT slave
- 313:../SSC/Src/ryhand.c **** 
- 314:../SSC/Src/ryhand.c ****  \brief     Read the Explicit Device ID (from an external ID switch)
- 315:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
- 316:../SSC/Src/ryhand.c **** UINT16 APPL_GetDeviceID()
- 317:../SSC/Src/ryhand.c **** {
- 318:../SSC/Src/ryhand.c **** #if _WIN32
- 319:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement explicit Device ID latching")
- 320:../SSC/Src/ryhand.c **** #else
- 321:../SSC/Src/ryhand.c ****     #warning "Implement explicit Device ID latching"
- 322:../SSC/Src/ryhand.c **** #endif
- 323:../SSC/Src/ryhand.c ****     /* Explicit Device 5 is expected by Explicit Device ID conformance tests*/
- 324:../SSC/Src/ryhand.c ****     return 0x5;
- 325:../SSC/Src/ryhand.c **** }
- 326:../SSC/Src/ryhand.c **** #endif
- 327:../SSC/Src/ryhand.c **** 
- 328:../SSC/Src/ryhand.c **** 
- 329:../SSC/Src/ryhand.c **** 
- 330:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
- 331:../SSC/Src/ryhand.c **** /**
- 332:../SSC/Src/ryhand.c **** \param     index               index of the requested object.
- 333:../SSC/Src/ryhand.c **** \param     subindex            subindex of the requested object.
- 334:../SSC/Src/ryhand.c **** \param     objSize             size of the requested object data, calculated with OBJ_GetObjectLeng
- 335:../SSC/Src/ryhand.c **** \param     pData               Pointer to the buffer where the data can be copied to
- 336:../SSC/Src/ryhand.c **** \param     bCompleteAccess     Indicates if a complete read of all subindices of the
- 337:../SSC/Src/ryhand.c ****                                object shall be done or not
- 338:../SSC/Src/ryhand.c **** 
- 339:../SSC/Src/ryhand.c ****  \return    result of the read operation (0 (success) or an abort code (ABORTIDX_.... defined in
- 340:../SSC/Src/ryhand.c ****             sdosrv.h))
- 341:../SSC/Src/ryhand.c ****  *////////////////////////////////////////////////////////////////////////////////////////
- 342:../SSC/Src/ryhand.c **** UINT8 WriteSimulateCANFD(UINT16 index, UINT8 subindex, UINT32 dataSize, UINT16 MBXMEM * pData, UINT
- 844              	 .loc 1 342 0
- 845              	 .cfi_startproc
- 846              	 
- 847              	 
- 848              	 
- 849 0000 80B4     	 push {r7}
- 850              	.LCFI53:
- 851              	 .cfi_def_cfa_offset 4
- 852              	 .cfi_offset 7,-4
- 853 0002 85B0     	 sub sp,sp,#20
- 854              	.LCFI54:
- 855              	 .cfi_def_cfa_offset 24
- 856 0004 00AF     	 add r7,sp,#0
- 857              	.LCFI55:
- 858              	 .cfi_def_cfa_register 7
- 859 0006 BA60     	 str r2,[r7,#8]
- 860 0008 7B60     	 str r3,[r7,#4]
- 861 000a 0346     	 mov r3,r0
- 862 000c FB81     	 strh r3,[r7,#14]
- 863 000e 0B46     	 mov r3,r1
- 864 0010 7B73     	 strb r3,[r7,#13]
- 343:../SSC/Src/ryhand.c **** #if _WIN32
- 344:../SSC/Src/ryhand.c **** #pragma message ("Warning: Implement CoE write callback")
- 345:../SSC/Src/ryhand.c **** #else
- 346:../SSC/Src/ryhand.c ****  #warning "Implement CoE write callback"
- 347:../SSC/Src/ryhand.c **** #endif
- 348:../SSC/Src/ryhand.c ****  return 0;
- 865              	 .loc 1 348 0
- 866 0012 0023     	 movs r3,#0
- 349:../SSC/Src/ryhand.c **** }
- 867              	 .loc 1 349 0
- 868 0014 1846     	 mov r0,r3
- 869 0016 1437     	 adds r7,r7,#20
- 870              	.LCFI56:
- 871              	 .cfi_def_cfa_offset 4
- 872 0018 BD46     	 mov sp,r7
- 873              	.LCFI57:
- 874              	 .cfi_def_cfa_register 13
+ 279:../SSC/Src/ryhand.c **** \brief    This function will copies the outputs from the ESC memory to the local memory
+ 280:../SSC/Src/ryhand.c ****             to the hardware
+ 281:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 282:../SSC/Src/ryhand.c **** void APPL_OutputMapping(UINT16* pData)
+ 283:../SSC/Src/ryhand.c **** {
+ 776              	 .loc 1 283 0
+ 777              	 .cfi_startproc
+ 778              	 
+ 779              	 
+ 780 0000 80B5     	 push {r7,lr}
+ 781              	.LCFI42:
+ 782              	 .cfi_def_cfa_offset 8
+ 783              	 .cfi_offset 7,-8
+ 784              	 .cfi_offset 14,-4
+ 785 0002 82B0     	 sub sp,sp,#8
+ 786              	.LCFI43:
+ 787              	 .cfi_def_cfa_offset 16
+ 788 0004 00AF     	 add r7,sp,#0
+ 789              	.LCFI44:
+ 790              	 .cfi_def_cfa_register 7
+ 791 0006 7860     	 str r0,[r7,#4]
+ 284:../SSC/Src/ryhand.c **** 	memcpy(&(((UINT16 *)&Rxpdo0x7000)[1]),pData,SIZEOF(Rxpdo0x7000)-2);
+ 792              	 .loc 1 284 0
+ 793 0008 0348     	 ldr r0,.L38
+ 794 000a 7968     	 ldr r1,[r7,#4]
+ 795 000c 9C22     	 movs r2,#156
+ 796 000e FFF7FEFF 	 bl memcpy
+ 285:../SSC/Src/ryhand.c **** }
+ 797              	 .loc 1 285 0
+ 798 0012 0837     	 adds r7,r7,#8
+ 799              	.LCFI45:
+ 800              	 .cfi_def_cfa_offset 8
+ 801 0014 BD46     	 mov sp,r7
+ 802              	.LCFI46:
+ 803              	 .cfi_def_cfa_register 13
+ 804              	 
+ 805 0016 80BD     	 pop {r7,pc}
+ 806              	.L39:
+ 807              	 .align 2
+ 808              	.L38:
+ 809 0018 02000000 	 .word Rxpdo0x7000+2
+ 810              	 .cfi_endproc
+ 811              	.LFE184:
+ 813              	 .section .text.APPL_Application,"ax",%progbits
+ 814              	 .align 2
+ 815              	 .global APPL_Application
+ 816              	 .thumb
+ 817              	 .thumb_func
+ 819              	APPL_Application:
+ 820              	.LFB185:
+ 286:../SSC/Src/ryhand.c **** 
+ 287:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 288:../SSC/Src/ryhand.c **** /**
+ 289:../SSC/Src/ryhand.c **** \brief    This function will called from the synchronisation ISR 
+ 290:../SSC/Src/ryhand.c ****             or from the mainloop if no synchronisation is supported
+ 291:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 292:../SSC/Src/ryhand.c **** void APPL_Application(void)
+ 293:../SSC/Src/ryhand.c **** {
+ 821              	 .loc 1 293 0
+ 822              	 .cfi_startproc
+ 823              	 
+ 824              	 
+ 825 0000 90B5     	 push {r4,r7,lr}
+ 826              	.LCFI47:
+ 827              	 .cfi_def_cfa_offset 12
+ 828              	 .cfi_offset 4,-12
+ 829              	 .cfi_offset 7,-8
+ 830              	 .cfi_offset 14,-4
+ 831 0002 A7B0     	 sub sp,sp,#156
+ 832              	.LCFI48:
+ 833              	 .cfi_def_cfa_offset 168
+ 834 0004 26AF     	 add r7,sp,#152
+ 835              	.LCFI49:
+ 836              	 .cfi_def_cfa 7,16
+ 294:../SSC/Src/ryhand.c **** 	process_app(&Rxpdo0x7000,Txpdo0x6000);
+ 837              	 .loc 1 294 0
+ 838 0006 084C     	 ldr r4,.L41
+ 839 0008 6946     	 mov r1,sp
+ 840 000a 04F10C03 	 add r3,r4,#12
+ 841 000e 9222     	 movs r2,#146
+ 842 0010 0846     	 mov r0,r1
+ 843 0012 1946     	 mov r1,r3
+ 844 0014 FFF7FEFF 	 bl memcpy
+ 845 0018 94E80E00 	 ldmia r4,{r1,r2,r3}
+ 846 001c 0348     	 ldr r0,.L41+4
+ 847 001e FFF7FEFF 	 bl process_app
+ 295:../SSC/Src/ryhand.c **** }
+ 848              	 .loc 1 295 0
+ 849 0022 0437     	 adds r7,r7,#4
+ 850              	.LCFI50:
+ 851              	 .cfi_def_cfa_offset 12
+ 852 0024 BD46     	 mov sp,r7
+ 853              	.LCFI51:
+ 854              	 .cfi_def_cfa_register 13
+ 855              	 
+ 856 0026 90BD     	 pop {r4,r7,pc}
+ 857              	.L42:
+ 858              	 .align 2
+ 859              	.L41:
+ 860 0028 00000000 	 .word Txpdo0x6000
+ 861 002c 00000000 	 .word Rxpdo0x7000
+ 862              	 .cfi_endproc
+ 863              	.LFE185:
+ 865              	 .section .text.WriteSimulateCANFD,"ax",%progbits
+ 866              	 .align 2
+ 867              	 .global WriteSimulateCANFD
+ 868              	 .thumb
+ 869              	 .thumb_func
+ 871              	WriteSimulateCANFD:
+ 872              	.LFB186:
+ 296:../SSC/Src/ryhand.c **** 
+ 297:../SSC/Src/ryhand.c **** #if EXPLICIT_DEVICE_ID
+ 298:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 299:../SSC/Src/ryhand.c **** /**
+ 300:../SSC/Src/ryhand.c ****  \return    The Explicit Device ID of the EtherCAT slave
+ 301:../SSC/Src/ryhand.c **** 
+ 302:../SSC/Src/ryhand.c ****  \brief     Read the Explicit Device ID (from an external ID switch)
+ 303:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 304:../SSC/Src/ryhand.c **** UINT16 APPL_GetDeviceID()
+ 305:../SSC/Src/ryhand.c **** {
+ 306:../SSC/Src/ryhand.c **** #if _WIN32
+ 307:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement explicit Device ID latching")
+ 308:../SSC/Src/ryhand.c **** #else
+ 309:../SSC/Src/ryhand.c ****     #warning "Implement explicit Device ID latching"
+ 310:../SSC/Src/ryhand.c **** #endif
+ 311:../SSC/Src/ryhand.c ****     /* Explicit Device 5 is expected by Explicit Device ID conformance tests*/
+ 312:../SSC/Src/ryhand.c ****     return 0x5;
+ 313:../SSC/Src/ryhand.c **** }
+ 314:../SSC/Src/ryhand.c **** #endif
+ 315:../SSC/Src/ryhand.c **** 
+ 316:../SSC/Src/ryhand.c **** 
+ 317:../SSC/Src/ryhand.c **** 
+ 318:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 319:../SSC/Src/ryhand.c **** /**
+ 320:../SSC/Src/ryhand.c **** \param     index               index of the requested object.
+ 321:../SSC/Src/ryhand.c **** \param     subindex            subindex of the requested object.
+ 322:../SSC/Src/ryhand.c **** \param     objSize             size of the requested object data, calculated with OBJ_GetObjectLeng
+ 323:../SSC/Src/ryhand.c **** \param     pData               Pointer to the buffer where the data can be copied to
+ 324:../SSC/Src/ryhand.c **** \param     bCompleteAccess     Indicates if a complete read of all subindices of the
+ 325:../SSC/Src/ryhand.c ****                                object shall be done or not
+ 326:../SSC/Src/ryhand.c **** 
+ 327:../SSC/Src/ryhand.c ****  \return    result of the read operation (0 (success) or an abort code (ABORTIDX_.... defined in
+ 328:../SSC/Src/ryhand.c ****             sdosrv.h))
+ 329:../SSC/Src/ryhand.c ****  *////////////////////////////////////////////////////////////////////////////////////////
+ 330:../SSC/Src/ryhand.c **** UINT8 WriteSimulateCANFD(UINT16 index, UINT8 subindex, UINT32 dataSize, UINT16 MBXMEM * pData, UINT
+ 873              	 .loc 1 330 0
+ 874              	 .cfi_startproc
  875              	 
- 876 001a 5DF8047B 	 ldr r7,[sp],#4
- 877              	.LCFI58:
- 878              	 .cfi_restore 7
- 879              	 .cfi_def_cfa_offset 0
- 880 001e 7047     	 bx lr
- 881              	 .cfi_endproc
- 882              	.LFE186:
- 884              	 .text
- 885              	.Letext0:
- 886              	 .file 2 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 887              	 .file 3 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 888              	 .file 4 "../SSC/Src/sdoserv.h"
- 889              	 .file 5 "../SSC/Src/objdef.h"
- 890              	 .file 6 "../SSC/Src/ryhandObjects.h"
- 891              	 .file 7 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
- 892              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
+ 876              	 
+ 877              	 
+ 878 0000 80B4     	 push {r7}
+ 879              	.LCFI52:
+ 880              	 .cfi_def_cfa_offset 4
+ 881              	 .cfi_offset 7,-4
+ 882 0002 85B0     	 sub sp,sp,#20
+ 883              	.LCFI53:
+ 884              	 .cfi_def_cfa_offset 24
+ 885 0004 00AF     	 add r7,sp,#0
+ 886              	.LCFI54:
+ 887              	 .cfi_def_cfa_register 7
+ 888 0006 BA60     	 str r2,[r7,#8]
+ 889 0008 7B60     	 str r3,[r7,#4]
+ 890 000a 0346     	 mov r3,r0
+ 891 000c FB81     	 strh r3,[r7,#14]
+ 892 000e 0B46     	 mov r3,r1
+ 893 0010 7B73     	 strb r3,[r7,#13]
+ 331:../SSC/Src/ryhand.c **** #if _WIN32
+ 332:../SSC/Src/ryhand.c **** #pragma message ("Warning: Implement CoE write callback")
+ 333:../SSC/Src/ryhand.c **** #else
+ 334:../SSC/Src/ryhand.c ****  #warning "Implement CoE write callback"
+ 335:../SSC/Src/ryhand.c **** #endif
+ 336:../SSC/Src/ryhand.c ****  return 0;
+ 894              	 .loc 1 336 0
+ 895 0012 0023     	 movs r3,#0
+ 337:../SSC/Src/ryhand.c **** }
+ 896              	 .loc 1 337 0
+ 897 0014 1846     	 mov r0,r3
+ 898 0016 1437     	 adds r7,r7,#20
+ 899              	.LCFI55:
+ 900              	 .cfi_def_cfa_offset 4
+ 901 0018 BD46     	 mov sp,r7
+ 902              	.LCFI56:
+ 903              	 .cfi_def_cfa_register 13
+ 904              	 
+ 905 001a 5DF8047B 	 ldr r7,[sp],#4
+ 906              	.LCFI57:
+ 907              	 .cfi_restore 7
+ 908              	 .cfi_def_cfa_offset 0
+ 909 001e 7047     	 bx lr
+ 910              	 .cfi_endproc
+ 911              	.LFE186:
+ 913              	 .text
+ 914              	.Letext0:
+ 915              	 .file 2 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 916              	 .file 3 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 917              	 .file 4 "../SSC/Src/sdoserv.h"
+ 918              	 .file 5 "../SSC/Src/objdef.h"
+ 919              	 .file 6 "../SSC/Src/ryhandObjects.h"
+ 920              	 .file 7 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 921              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 ryhand.c
     {standard input}:24     .data.RxpdoProcessDataMapping0x1600:00000000 RxpdoProcessDataMapping0x1600
@@ -1361,14 +1378,19 @@ DEFINED SYMBOLS
     {standard input}:718    .text.APPL_GenerateMapping:00000164 $d
     {standard input}:724    .text.APPL_InputMapping:00000000 $t
     {standard input}:729    .text.APPL_InputMapping:00000000 APPL_InputMapping
-    {standard input}:764    .text.APPL_OutputMapping:00000000 $t
-    {standard input}:769    .text.APPL_OutputMapping:00000000 APPL_OutputMapping
-    {standard input}:804    .text.APPL_Application:00000000 $t
-    {standard input}:809    .text.APPL_Application:00000000 APPL_Application
-    {standard input}:837    .text.WriteSimulateCANFD:00000000 $t
-    {standard input}:842    .text.WriteSimulateCANFD:00000000 WriteSimulateCANFD
+    {standard input}:764    .text.APPL_InputMapping:00000018 $d
+    {standard input}:769    .text.APPL_OutputMapping:00000000 $t
+    {standard input}:774    .text.APPL_OutputMapping:00000000 APPL_OutputMapping
+    {standard input}:809    .text.APPL_OutputMapping:00000018 $d
+    {standard input}:814    .text.APPL_Application:00000000 $t
+    {standard input}:819    .text.APPL_Application:00000000 APPL_Application
+    {standard input}:860    .text.APPL_Application:00000028 $d
+    {standard input}:866    .text.WriteSimulateCANFD:00000000 $t
+    {standard input}:871    .text.WriteSimulateCANFD:00000000 WriteSimulateCANFD
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 OBJ_GetObjectHandle
 OBJ_GetEntryOffset
+memcpy
+process_app

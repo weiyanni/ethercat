@@ -269,7 +269,7 @@ UINT16 APPL_GenerateMapping(UINT16 *pInputSize,UINT16 *pOutputSize)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_InputMapping(UINT16* pData)
 {
-	memcpy(pData,&(((UINT16 *)&IN_GENERIC0x6000)[1]),SIZEOF(IN_GENERIC0x6000)-2);
+	memcpy(pData,&(((UINT16 *)&Txpdo0x6000)[1]),SIZEOF(Txpdo0x6000)-2);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -281,7 +281,7 @@ void APPL_InputMapping(UINT16* pData)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_OutputMapping(UINT16* pData)
 {
-	memcpy(&(((UINT16 *)&OUT_GENERIC0x7000)[1]),pData,SIZEOF(OUT_GENERIC0x7000)-2);
+	memcpy(&(((UINT16 *)&Rxpdo0x7000)[1]),pData,SIZEOF(Rxpdo0x7000)-2);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -291,7 +291,7 @@ void APPL_OutputMapping(UINT16* pData)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_Application(void)
 {
-	process_app(&OUT_GENERIC0x7000,IN_GENERIC0x6000);
+	process_app(&Rxpdo0x7000,Txpdo0x6000);
 }
 
 #if EXPLICIT_DEVICE_ID

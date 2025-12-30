@@ -73,7 +73,15 @@ Dave/Generated/DAVE.o Dave/Generated/DAVE.d Dave/Generated/DAVE.o: \
  D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/SSC/Src/ecatappl.h \
  D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/TIMER/timer.h \
  D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/INTERRUPT/interrupt.h \
- ../Dave/Generated/ECAT_SSC/ecat_ssc_extern.h
+ ../Dave/Generated/ECAT_SSC/ecat_ssc_extern.h \
+ ../Dave/Generated/EVENT_DETECTOR/event_detector.h \
+ D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_eru.h \
+ D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_eru_map.h \
+ ../Dave/Generated/EVENT_DETECTOR/event_detector_conf.h \
+ ../Dave/Generated/EVENT_DETECTOR/event_detector_extern.h \
+ ../Dave/Generated/EVENT_GENERATOR/event_generator.h \
+ ../Dave/Generated/EVENT_GENERATOR/event_generator_conf.h \
+ ../Dave/Generated/EVENT_GENERATOR/event_generator_extern.h
 
 ../Dave/Generated/DAVE.h:
 
@@ -226,3 +234,19 @@ D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/G
 D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/INTERRUPT/interrupt.h:
 
 ../Dave/Generated/ECAT_SSC/ecat_ssc_extern.h:
+
+../Dave/Generated/EVENT_DETECTOR/event_detector.h:
+
+D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_eru.h:
+
+D:/Infineon/Tools/DAVE\ IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_eru_map.h:
+
+../Dave/Generated/EVENT_DETECTOR/event_detector_conf.h:
+
+../Dave/Generated/EVENT_DETECTOR/event_detector_extern.h:
+
+../Dave/Generated/EVENT_GENERATOR/event_generator.h:
+
+../Dave/Generated/EVENT_GENERATOR/event_generator_conf.h:
+
+../Dave/Generated/EVENT_GENERATOR/event_generator_extern.h:

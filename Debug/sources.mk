@@ -24,6 +24,8 @@ Dave/Generated/CPU_CTRL_XMC4 \
 Dave/Generated \
 Dave/Generated/DIGITAL_IO \
 Dave/Generated/ECAT_SSC \
+Dave/Generated/EVENT_DETECTOR \
+Dave/Generated/EVENT_GENERATOR \
 Dave/Generated/E_EEPROM_XMC4 \
 Dave/Generated/GLOBAL_CCU4 \
 Dave/Generated/GLOBAL_DMA \
