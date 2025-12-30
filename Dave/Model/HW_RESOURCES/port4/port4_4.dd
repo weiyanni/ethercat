@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ResourceModel:Peripheral xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ResourceModel="http://www.infineon.com/Davex/Resource.ecore" URI="http://resources/48.1.0/port/p/4" description="Port 4" baseAddress="0x48028400">
   <provided xsi:type="ResourceModel:ResourceGroup" name="P4.0 / #85" URI="http://resources/48.1.0/port/p/4/pad/0">
+    <upwardMapList xsi:type="ResourceModel:HWResource" href="../../APPS/DIGITAL_IO/v4_0_18/DIGITAL_IO_2.app#//@hwResources.0"/>
     <resourcesList name="hwsel_hw" requiredResourceUri="http://resources/48.1.0/port/p/4/hwsel/hw0"/>
     <resourcesList name="in_p" requiredResourceUri="http://resources/48.1.0/port/p/4/in/p0"/>
     <resourcesList name="iocr_oe" requiredResourceUri="http://resources/48.1.0/port/p/4/iocr0/pc0_4"/>
@@ -130,6 +131,7 @@
   <provided xsi:type="ResourceModel:BitField" name="PC0_4" URI="http://resources/48.1.0/port/p/4/iocr0/pc0_4" value="0x00000000" toolTipHelpDescription="Port Control for Port n Pin 0 to 3" defaultValue="0x00000000" startPos="7" stopPos="7" accessPermission="rw" maxValue="1" minValue="0"/>
   <provided xsi:type="ResourceModel:BitField" name="PC0_2_0" URI="http://resources/48.1.0/port/p/4/iocr0/pc0_2_0" value="0x00000000" toolTipHelpDescription="Port Control for Port n Pin 0 to 3" defaultValue="0x00000000" startPos="3" stopPos="5" accessPermission="rw" maxValue="7" minValue="0"/>
   <provided xsi:type="ResourceModel:ResourceGroup" name="P4.1 / #84" URI="http://resources/48.1.0/port/p/4/pad/1">
+    <upwardMapList xsi:type="ResourceModel:HWResource" href="../../APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@hwResources.9"/>
     <resourcesList name="hwsel_hw" requiredResourceUri="http://resources/48.1.0/port/p/4/hwsel/hw1"/>
     <resourcesList name="in_p" requiredResourceUri="http://resources/48.1.0/port/p/4/in/p1"/>
     <resourcesList name="iocr_oe" requiredResourceUri="http://resources/48.1.0/port/p/4/iocr0/pc1_4"/>

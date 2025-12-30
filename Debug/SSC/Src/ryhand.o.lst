@@ -1,0 +1,1374 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "ryhand.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global RxpdoProcessDataMapping0x1600
+  20              	 .section .data.RxpdoProcessDataMapping0x1600,"aw",%progbits
+  21              	 .align 2
+  24              	RxpdoProcessDataMapping0x1600:
+  25 0000 0C00     	 .short 12
+  26 0002 0000     	 .space 2
+  27 0004 10010070 	 .word 1879048464
+  28 0008 C0020070 	 .word 1879048896
+  29 000c 10030070 	 .word 1879048976
+  30 0010 C0040070 	 .word 1879049408
+  31 0014 10050070 	 .word 1879049488
+  32 0018 C0060070 	 .word 1879049920
+  33 001c 10070070 	 .word 1879050000
+  34 0020 C0080070 	 .word 1879050432
+  35 0024 10090070 	 .word 1879050512
+  36 0028 C00A0070 	 .word 1879050944
+  37 002c 100B0070 	 .word 1879051024
+  38 0030 C00C0070 	 .word 1879051456
+  39              	 .global TxpdoProcessDataMapping0x1A00
+  40              	 .section .data.TxpdoProcessDataMapping0x1A00,"aw",%progbits
+  41              	 .align 2
+  44              	TxpdoProcessDataMapping0x1A00:
+  45 0000 0C00     	 .short 12
+  46 0002 0000     	 .space 2
+  47 0004 10010060 	 .word 1610613008
+  48 0008 C0020060 	 .word 1610613440
+  49 000c 10030060 	 .word 1610613520
+  50 0010 C0040060 	 .word 1610613952
+  51 0014 10050060 	 .word 1610614032
+  52 0018 C0060060 	 .word 1610614464
+  53 001c 10070060 	 .word 1610614544
+  54 0020 C0080060 	 .word 1610614976
+  55 0024 10090060 	 .word 1610615056
+  56 0028 C00A0060 	 .word 1610615488
+  57 002c 100B0060 	 .word 1610615568
+  58 0030 C00C0060 	 .word 1610616000
+  59              	 .global sRxPDOassign
+  60              	 .section .data.sRxPDOassign,"aw",%progbits
+  61              	 .align 2
+  64              	sRxPDOassign:
+  65 0000 0100     	 .short 1
+  66 0002 0016     	 .short 5632
+  67              	 .global sTxPDOassign
+  68              	 .section .data.sTxPDOassign,"aw",%progbits
+  69              	 .align 2
+  72              	sTxPDOassign:
+  73 0000 0100     	 .short 1
+  74 0002 001A     	 .short 6656
+  75              	 .global Txpdo0x6000
+  76              	 .section .data.Txpdo0x6000,"aw",%progbits
+  77              	 .align 2
+  80              	Txpdo0x6000:
+  81 0000 0C00     	 .short 12
+  82 0002 0000     	 .short 0
+  83 0004 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+  83      00000000 
+  83      00000000 
+  83      00
+  84 0011 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+  84      00000000 
+  84      000000
+  85 001c 0000     	 .short 0
+  86 001e 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+  86      00000000 
+  86      00000000 
+  86      00
+  87 002b 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+  87      00000000 
+  87      000000
+  88 0036 0000     	 .short 0
+  89 0038 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+  89      00000000 
+  89      00000000 
+  89      00
+  90 0045 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+  90      00000000 
+  90      000000
+  91 0050 0000     	 .short 0
+  92 0052 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+  92      00000000 
+  92      00000000 
+  92      00
+  93 005f 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+  93      00000000 
+  93      000000
+  94 006a 0000     	 .short 0
+  95 006c 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+  95      00000000 
+  95      00000000 
+  95      00
+  96 0079 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+  96      00000000 
+  96      000000
+  97 0084 0000     	 .short 0
+  98 0086 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+  98      00000000 
+  98      00000000 
+  98      00
+  99 0093 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+  99      00000000 
+  99      000000
+ 100              	 .global Rxpdo0x7000
+ 101 009e 0000     	 .section .data.Rxpdo0x7000,"aw",%progbits
+ 102              	 .align 2
+ 105              	Rxpdo0x7000:
+ 106 0000 0C00     	 .short 12
+ 107 0002 0000     	 .short 0
+ 108 0004 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 108      00000000 
+ 108      00000000 
+ 108      00
+ 109 0011 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+ 109      00000000 
+ 109      000000
+ 110 001c 0000     	 .short 0
+ 111 001e 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 111      00000000 
+ 111      00000000 
+ 111      00
+ 112 002b 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+ 112      00000000 
+ 112      000000
+ 113 0036 0000     	 .short 0
+ 114 0038 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 114      00000000 
+ 114      00000000 
+ 114      00
+ 115 0045 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+ 115      00000000 
+ 115      000000
+ 116 0050 0000     	 .short 0
+ 117 0052 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 117      00000000 
+ 117      00000000 
+ 117      00
+ 118 005f 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+ 118      00000000 
+ 118      000000
+ 119 006a 0000     	 .short 0
+ 120 006c 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 120      00000000 
+ 120      00000000 
+ 120      00
+ 121 0079 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+ 121      00000000 
+ 121      000000
+ 122 0084 0000     	 .short 0
+ 123 0086 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 123      00000000 
+ 123      00000000 
+ 123      00
+ 124 0093 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000"
+ 124      00000000 
+ 124      000000
+ 125              	 .global DevInfo0x8000
+ 126 009e 0000     	 .section .data.DevInfo0x8000,"aw",%progbits
+ 127              	 .align 2
+ 130              	DevInfo0x8000:
+ 131 0000 0D00     	 .short 13
+ 132 0002 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 132      00000000 
+ 132      00000000 
+ 132      00
+ 133 000f 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 133      00000000 
+ 133      00000000 
+ 133      00
+ 134 001c 00000000 	 .ascii "\000\000\000\000\000\000"
+ 134      0000
+ 135 0022 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 135      00000000 
+ 135      00000000 
+ 135      00
+ 136 002f 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 136      00000000 
+ 136      00000000 
+ 136      00
+ 137 003c 00000000 	 .ascii "\000\000\000\000\000\000"
+ 137      0000
+ 138 0042 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 138      00000000 
+ 138      00000000 
+ 138      00
+ 139 004f 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 139      00000000 
+ 139      00000000 
+ 139      00
+ 140 005c 00000000 	 .ascii "\000\000\000\000\000\000"
+ 140      0000
+ 141 0062 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 141      00000000 
+ 141      00000000 
+ 141      00
+ 142 006f 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 142      00000000 
+ 142      00000000 
+ 142      00
+ 143 007c 00000000 	 .ascii "\000\000\000\000\000\000"
+ 143      0000
+ 144 0082 0000     	 .space 2
+ 145 0084 10092420 	 .word 539232528
+ 146 0088 40420F00 	 .word 1000000
+ 147 008c 404B4C00 	 .word 5000000
+ 148 0090 404B4C00 	 .word 5000000
+ 149 0094 00       	 .byte 0
+ 150 0095 00       	 .byte 0
+ 151 0096 00       	 .byte 0
+ 152 0097 00       	 .byte 0
+ 153 0098 00000000 	 .ascii "\000\000\000\000\000\000"
+ 153      0000
+ 154 009e 0000     	 .space 2
+ 155              	 .global SimulateCANFD0x9000
+ 156              	 .section .data.SimulateCANFD0x9000,"aw",%progbits
+ 157              	 .align 2
+ 160              	SimulateCANFD0x9000:
+ 161 0000 0800     	 .short 8
+ 162 0002 0000     	 .short 0
+ 163 0004 0000     	 .short 0
+ 164 0006 0000     	 .short 0
+ 165 0008 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 165      00000000 
+ 165      00000000 
+ 165      00
+ 166 0015 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 166      00000000 
+ 166      00000000 
+ 166      00
+ 167 0022 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 167      00000000 
+ 167      00000000 
+ 167      00
+ 168 002f 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 168      00000000 
+ 168      00000000 
+ 168      00
+ 169 003c 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000"
+ 169      00000000 
+ 169      00000000 
+ 170 0048 0000     	 .short 0
+ 171 004a 0000     	 .short 0
+ 172 004c 0000     	 .short 0
+ 173 004e 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 173      00000000 
+ 173      00000000 
+ 173      00
+ 174 005b 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 174      00000000 
+ 174      00000000 
+ 174      00
+ 175 0068 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 175      00000000 
+ 175      00000000 
+ 175      00
+ 176 0075 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 176      00000000 
+ 176      00000000 
+ 176      00
+ 177 0082 00000000 	 .ascii "\000\000\000\000\000\000\000\000\000\000\000\000"
+ 177      00000000 
+ 177      00000000 
+ 178              	 .global ParamAction0x9001
+ 179 008e 0000     	 .section .bss.ParamAction0x9001,"aw",%nobits
+ 180              	 .align 1
+ 183              	ParamAction0x9001:
+ 184 0000 0000     	 .space 2
+ 185              	 .global ModularDeviceProfile0xF000
+ 186              	 .section .data.ModularDeviceProfile0xF000,"aw",%progbits
+ 187              	 .align 2
+ 190              	ModularDeviceProfile0xF000:
+ 191 0000 0200     	 .short 2
+ 192 0002 1000     	 .short 16
+ 193 0004 0800     	 .short 8
+ 194 0006 0000     	 .section .text.APPL_AckErrorInd,"ax",%progbits
+ 195              	 .align 2
+ 196              	 .global APPL_AckErrorInd
+ 197              	 .thumb
+ 198              	 .thumb_func
+ 200              	APPL_AckErrorInd:
+ 201              	.LFB175:
+ 202              	 .file 1 "../SSC/Src/ryhand.c"
+   1:../SSC/Src/ryhand.c **** /*
+   2:../SSC/Src/ryhand.c **** * This source file is part of the EtherCAT Slave Stack Code licensed by Beckhoff Automation GmbH & 
+   3:../SSC/Src/ryhand.c **** * The corresponding license agreement applies. This hint shall not be removed.
+   4:../SSC/Src/ryhand.c **** */
+   5:../SSC/Src/ryhand.c **** 
+   6:../SSC/Src/ryhand.c **** /**
+   7:../SSC/Src/ryhand.c **** \addtogroup ryhand ryhand
+   8:../SSC/Src/ryhand.c **** @{
+   9:../SSC/Src/ryhand.c **** */
+  10:../SSC/Src/ryhand.c **** 
+  11:../SSC/Src/ryhand.c **** /**
+  12:../SSC/Src/ryhand.c **** \file ryhand.c
+  13:../SSC/Src/ryhand.c **** \brief Implementation
+  14:../SSC/Src/ryhand.c ****  Created with SSC Tool application parser 1.6.4.0
+  15:../SSC/Src/ryhand.c **** \version 0.0.0.1
+  16:../SSC/Src/ryhand.c **** */
+  17:../SSC/Src/ryhand.c **** 
+  18:../SSC/Src/ryhand.c **** 
+  19:../SSC/Src/ryhand.c **** /*-----------------------------------------------------------------------------------------
+  20:../SSC/Src/ryhand.c **** ------
+  21:../SSC/Src/ryhand.c **** ------    Includes
+  22:../SSC/Src/ryhand.c **** ------
+  23:../SSC/Src/ryhand.c **** -----------------------------------------------------------------------------------------*/
+  24:../SSC/Src/ryhand.c **** #include "ecat_def.h"
+  25:../SSC/Src/ryhand.c **** 
+  26:../SSC/Src/ryhand.c **** #include "applInterface.h"
+  27:../SSC/Src/ryhand.c **** 
+  28:../SSC/Src/ryhand.c **** #define _RYHAND_ 1
+  29:../SSC/Src/ryhand.c **** #include "ryhand.h"
+  30:../SSC/Src/ryhand.c **** #undef _RYHAND_
+  31:../SSC/Src/ryhand.c **** /*--------------------------------------------------------------------------------------
+  32:../SSC/Src/ryhand.c **** ------
+  33:../SSC/Src/ryhand.c **** ------    local types and defines
+  34:../SSC/Src/ryhand.c **** ------
+  35:../SSC/Src/ryhand.c **** --------------------------------------------------------------------------------------*/
+  36:../SSC/Src/ryhand.c **** 
+  37:../SSC/Src/ryhand.c **** /*-----------------------------------------------------------------------------------------
+  38:../SSC/Src/ryhand.c **** ------
+  39:../SSC/Src/ryhand.c **** ------    local variables and constants
+  40:../SSC/Src/ryhand.c **** ------
+  41:../SSC/Src/ryhand.c **** -----------------------------------------------------------------------------------------*/
+  42:../SSC/Src/ryhand.c **** 
+  43:../SSC/Src/ryhand.c **** /*-----------------------------------------------------------------------------------------
+  44:../SSC/Src/ryhand.c **** ------
+  45:../SSC/Src/ryhand.c **** ------    application specific functions
+  46:../SSC/Src/ryhand.c **** ------
+  47:../SSC/Src/ryhand.c **** -----------------------------------------------------------------------------------------*/
+  48:../SSC/Src/ryhand.c **** 
+  49:../SSC/Src/ryhand.c **** /*-----------------------------------------------------------------------------------------
+  50:../SSC/Src/ryhand.c **** ------
+  51:../SSC/Src/ryhand.c **** ------    generic functions
+  52:../SSC/Src/ryhand.c **** ------
+  53:../SSC/Src/ryhand.c **** -----------------------------------------------------------------------------------------*/
+  54:../SSC/Src/ryhand.c **** 
+  55:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+  56:../SSC/Src/ryhand.c **** /**
+  57:../SSC/Src/ryhand.c ****  \brief    The function is called when an error state was acknowledged by the master
+  58:../SSC/Src/ryhand.c **** 
+  59:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+  60:../SSC/Src/ryhand.c **** 
+  61:../SSC/Src/ryhand.c **** void    APPL_AckErrorInd(UINT16 stateTrans)
+  62:../SSC/Src/ryhand.c **** {
+ 203              	 .loc 1 62 0
+ 204              	 .cfi_startproc
+ 205              	 
+ 206              	 
+ 207              	 
+ 208 0000 80B4     	 push {r7}
+ 209              	.LCFI0:
+ 210              	 .cfi_def_cfa_offset 4
+ 211              	 .cfi_offset 7,-4
+ 212 0002 83B0     	 sub sp,sp,#12
+ 213              	.LCFI1:
+ 214              	 .cfi_def_cfa_offset 16
+ 215 0004 00AF     	 add r7,sp,#0
+ 216              	.LCFI2:
+ 217              	 .cfi_def_cfa_register 7
+ 218 0006 0346     	 mov r3,r0
+ 219 0008 FB80     	 strh r3,[r7,#6]
+  63:../SSC/Src/ryhand.c **** 
+  64:../SSC/Src/ryhand.c **** }
+ 220              	 .loc 1 64 0
+ 221 000a 0C37     	 adds r7,r7,#12
+ 222              	.LCFI3:
+ 223              	 .cfi_def_cfa_offset 4
+ 224 000c BD46     	 mov sp,r7
+ 225              	.LCFI4:
+ 226              	 .cfi_def_cfa_register 13
+ 227              	 
+ 228 000e 5DF8047B 	 ldr r7,[sp],#4
+ 229              	.LCFI5:
+ 230              	 .cfi_restore 7
+ 231              	 .cfi_def_cfa_offset 0
+ 232 0012 7047     	 bx lr
+ 233              	 .cfi_endproc
+ 234              	.LFE175:
+ 236              	 .section .text.APPL_StartMailboxHandler,"ax",%progbits
+ 237              	 .align 2
+ 238              	 .global APPL_StartMailboxHandler
+ 239              	 .thumb
+ 240              	 .thumb_func
+ 242              	APPL_StartMailboxHandler:
+ 243              	.LFB176:
+  65:../SSC/Src/ryhand.c **** 
+  66:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+  67:../SSC/Src/ryhand.c **** /**
+  68:../SSC/Src/ryhand.c ****  \return    AL Status Code (see ecatslv.h ALSTATUSCODE_....)
+  69:../SSC/Src/ryhand.c **** 
+  70:../SSC/Src/ryhand.c ****  \brief    The function is called in the state transition from INIT to PREOP when
+  71:../SSC/Src/ryhand.c ****              all general settings were checked to start the mailbox handler. This function
+  72:../SSC/Src/ryhand.c ****              informs the application about the state transition, the application can refuse
+  73:../SSC/Src/ryhand.c ****              the state transition when returning an AL Status error code.
+  74:../SSC/Src/ryhand.c ****             The return code NOERROR_INWORK can be used, if the application cannot confirm
+  75:../SSC/Src/ryhand.c ****             the state transition immediately, in that case this function will be called cyclically
+  76:../SSC/Src/ryhand.c ****             until a value unequal NOERROR_INWORK is returned
+  77:../SSC/Src/ryhand.c **** 
+  78:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+  79:../SSC/Src/ryhand.c **** 
+  80:../SSC/Src/ryhand.c **** UINT16 APPL_StartMailboxHandler(void)
+  81:../SSC/Src/ryhand.c **** {
+ 244              	 .loc 1 81 0
+ 245              	 .cfi_startproc
+ 246              	 
+ 247              	 
+ 248              	 
+ 249 0000 80B4     	 push {r7}
+ 250              	.LCFI6:
+ 251              	 .cfi_def_cfa_offset 4
+ 252              	 .cfi_offset 7,-4
+ 253 0002 00AF     	 add r7,sp,#0
+ 254              	.LCFI7:
+ 255              	 .cfi_def_cfa_register 7
+  82:../SSC/Src/ryhand.c ****     return ALSTATUSCODE_NOERROR;
+ 256              	 .loc 1 82 0
+ 257 0004 0023     	 movs r3,#0
+  83:../SSC/Src/ryhand.c **** }
+ 258              	 .loc 1 83 0
+ 259 0006 1846     	 mov r0,r3
+ 260 0008 BD46     	 mov sp,r7
+ 261              	.LCFI8:
+ 262              	 .cfi_def_cfa_register 13
+ 263              	 
+ 264 000a 5DF8047B 	 ldr r7,[sp],#4
+ 265              	.LCFI9:
+ 266              	 .cfi_restore 7
+ 267              	 .cfi_def_cfa_offset 0
+ 268 000e 7047     	 bx lr
+ 269              	 .cfi_endproc
+ 270              	.LFE176:
+ 272              	 .section .text.APPL_StopMailboxHandler,"ax",%progbits
+ 273              	 .align 2
+ 274              	 .global APPL_StopMailboxHandler
+ 275              	 .thumb
+ 276              	 .thumb_func
+ 278              	APPL_StopMailboxHandler:
+ 279              	.LFB177:
+  84:../SSC/Src/ryhand.c **** 
+  85:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+  86:../SSC/Src/ryhand.c **** /**
+  87:../SSC/Src/ryhand.c ****  \return     0, NOERROR_INWORK
+  88:../SSC/Src/ryhand.c **** 
+  89:../SSC/Src/ryhand.c ****  \brief    The function is called in the state transition from PREEOP to INIT
+  90:../SSC/Src/ryhand.c ****              to stop the mailbox handler. This functions informs the application
+  91:../SSC/Src/ryhand.c ****              about the state transition, the application cannot refuse
+  92:../SSC/Src/ryhand.c ****              the state transition.
+  93:../SSC/Src/ryhand.c **** 
+  94:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+  95:../SSC/Src/ryhand.c **** 
+  96:../SSC/Src/ryhand.c **** UINT16 APPL_StopMailboxHandler(void)
+  97:../SSC/Src/ryhand.c **** {
+ 280              	 .loc 1 97 0
+ 281              	 .cfi_startproc
+ 282              	 
+ 283              	 
+ 284              	 
+ 285 0000 80B4     	 push {r7}
+ 286              	.LCFI10:
+ 287              	 .cfi_def_cfa_offset 4
+ 288              	 .cfi_offset 7,-4
+ 289 0002 00AF     	 add r7,sp,#0
+ 290              	.LCFI11:
+ 291              	 .cfi_def_cfa_register 7
+  98:../SSC/Src/ryhand.c ****     return ALSTATUSCODE_NOERROR;
+ 292              	 .loc 1 98 0
+ 293 0004 0023     	 movs r3,#0
+  99:../SSC/Src/ryhand.c **** }
+ 294              	 .loc 1 99 0
+ 295 0006 1846     	 mov r0,r3
+ 296 0008 BD46     	 mov sp,r7
+ 297              	.LCFI12:
+ 298              	 .cfi_def_cfa_register 13
+ 299              	 
+ 300 000a 5DF8047B 	 ldr r7,[sp],#4
+ 301              	.LCFI13:
+ 302              	 .cfi_restore 7
+ 303              	 .cfi_def_cfa_offset 0
+ 304 000e 7047     	 bx lr
+ 305              	 .cfi_endproc
+ 306              	.LFE177:
+ 308              	 .section .text.APPL_StartInputHandler,"ax",%progbits
+ 309              	 .align 2
+ 310              	 .global APPL_StartInputHandler
+ 311              	 .thumb
+ 312              	 .thumb_func
+ 314              	APPL_StartInputHandler:
+ 315              	.LFB178:
+ 100:../SSC/Src/ryhand.c **** 
+ 101:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 102:../SSC/Src/ryhand.c **** /**
+ 103:../SSC/Src/ryhand.c ****  \param    pIntMask    pointer to the AL Event Mask which will be written to the AL event Mask
+ 104:../SSC/Src/ryhand.c ****                        register (0x204) when this function is succeeded. The event mask can be adap
+ 105:../SSC/Src/ryhand.c ****                        in this function
+ 106:../SSC/Src/ryhand.c ****  \return    AL Status Code (see ecatslv.h ALSTATUSCODE_....)
+ 107:../SSC/Src/ryhand.c **** 
+ 108:../SSC/Src/ryhand.c ****  \brief    The function is called in the state transition from PREOP to SAFEOP when
+ 109:../SSC/Src/ryhand.c ****            all general settings were checked to start the input handler. This function
+ 110:../SSC/Src/ryhand.c ****            informs the application about the state transition, the application can refuse
+ 111:../SSC/Src/ryhand.c ****            the state transition when returning an AL Status error code.
+ 112:../SSC/Src/ryhand.c ****            The return code NOERROR_INWORK can be used, if the application cannot confirm
+ 113:../SSC/Src/ryhand.c ****            the state transition immediately, in that case the application need to be complete 
+ 114:../SSC/Src/ryhand.c ****            the transition by calling ECAT_StateChange.
+ 115:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 116:../SSC/Src/ryhand.c **** 
+ 117:../SSC/Src/ryhand.c **** UINT16 APPL_StartInputHandler(UINT16 *pIntMask)
+ 118:../SSC/Src/ryhand.c **** {
+ 316              	 .loc 1 118 0
+ 317              	 .cfi_startproc
+ 318              	 
+ 319              	 
+ 320              	 
+ 321 0000 80B4     	 push {r7}
+ 322              	.LCFI14:
+ 323              	 .cfi_def_cfa_offset 4
+ 324              	 .cfi_offset 7,-4
+ 325 0002 83B0     	 sub sp,sp,#12
+ 326              	.LCFI15:
+ 327              	 .cfi_def_cfa_offset 16
+ 328 0004 00AF     	 add r7,sp,#0
+ 329              	.LCFI16:
+ 330              	 .cfi_def_cfa_register 7
+ 331 0006 7860     	 str r0,[r7,#4]
+ 119:../SSC/Src/ryhand.c ****     return ALSTATUSCODE_NOERROR;
+ 332              	 .loc 1 119 0
+ 333 0008 0023     	 movs r3,#0
+ 120:../SSC/Src/ryhand.c **** }
+ 334              	 .loc 1 120 0
+ 335 000a 1846     	 mov r0,r3
+ 336 000c 0C37     	 adds r7,r7,#12
+ 337              	.LCFI17:
+ 338              	 .cfi_def_cfa_offset 4
+ 339 000e BD46     	 mov sp,r7
+ 340              	.LCFI18:
+ 341              	 .cfi_def_cfa_register 13
+ 342              	 
+ 343 0010 5DF8047B 	 ldr r7,[sp],#4
+ 344              	.LCFI19:
+ 345              	 .cfi_restore 7
+ 346              	 .cfi_def_cfa_offset 0
+ 347 0014 7047     	 bx lr
+ 348              	 .cfi_endproc
+ 349              	.LFE178:
+ 351 0016 00BF     	 .section .text.APPL_StopInputHandler,"ax",%progbits
+ 352              	 .align 2
+ 353              	 .global APPL_StopInputHandler
+ 354              	 .thumb
+ 355              	 .thumb_func
+ 357              	APPL_StopInputHandler:
+ 358              	.LFB179:
+ 121:../SSC/Src/ryhand.c **** 
+ 122:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 123:../SSC/Src/ryhand.c **** /**
+ 124:../SSC/Src/ryhand.c ****  \return     0, NOERROR_INWORK
+ 125:../SSC/Src/ryhand.c **** 
+ 126:../SSC/Src/ryhand.c ****  \brief    The function is called in the state transition from SAFEOP to PREEOP
+ 127:../SSC/Src/ryhand.c ****              to stop the input handler. This functions informs the application
+ 128:../SSC/Src/ryhand.c ****              about the state transition, the application cannot refuse
+ 129:../SSC/Src/ryhand.c ****              the state transition.
+ 130:../SSC/Src/ryhand.c **** 
+ 131:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 132:../SSC/Src/ryhand.c **** 
+ 133:../SSC/Src/ryhand.c **** UINT16 APPL_StopInputHandler(void)
+ 134:../SSC/Src/ryhand.c **** {
+ 359              	 .loc 1 134 0
+ 360              	 .cfi_startproc
+ 361              	 
+ 362              	 
+ 363              	 
+ 364 0000 80B4     	 push {r7}
+ 365              	.LCFI20:
+ 366              	 .cfi_def_cfa_offset 4
+ 367              	 .cfi_offset 7,-4
+ 368 0002 00AF     	 add r7,sp,#0
+ 369              	.LCFI21:
+ 370              	 .cfi_def_cfa_register 7
+ 135:../SSC/Src/ryhand.c ****     return ALSTATUSCODE_NOERROR;
+ 371              	 .loc 1 135 0
+ 372 0004 0023     	 movs r3,#0
+ 136:../SSC/Src/ryhand.c **** }
+ 373              	 .loc 1 136 0
+ 374 0006 1846     	 mov r0,r3
+ 375 0008 BD46     	 mov sp,r7
+ 376              	.LCFI22:
+ 377              	 .cfi_def_cfa_register 13
+ 378              	 
+ 379 000a 5DF8047B 	 ldr r7,[sp],#4
+ 380              	.LCFI23:
+ 381              	 .cfi_restore 7
+ 382              	 .cfi_def_cfa_offset 0
+ 383 000e 7047     	 bx lr
+ 384              	 .cfi_endproc
+ 385              	.LFE179:
+ 387              	 .section .text.APPL_StartOutputHandler,"ax",%progbits
+ 388              	 .align 2
+ 389              	 .global APPL_StartOutputHandler
+ 390              	 .thumb
+ 391              	 .thumb_func
+ 393              	APPL_StartOutputHandler:
+ 394              	.LFB180:
+ 137:../SSC/Src/ryhand.c **** 
+ 138:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 139:../SSC/Src/ryhand.c **** /**
+ 140:../SSC/Src/ryhand.c ****  \return    AL Status Code (see ecatslv.h ALSTATUSCODE_....)
+ 141:../SSC/Src/ryhand.c **** 
+ 142:../SSC/Src/ryhand.c ****  \brief    The function is called in the state transition from SAFEOP to OP when
+ 143:../SSC/Src/ryhand.c ****              all general settings were checked to start the output handler. This function
+ 144:../SSC/Src/ryhand.c ****              informs the application about the state transition, the application can refuse
+ 145:../SSC/Src/ryhand.c ****              the state transition when returning an AL Status error code.
+ 146:../SSC/Src/ryhand.c ****            The return code NOERROR_INWORK can be used, if the application cannot confirm
+ 147:../SSC/Src/ryhand.c ****            the state transition immediately, in that case the application need to be complete 
+ 148:../SSC/Src/ryhand.c ****            the transition by calling ECAT_StateChange.
+ 149:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 150:../SSC/Src/ryhand.c **** 
+ 151:../SSC/Src/ryhand.c **** UINT16 APPL_StartOutputHandler(void)
+ 152:../SSC/Src/ryhand.c **** {
+ 395              	 .loc 1 152 0
+ 396              	 .cfi_startproc
+ 397              	 
+ 398              	 
+ 399              	 
+ 400 0000 80B4     	 push {r7}
+ 401              	.LCFI24:
+ 402              	 .cfi_def_cfa_offset 4
+ 403              	 .cfi_offset 7,-4
+ 404 0002 00AF     	 add r7,sp,#0
+ 405              	.LCFI25:
+ 406              	 .cfi_def_cfa_register 7
+ 153:../SSC/Src/ryhand.c ****     return ALSTATUSCODE_NOERROR;
+ 407              	 .loc 1 153 0
+ 408 0004 0023     	 movs r3,#0
+ 154:../SSC/Src/ryhand.c **** }
+ 409              	 .loc 1 154 0
+ 410 0006 1846     	 mov r0,r3
+ 411 0008 BD46     	 mov sp,r7
+ 412              	.LCFI26:
+ 413              	 .cfi_def_cfa_register 13
+ 414              	 
+ 415 000a 5DF8047B 	 ldr r7,[sp],#4
+ 416              	.LCFI27:
+ 417              	 .cfi_restore 7
+ 418              	 .cfi_def_cfa_offset 0
+ 419 000e 7047     	 bx lr
+ 420              	 .cfi_endproc
+ 421              	.LFE180:
+ 423              	 .section .text.APPL_StopOutputHandler,"ax",%progbits
+ 424              	 .align 2
+ 425              	 .global APPL_StopOutputHandler
+ 426              	 .thumb
+ 427              	 .thumb_func
+ 429              	APPL_StopOutputHandler:
+ 430              	.LFB181:
+ 155:../SSC/Src/ryhand.c **** 
+ 156:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 157:../SSC/Src/ryhand.c **** /**
+ 158:../SSC/Src/ryhand.c ****  \return     0, NOERROR_INWORK
+ 159:../SSC/Src/ryhand.c **** 
+ 160:../SSC/Src/ryhand.c ****  \brief    The function is called in the state transition from OP to SAFEOP
+ 161:../SSC/Src/ryhand.c ****              to stop the output handler. This functions informs the application
+ 162:../SSC/Src/ryhand.c ****              about the state transition, the application cannot refuse
+ 163:../SSC/Src/ryhand.c ****              the state transition.
+ 164:../SSC/Src/ryhand.c **** 
+ 165:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 166:../SSC/Src/ryhand.c **** 
+ 167:../SSC/Src/ryhand.c **** UINT16 APPL_StopOutputHandler(void)
+ 168:../SSC/Src/ryhand.c **** {
+ 431              	 .loc 1 168 0
+ 432              	 .cfi_startproc
+ 433              	 
+ 434              	 
+ 435              	 
+ 436 0000 80B4     	 push {r7}
+ 437              	.LCFI28:
+ 438              	 .cfi_def_cfa_offset 4
+ 439              	 .cfi_offset 7,-4
+ 440 0002 00AF     	 add r7,sp,#0
+ 441              	.LCFI29:
+ 442              	 .cfi_def_cfa_register 7
+ 169:../SSC/Src/ryhand.c ****     return ALSTATUSCODE_NOERROR;
+ 443              	 .loc 1 169 0
+ 444 0004 0023     	 movs r3,#0
+ 170:../SSC/Src/ryhand.c **** }
+ 445              	 .loc 1 170 0
+ 446 0006 1846     	 mov r0,r3
+ 447 0008 BD46     	 mov sp,r7
+ 448              	.LCFI30:
+ 449              	 .cfi_def_cfa_register 13
+ 450              	 
+ 451 000a 5DF8047B 	 ldr r7,[sp],#4
+ 452              	.LCFI31:
+ 453              	 .cfi_restore 7
+ 454              	 .cfi_def_cfa_offset 0
+ 455 000e 7047     	 bx lr
+ 456              	 .cfi_endproc
+ 457              	.LFE181:
+ 459              	 .section .text.APPL_GenerateMapping,"ax",%progbits
+ 460              	 .align 2
+ 461              	 .global APPL_GenerateMapping
+ 462              	 .thumb
+ 463              	 .thumb_func
+ 465              	APPL_GenerateMapping:
+ 466              	.LFB182:
+ 171:../SSC/Src/ryhand.c **** 
+ 172:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 173:../SSC/Src/ryhand.c **** /**
+ 174:../SSC/Src/ryhand.c **** \return     0(ALSTATUSCODE_NOERROR), NOERROR_INWORK
+ 175:../SSC/Src/ryhand.c **** \param      pInputSize  pointer to save the input process data length
+ 176:../SSC/Src/ryhand.c **** \param      pOutputSize  pointer to save the output process data length
+ 177:../SSC/Src/ryhand.c **** 
+ 178:../SSC/Src/ryhand.c **** \brief    This function calculates the process data sizes from the actual SM-PDO-Assign
+ 179:../SSC/Src/ryhand.c ****             and PDO mapping
+ 180:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 181:../SSC/Src/ryhand.c **** UINT16 APPL_GenerateMapping(UINT16 *pInputSize,UINT16 *pOutputSize)
+ 182:../SSC/Src/ryhand.c **** {
+ 467              	 .loc 1 182 0
+ 468              	 .cfi_startproc
+ 469              	 
+ 470              	 
+ 471 0000 90B5     	 push {r4,r7,lr}
+ 472              	.LCFI32:
+ 473              	 .cfi_def_cfa_offset 12
+ 474              	 .cfi_offset 4,-12
+ 475              	 .cfi_offset 7,-8
+ 476              	 .cfi_offset 14,-4
+ 477 0002 89B0     	 sub sp,sp,#36
+ 478              	.LCFI33:
+ 479              	 .cfi_def_cfa_offset 48
+ 480 0004 00AF     	 add r7,sp,#0
+ 481              	.LCFI34:
+ 482              	 .cfi_def_cfa_register 7
+ 483 0006 7860     	 str r0,[r7,#4]
+ 484 0008 3960     	 str r1,[r7]
+ 183:../SSC/Src/ryhand.c ****     UINT16 result = ALSTATUSCODE_NOERROR;
+ 485              	 .loc 1 183 0
+ 486 000a 0023     	 movs r3,#0
+ 487 000c FB83     	 strh r3,[r7,#30]
+ 184:../SSC/Src/ryhand.c ****     UINT16 InputSize = 0;
+ 488              	 .loc 1 184 0
+ 489 000e 0023     	 movs r3,#0
+ 490 0010 BB83     	 strh r3,[r7,#28]
+ 185:../SSC/Src/ryhand.c ****     UINT16 OutputSize = 0;
+ 491              	 .loc 1 185 0
+ 492 0012 0023     	 movs r3,#0
+ 493 0014 7B83     	 strh r3,[r7,#26]
+ 186:../SSC/Src/ryhand.c **** 
+ 187:../SSC/Src/ryhand.c **** #if COE_SUPPORTED
+ 188:../SSC/Src/ryhand.c ****     UINT16 PDOAssignEntryCnt = 0;
+ 494              	 .loc 1 188 0
+ 495 0016 0023     	 movs r3,#0
+ 496 0018 3B83     	 strh r3,[r7,#24]
+ 189:../SSC/Src/ryhand.c ****     OBJCONST TOBJECT OBJMEM * pPDO = NULL;
+ 497              	 .loc 1 189 0
+ 498 001a 0023     	 movs r3,#0
+ 499 001c 3B61     	 str r3,[r7,#16]
+ 190:../SSC/Src/ryhand.c ****     UINT16 PDOSubindex0 = 0;
+ 500              	 .loc 1 190 0
+ 501 001e 0023     	 movs r3,#0
+ 502 0020 FB81     	 strh r3,[r7,#14]
+ 191:../SSC/Src/ryhand.c ****     UINT32 *pPDOEntry = NULL;
+ 503              	 .loc 1 191 0
+ 504 0022 0023     	 movs r3,#0
+ 505 0024 BB60     	 str r3,[r7,#8]
+ 192:../SSC/Src/ryhand.c ****     UINT16 PDOEntryCnt = 0;
+ 506              	 .loc 1 192 0
+ 507 0026 0023     	 movs r3,#0
+ 508 0028 FB82     	 strh r3,[r7,#22]
+ 193:../SSC/Src/ryhand.c ****    
+ 194:../SSC/Src/ryhand.c **** #if MAX_PD_OUTPUT_SIZE > 0
+ 195:../SSC/Src/ryhand.c ****     /*Scan object 0x1C12 RXPDO assign*/
+ 196:../SSC/Src/ryhand.c ****     for(PDOAssignEntryCnt = 0; PDOAssignEntryCnt < sRxPDOassign.u16SubIndex0; PDOAssignEntryCnt++)
+ 509              	 .loc 1 196 0
+ 510 002a 0023     	 movs r3,#0
+ 511 002c 3B83     	 strh r3,[r7,#24]
+ 512 002e 3AE0     	 b .L15
+ 513              	.L21:
+ 197:../SSC/Src/ryhand.c ****     {
+ 198:../SSC/Src/ryhand.c ****         pPDO = OBJ_GetObjectHandle(sRxPDOassign.aEntries[PDOAssignEntryCnt]);
+ 514              	 .loc 1 198 0
+ 515 0030 3B8B     	 ldrh r3,[r7,#24]
+ 516 0032 4C4A     	 ldr r2,.L32
+ 517 0034 5B00     	 lsls r3,r3,#1
+ 518 0036 1344     	 add r3,r3,r2
+ 519 0038 5B88     	 ldrh r3,[r3,#2]
+ 520 003a 1846     	 mov r0,r3
+ 521 003c FFF7FEFF 	 bl OBJ_GetObjectHandle
+ 522 0040 3861     	 str r0,[r7,#16]
+ 199:../SSC/Src/ryhand.c ****         if(pPDO != NULL)
+ 523              	 .loc 1 199 0
+ 524 0042 3B69     	 ldr r3,[r7,#16]
+ 525 0044 002B     	 cmp r3,#0
+ 526 0046 26D0     	 beq .L16
+ 200:../SSC/Src/ryhand.c ****         {
+ 201:../SSC/Src/ryhand.c ****             PDOSubindex0 = *((UINT16 *)pPDO->pVarPtr);
+ 527              	 .loc 1 201 0
+ 528 0048 3B69     	 ldr r3,[r7,#16]
+ 529 004a 9B69     	 ldr r3,[r3,#24]
+ 530 004c 1B88     	 ldrh r3,[r3]
+ 531 004e FB81     	 strh r3,[r7,#14]
+ 202:../SSC/Src/ryhand.c ****             for(PDOEntryCnt = 0; PDOEntryCnt < PDOSubindex0; PDOEntryCnt++)
+ 532              	 .loc 1 202 0
+ 533 0050 0023     	 movs r3,#0
+ 534 0052 FB82     	 strh r3,[r7,#22]
+ 535 0054 1AE0     	 b .L17
+ 536              	.L18:
+ 203:../SSC/Src/ryhand.c ****             {
+ 204:../SSC/Src/ryhand.c ****                 pPDOEntry = (UINT32 *)(((UINT16 *)pPDO->pVarPtr) + (OBJ_GetEntryOffset((PDOEntryCnt
+ 537              	 .loc 1 204 0 discriminator 3
+ 538 0056 3B69     	 ldr r3,[r7,#16]
+ 539 0058 9C69     	 ldr r4,[r3,#24]
+ 540 005a FB8A     	 ldrh r3,[r7,#22]
+ 541 005c DBB2     	 uxtb r3,r3
+ 542 005e 0133     	 adds r3,r3,#1
+ 543 0060 DBB2     	 uxtb r3,r3
+ 544 0062 1846     	 mov r0,r3
+ 545 0064 3969     	 ldr r1,[r7,#16]
+ 546 0066 FFF7FEFF 	 bl OBJ_GetEntryOffset
+ 547 006a 0346     	 mov r3,r0
+ 548 006c 1B09     	 lsrs r3,r3,#4
+ 549 006e 9BB2     	 uxth r3,r3
+ 550 0070 5B00     	 lsls r3,r3,#1
+ 551 0072 2344     	 add r3,r3,r4
+ 552 0074 BB60     	 str r3,[r7,#8]
+ 205:../SSC/Src/ryhand.c ****                 // we increment the expected output size depending on the mapped Entry
+ 206:../SSC/Src/ryhand.c ****                 OutputSize += (UINT16) ((*pPDOEntry) & 0xFF);
+ 553              	 .loc 1 206 0 discriminator 3
+ 554 0076 BB68     	 ldr r3,[r7,#8]
+ 555 0078 1B68     	 ldr r3,[r3]
+ 556 007a 9BB2     	 uxth r3,r3
+ 557 007c DBB2     	 uxtb r3,r3
+ 558 007e 9AB2     	 uxth r2,r3
+ 559 0080 7B8B     	 ldrh r3,[r7,#26]
+ 560 0082 1344     	 add r3,r3,r2
+ 561 0084 7B83     	 strh r3,[r7,#26]
+ 202:../SSC/Src/ryhand.c ****             {
+ 562              	 .loc 1 202 0 discriminator 3
+ 563 0086 FB8A     	 ldrh r3,[r7,#22]
+ 564 0088 0133     	 adds r3,r3,#1
+ 565 008a FB82     	 strh r3,[r7,#22]
+ 566              	.L17:
+ 202:../SSC/Src/ryhand.c ****             {
+ 567              	 .loc 1 202 0 is_stmt 0 discriminator 1
+ 568 008c FA8A     	 ldrh r2,[r7,#22]
+ 569 008e FB89     	 ldrh r3,[r7,#14]
+ 570 0090 9A42     	 cmp r2,r3
+ 571 0092 E0D3     	 bcc .L18
+ 572 0094 04E0     	 b .L30
+ 573              	.L16:
+ 207:../SSC/Src/ryhand.c ****             }
+ 208:../SSC/Src/ryhand.c ****         }
+ 209:../SSC/Src/ryhand.c ****         else
+ 210:../SSC/Src/ryhand.c ****         {
+ 211:../SSC/Src/ryhand.c ****             /*assigned PDO was not found in object dictionary. return invalid mapping*/
+ 212:../SSC/Src/ryhand.c ****             OutputSize = 0;
+ 574              	 .loc 1 212 0 is_stmt 1
+ 575 0096 0023     	 movs r3,#0
+ 576 0098 7B83     	 strh r3,[r7,#26]
+ 213:../SSC/Src/ryhand.c ****             result = ALSTATUSCODE_INVALIDOUTPUTMAPPING;
+ 577              	 .loc 1 213 0
+ 578 009a 2523     	 movs r3,#37
+ 579 009c FB83     	 strh r3,[r7,#30]
+ 214:../SSC/Src/ryhand.c ****             break;
+ 580              	 .loc 1 214 0
+ 581 009e 07E0     	 b .L20
+ 582              	.L30:
+ 196:../SSC/Src/ryhand.c ****     {
+ 583              	 .loc 1 196 0 discriminator 2
+ 584 00a0 3B8B     	 ldrh r3,[r7,#24]
+ 585 00a2 0133     	 adds r3,r3,#1
+ 586 00a4 3B83     	 strh r3,[r7,#24]
+ 587              	.L15:
+ 196:../SSC/Src/ryhand.c ****     {
+ 588              	 .loc 1 196 0 is_stmt 0 discriminator 1
+ 589 00a6 2F4B     	 ldr r3,.L32
+ 590 00a8 1B88     	 ldrh r3,[r3]
+ 591 00aa 3A8B     	 ldrh r2,[r7,#24]
+ 592 00ac 9A42     	 cmp r2,r3
+ 593 00ae BFD3     	 bcc .L21
+ 594              	.L20:
+ 215:../SSC/Src/ryhand.c ****         }
+ 216:../SSC/Src/ryhand.c ****     }
+ 217:../SSC/Src/ryhand.c **** 
+ 218:../SSC/Src/ryhand.c ****     OutputSize = (OutputSize + 7) >> 3;
+ 595              	 .loc 1 218 0 is_stmt 1
+ 596 00b0 7B8B     	 ldrh r3,[r7,#26]
+ 597 00b2 0733     	 adds r3,r3,#7
+ 598 00b4 DB10     	 asrs r3,r3,#3
+ 599 00b6 7B83     	 strh r3,[r7,#26]
+ 219:../SSC/Src/ryhand.c **** #endif
+ 220:../SSC/Src/ryhand.c **** 
+ 221:../SSC/Src/ryhand.c **** #if MAX_PD_INPUT_SIZE > 0
+ 222:../SSC/Src/ryhand.c ****     if(result == 0)
+ 600              	 .loc 1 222 0
+ 601 00b8 FB8B     	 ldrh r3,[r7,#30]
+ 602 00ba 002B     	 cmp r3,#0
+ 603 00bc 42D1     	 bne .L22
+ 223:../SSC/Src/ryhand.c ****     {
+ 224:../SSC/Src/ryhand.c ****         /*Scan Object 0x1C13 TXPDO assign*/
+ 225:../SSC/Src/ryhand.c ****         for(PDOAssignEntryCnt = 0; PDOAssignEntryCnt < sTxPDOassign.u16SubIndex0; PDOAssignEntryCnt
+ 604              	 .loc 1 225 0
+ 605 00be 0023     	 movs r3,#0
+ 606 00c0 3B83     	 strh r3,[r7,#24]
+ 607 00c2 3AE0     	 b .L23
+ 608              	.L28:
+ 226:../SSC/Src/ryhand.c ****         {
+ 227:../SSC/Src/ryhand.c ****             pPDO = OBJ_GetObjectHandle(sTxPDOassign.aEntries[PDOAssignEntryCnt]);
+ 609              	 .loc 1 227 0
+ 610 00c4 3B8B     	 ldrh r3,[r7,#24]
+ 611 00c6 284A     	 ldr r2,.L32+4
+ 612 00c8 5B00     	 lsls r3,r3,#1
+ 613 00ca 1344     	 add r3,r3,r2
+ 614 00cc 5B88     	 ldrh r3,[r3,#2]
+ 615 00ce 1846     	 mov r0,r3
+ 616 00d0 FFF7FEFF 	 bl OBJ_GetObjectHandle
+ 617 00d4 3861     	 str r0,[r7,#16]
+ 228:../SSC/Src/ryhand.c ****             if(pPDO != NULL)
+ 618              	 .loc 1 228 0
+ 619 00d6 3B69     	 ldr r3,[r7,#16]
+ 620 00d8 002B     	 cmp r3,#0
+ 621 00da 26D0     	 beq .L24
+ 229:../SSC/Src/ryhand.c ****             {
+ 230:../SSC/Src/ryhand.c ****                 PDOSubindex0 = *((UINT16 *)pPDO->pVarPtr);
+ 622              	 .loc 1 230 0
+ 623 00dc 3B69     	 ldr r3,[r7,#16]
+ 624 00de 9B69     	 ldr r3,[r3,#24]
+ 625 00e0 1B88     	 ldrh r3,[r3]
+ 626 00e2 FB81     	 strh r3,[r7,#14]
+ 231:../SSC/Src/ryhand.c ****                 for(PDOEntryCnt = 0; PDOEntryCnt < PDOSubindex0; PDOEntryCnt++)
+ 627              	 .loc 1 231 0
+ 628 00e4 0023     	 movs r3,#0
+ 629 00e6 FB82     	 strh r3,[r7,#22]
+ 630 00e8 1AE0     	 b .L25
+ 631              	.L26:
+ 232:../SSC/Src/ryhand.c ****                 {
+ 233:../SSC/Src/ryhand.c ****                     pPDOEntry = (UINT32 *)(((UINT16 *)pPDO->pVarPtr) + (OBJ_GetEntryOffset((PDOEntr
+ 632              	 .loc 1 233 0 discriminator 3
+ 633 00ea 3B69     	 ldr r3,[r7,#16]
+ 634 00ec 9C69     	 ldr r4,[r3,#24]
+ 635 00ee FB8A     	 ldrh r3,[r7,#22]
+ 636 00f0 DBB2     	 uxtb r3,r3
+ 637 00f2 0133     	 adds r3,r3,#1
+ 638 00f4 DBB2     	 uxtb r3,r3
+ 639 00f6 1846     	 mov r0,r3
+ 640 00f8 3969     	 ldr r1,[r7,#16]
+ 641 00fa FFF7FEFF 	 bl OBJ_GetEntryOffset
+ 642 00fe 0346     	 mov r3,r0
+ 643 0100 1B09     	 lsrs r3,r3,#4
+ 644 0102 9BB2     	 uxth r3,r3
+ 645 0104 5B00     	 lsls r3,r3,#1
+ 646 0106 2344     	 add r3,r3,r4
+ 647 0108 BB60     	 str r3,[r7,#8]
+ 234:../SSC/Src/ryhand.c ****                     // we increment the expected output size depending on the mapped Entry
+ 235:../SSC/Src/ryhand.c ****                     InputSize += (UINT16) ((*pPDOEntry) & 0xFF);
+ 648              	 .loc 1 235 0 discriminator 3
+ 649 010a BB68     	 ldr r3,[r7,#8]
+ 650 010c 1B68     	 ldr r3,[r3]
+ 651 010e 9BB2     	 uxth r3,r3
+ 652 0110 DBB2     	 uxtb r3,r3
+ 653 0112 9AB2     	 uxth r2,r3
+ 654 0114 BB8B     	 ldrh r3,[r7,#28]
+ 655 0116 1344     	 add r3,r3,r2
+ 656 0118 BB83     	 strh r3,[r7,#28]
+ 231:../SSC/Src/ryhand.c ****                 {
+ 657              	 .loc 1 231 0 discriminator 3
+ 658 011a FB8A     	 ldrh r3,[r7,#22]
+ 659 011c 0133     	 adds r3,r3,#1
+ 660 011e FB82     	 strh r3,[r7,#22]
+ 661              	.L25:
+ 231:../SSC/Src/ryhand.c ****                 {
+ 662              	 .loc 1 231 0 is_stmt 0 discriminator 1
+ 663 0120 FA8A     	 ldrh r2,[r7,#22]
+ 664 0122 FB89     	 ldrh r3,[r7,#14]
+ 665 0124 9A42     	 cmp r2,r3
+ 666 0126 E0D3     	 bcc .L26
+ 667 0128 04E0     	 b .L31
+ 668              	.L24:
+ 236:../SSC/Src/ryhand.c ****                 }
+ 237:../SSC/Src/ryhand.c ****             }
+ 238:../SSC/Src/ryhand.c ****             else
+ 239:../SSC/Src/ryhand.c ****             {
+ 240:../SSC/Src/ryhand.c ****                 /*assigned PDO was not found in object dictionary. return invalid mapping*/
+ 241:../SSC/Src/ryhand.c ****                 InputSize = 0;
+ 669              	 .loc 1 241 0 is_stmt 1
+ 670 012a 0023     	 movs r3,#0
+ 671 012c BB83     	 strh r3,[r7,#28]
+ 242:../SSC/Src/ryhand.c ****                 result = ALSTATUSCODE_INVALIDINPUTMAPPING;
+ 672              	 .loc 1 242 0
+ 673 012e 2423     	 movs r3,#36
+ 674 0130 FB83     	 strh r3,[r7,#30]
+ 243:../SSC/Src/ryhand.c ****                 break;
+ 675              	 .loc 1 243 0
+ 676 0132 07E0     	 b .L22
+ 677              	.L31:
+ 225:../SSC/Src/ryhand.c ****         {
+ 678              	 .loc 1 225 0 discriminator 2
+ 679 0134 3B8B     	 ldrh r3,[r7,#24]
+ 680 0136 0133     	 adds r3,r3,#1
+ 681 0138 3B83     	 strh r3,[r7,#24]
+ 682              	.L23:
+ 225:../SSC/Src/ryhand.c ****         {
+ 683              	 .loc 1 225 0 is_stmt 0 discriminator 1
+ 684 013a 0B4B     	 ldr r3,.L32+4
+ 685 013c 1B88     	 ldrh r3,[r3]
+ 686 013e 3A8B     	 ldrh r2,[r7,#24]
+ 687 0140 9A42     	 cmp r2,r3
+ 688 0142 BFD3     	 bcc .L28
+ 689              	.L22:
+ 244:../SSC/Src/ryhand.c ****             }
+ 245:../SSC/Src/ryhand.c ****         }
+ 246:../SSC/Src/ryhand.c ****     }
+ 247:../SSC/Src/ryhand.c ****     InputSize = (InputSize + 7) >> 3;
+ 690              	 .loc 1 247 0 is_stmt 1
+ 691 0144 BB8B     	 ldrh r3,[r7,#28]
+ 692 0146 0733     	 adds r3,r3,#7
+ 693 0148 DB10     	 asrs r3,r3,#3
+ 694 014a BB83     	 strh r3,[r7,#28]
+ 248:../SSC/Src/ryhand.c **** #endif
+ 249:../SSC/Src/ryhand.c **** 
+ 250:../SSC/Src/ryhand.c **** #else
+ 251:../SSC/Src/ryhand.c **** #if _WIN32
+ 252:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Define 'InputSize' and 'OutputSize'.")
+ 253:../SSC/Src/ryhand.c **** #else
+ 254:../SSC/Src/ryhand.c ****     #warning "Define 'InputSize' and 'OutputSize'."
+ 255:../SSC/Src/ryhand.c **** #endif
+ 256:../SSC/Src/ryhand.c **** #endif
+ 257:../SSC/Src/ryhand.c **** 
+ 258:../SSC/Src/ryhand.c ****     *pInputSize = InputSize;
+ 695              	 .loc 1 258 0
+ 696 014c 7B68     	 ldr r3,[r7,#4]
+ 697 014e BA8B     	 ldrh r2,[r7,#28]
+ 698 0150 1A80     	 strh r2,[r3]
+ 259:../SSC/Src/ryhand.c ****     *pOutputSize = OutputSize;
+ 699              	 .loc 1 259 0
+ 700 0152 3B68     	 ldr r3,[r7]
+ 701 0154 7A8B     	 ldrh r2,[r7,#26]
+ 702 0156 1A80     	 strh r2,[r3]
+ 260:../SSC/Src/ryhand.c ****     return result;
+ 703              	 .loc 1 260 0
+ 704 0158 FB8B     	 ldrh r3,[r7,#30]
+ 261:../SSC/Src/ryhand.c **** }
+ 705              	 .loc 1 261 0
+ 706 015a 1846     	 mov r0,r3
+ 707 015c 2437     	 adds r7,r7,#36
+ 708              	.LCFI35:
+ 709              	 .cfi_def_cfa_offset 12
+ 710 015e BD46     	 mov sp,r7
+ 711              	.LCFI36:
+ 712              	 .cfi_def_cfa_register 13
+ 713              	 
+ 714 0160 90BD     	 pop {r4,r7,pc}
+ 715              	.L33:
+ 716 0162 00BF     	 .align 2
+ 717              	.L32:
+ 718 0164 00000000 	 .word sRxPDOassign
+ 719 0168 00000000 	 .word sTxPDOassign
+ 720              	 .cfi_endproc
+ 721              	.LFE182:
+ 723              	 .section .text.APPL_InputMapping,"ax",%progbits
+ 724              	 .align 2
+ 725              	 .global APPL_InputMapping
+ 726              	 .thumb
+ 727              	 .thumb_func
+ 729              	APPL_InputMapping:
+ 730              	.LFB183:
+ 262:../SSC/Src/ryhand.c **** 
+ 263:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 264:../SSC/Src/ryhand.c **** /**
+ 265:../SSC/Src/ryhand.c **** \param      pData  pointer to input process data
+ 266:../SSC/Src/ryhand.c **** 
+ 267:../SSC/Src/ryhand.c **** \brief      This function will copies the inputs from the local memory to the ESC memory
+ 268:../SSC/Src/ryhand.c ****             to the hardware
+ 269:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 270:../SSC/Src/ryhand.c **** void APPL_InputMapping(UINT16* pData)
+ 271:../SSC/Src/ryhand.c **** {
+ 731              	 .loc 1 271 0
+ 732              	 .cfi_startproc
+ 733              	 
+ 734              	 
+ 735              	 
+ 736 0000 80B4     	 push {r7}
+ 737              	.LCFI37:
+ 738              	 .cfi_def_cfa_offset 4
+ 739              	 .cfi_offset 7,-4
+ 740 0002 83B0     	 sub sp,sp,#12
+ 741              	.LCFI38:
+ 742              	 .cfi_def_cfa_offset 16
+ 743 0004 00AF     	 add r7,sp,#0
+ 744              	.LCFI39:
+ 745              	 .cfi_def_cfa_register 7
+ 746 0006 7860     	 str r0,[r7,#4]
+ 272:../SSC/Src/ryhand.c **** #if _WIN32
+ 273:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement input (Slave->Master) mapping")
+ 274:../SSC/Src/ryhand.c **** #else
+ 275:../SSC/Src/ryhand.c ****     #warning "Implement input (Slave->Master) mapping"
+ 276:../SSC/Src/ryhand.c **** #endif
+ 277:../SSC/Src/ryhand.c **** }
+ 747              	 .loc 1 277 0
+ 748 0008 0C37     	 adds r7,r7,#12
+ 749              	.LCFI40:
+ 750              	 .cfi_def_cfa_offset 4
+ 751 000a BD46     	 mov sp,r7
+ 752              	.LCFI41:
+ 753              	 .cfi_def_cfa_register 13
+ 754              	 
+ 755 000c 5DF8047B 	 ldr r7,[sp],#4
+ 756              	.LCFI42:
+ 757              	 .cfi_restore 7
+ 758              	 .cfi_def_cfa_offset 0
+ 759 0010 7047     	 bx lr
+ 760              	 .cfi_endproc
+ 761              	.LFE183:
+ 763 0012 00BF     	 .section .text.APPL_OutputMapping,"ax",%progbits
+ 764              	 .align 2
+ 765              	 .global APPL_OutputMapping
+ 766              	 .thumb
+ 767              	 .thumb_func
+ 769              	APPL_OutputMapping:
+ 770              	.LFB184:
+ 278:../SSC/Src/ryhand.c **** 
+ 279:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 280:../SSC/Src/ryhand.c **** /**
+ 281:../SSC/Src/ryhand.c **** \param      pData  pointer to output process data
+ 282:../SSC/Src/ryhand.c **** 
+ 283:../SSC/Src/ryhand.c **** \brief    This function will copies the outputs from the ESC memory to the local memory
+ 284:../SSC/Src/ryhand.c ****             to the hardware
+ 285:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 286:../SSC/Src/ryhand.c **** void APPL_OutputMapping(UINT16* pData)
+ 287:../SSC/Src/ryhand.c **** {
+ 771              	 .loc 1 287 0
+ 772              	 .cfi_startproc
+ 773              	 
+ 774              	 
+ 775              	 
+ 776 0000 80B4     	 push {r7}
+ 777              	.LCFI43:
+ 778              	 .cfi_def_cfa_offset 4
+ 779              	 .cfi_offset 7,-4
+ 780 0002 83B0     	 sub sp,sp,#12
+ 781              	.LCFI44:
+ 782              	 .cfi_def_cfa_offset 16
+ 783 0004 00AF     	 add r7,sp,#0
+ 784              	.LCFI45:
+ 785              	 .cfi_def_cfa_register 7
+ 786 0006 7860     	 str r0,[r7,#4]
+ 288:../SSC/Src/ryhand.c **** #if _WIN32
+ 289:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement output (Master->Slave) mapping")
+ 290:../SSC/Src/ryhand.c **** #else
+ 291:../SSC/Src/ryhand.c ****     #warning "Implement output (Master->Slave) mapping"
+ 292:../SSC/Src/ryhand.c **** #endif
+ 293:../SSC/Src/ryhand.c **** }
+ 787              	 .loc 1 293 0
+ 788 0008 0C37     	 adds r7,r7,#12
+ 789              	.LCFI46:
+ 790              	 .cfi_def_cfa_offset 4
+ 791 000a BD46     	 mov sp,r7
+ 792              	.LCFI47:
+ 793              	 .cfi_def_cfa_register 13
+ 794              	 
+ 795 000c 5DF8047B 	 ldr r7,[sp],#4
+ 796              	.LCFI48:
+ 797              	 .cfi_restore 7
+ 798              	 .cfi_def_cfa_offset 0
+ 799 0010 7047     	 bx lr
+ 800              	 .cfi_endproc
+ 801              	.LFE184:
+ 803 0012 00BF     	 .section .text.APPL_Application,"ax",%progbits
+ 804              	 .align 2
+ 805              	 .global APPL_Application
+ 806              	 .thumb
+ 807              	 .thumb_func
+ 809              	APPL_Application:
+ 810              	.LFB185:
+ 294:../SSC/Src/ryhand.c **** 
+ 295:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 296:../SSC/Src/ryhand.c **** /**
+ 297:../SSC/Src/ryhand.c **** \brief    This function will called from the synchronisation ISR 
+ 298:../SSC/Src/ryhand.c ****             or from the mainloop if no synchronisation is supported
+ 299:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 300:../SSC/Src/ryhand.c **** void APPL_Application(void)
+ 301:../SSC/Src/ryhand.c **** {
+ 811              	 .loc 1 301 0
+ 812              	 .cfi_startproc
+ 813              	 
+ 814              	 
+ 815              	 
+ 816 0000 80B4     	 push {r7}
+ 817              	.LCFI49:
+ 818              	 .cfi_def_cfa_offset 4
+ 819              	 .cfi_offset 7,-4
+ 820 0002 00AF     	 add r7,sp,#0
+ 821              	.LCFI50:
+ 822              	 .cfi_def_cfa_register 7
+ 302:../SSC/Src/ryhand.c **** #if _WIN32
+ 303:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement the slave application")
+ 304:../SSC/Src/ryhand.c **** #else
+ 305:../SSC/Src/ryhand.c ****     #warning "Implement the slave application"
+ 306:../SSC/Src/ryhand.c **** #endif
+ 307:../SSC/Src/ryhand.c **** }
+ 823              	 .loc 1 307 0
+ 824 0004 BD46     	 mov sp,r7
+ 825              	.LCFI51:
+ 826              	 .cfi_def_cfa_register 13
+ 827              	 
+ 828 0006 5DF8047B 	 ldr r7,[sp],#4
+ 829              	.LCFI52:
+ 830              	 .cfi_restore 7
+ 831              	 .cfi_def_cfa_offset 0
+ 832 000a 7047     	 bx lr
+ 833              	 .cfi_endproc
+ 834              	.LFE185:
+ 836              	 .section .text.WriteSimulateCANFD,"ax",%progbits
+ 837              	 .align 2
+ 838              	 .global WriteSimulateCANFD
+ 839              	 .thumb
+ 840              	 .thumb_func
+ 842              	WriteSimulateCANFD:
+ 843              	.LFB186:
+ 308:../SSC/Src/ryhand.c **** 
+ 309:../SSC/Src/ryhand.c **** #if EXPLICIT_DEVICE_ID
+ 310:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 311:../SSC/Src/ryhand.c **** /**
+ 312:../SSC/Src/ryhand.c ****  \return    The Explicit Device ID of the EtherCAT slave
+ 313:../SSC/Src/ryhand.c **** 
+ 314:../SSC/Src/ryhand.c ****  \brief     Read the Explicit Device ID (from an external ID switch)
+ 315:../SSC/Src/ryhand.c **** *////////////////////////////////////////////////////////////////////////////////////////
+ 316:../SSC/Src/ryhand.c **** UINT16 APPL_GetDeviceID()
+ 317:../SSC/Src/ryhand.c **** {
+ 318:../SSC/Src/ryhand.c **** #if _WIN32
+ 319:../SSC/Src/ryhand.c ****    #pragma message ("Warning: Implement explicit Device ID latching")
+ 320:../SSC/Src/ryhand.c **** #else
+ 321:../SSC/Src/ryhand.c ****     #warning "Implement explicit Device ID latching"
+ 322:../SSC/Src/ryhand.c **** #endif
+ 323:../SSC/Src/ryhand.c ****     /* Explicit Device 5 is expected by Explicit Device ID conformance tests*/
+ 324:../SSC/Src/ryhand.c ****     return 0x5;
+ 325:../SSC/Src/ryhand.c **** }
+ 326:../SSC/Src/ryhand.c **** #endif
+ 327:../SSC/Src/ryhand.c **** 
+ 328:../SSC/Src/ryhand.c **** 
+ 329:../SSC/Src/ryhand.c **** 
+ 330:../SSC/Src/ryhand.c **** /////////////////////////////////////////////////////////////////////////////////////////
+ 331:../SSC/Src/ryhand.c **** /**
+ 332:../SSC/Src/ryhand.c **** \param     index               index of the requested object.
+ 333:../SSC/Src/ryhand.c **** \param     subindex            subindex of the requested object.
+ 334:../SSC/Src/ryhand.c **** \param     objSize             size of the requested object data, calculated with OBJ_GetObjectLeng
+ 335:../SSC/Src/ryhand.c **** \param     pData               Pointer to the buffer where the data can be copied to
+ 336:../SSC/Src/ryhand.c **** \param     bCompleteAccess     Indicates if a complete read of all subindices of the
+ 337:../SSC/Src/ryhand.c ****                                object shall be done or not
+ 338:../SSC/Src/ryhand.c **** 
+ 339:../SSC/Src/ryhand.c ****  \return    result of the read operation (0 (success) or an abort code (ABORTIDX_.... defined in
+ 340:../SSC/Src/ryhand.c ****             sdosrv.h))
+ 341:../SSC/Src/ryhand.c ****  *////////////////////////////////////////////////////////////////////////////////////////
+ 342:../SSC/Src/ryhand.c **** UINT8 WriteSimulateCANFD(UINT16 index, UINT8 subindex, UINT32 dataSize, UINT16 MBXMEM * pData, UINT
+ 844              	 .loc 1 342 0
+ 845              	 .cfi_startproc
+ 846              	 
+ 847              	 
+ 848              	 
+ 849 0000 80B4     	 push {r7}
+ 850              	.LCFI53:
+ 851              	 .cfi_def_cfa_offset 4
+ 852              	 .cfi_offset 7,-4
+ 853 0002 85B0     	 sub sp,sp,#20
+ 854              	.LCFI54:
+ 855              	 .cfi_def_cfa_offset 24
+ 856 0004 00AF     	 add r7,sp,#0
+ 857              	.LCFI55:
+ 858              	 .cfi_def_cfa_register 7
+ 859 0006 BA60     	 str r2,[r7,#8]
+ 860 0008 7B60     	 str r3,[r7,#4]
+ 861 000a 0346     	 mov r3,r0
+ 862 000c FB81     	 strh r3,[r7,#14]
+ 863 000e 0B46     	 mov r3,r1
+ 864 0010 7B73     	 strb r3,[r7,#13]
+ 343:../SSC/Src/ryhand.c **** #if _WIN32
+ 344:../SSC/Src/ryhand.c **** #pragma message ("Warning: Implement CoE write callback")
+ 345:../SSC/Src/ryhand.c **** #else
+ 346:../SSC/Src/ryhand.c ****  #warning "Implement CoE write callback"
+ 347:../SSC/Src/ryhand.c **** #endif
+ 348:../SSC/Src/ryhand.c ****  return 0;
+ 865              	 .loc 1 348 0
+ 866 0012 0023     	 movs r3,#0
+ 349:../SSC/Src/ryhand.c **** }
+ 867              	 .loc 1 349 0
+ 868 0014 1846     	 mov r0,r3
+ 869 0016 1437     	 adds r7,r7,#20
+ 870              	.LCFI56:
+ 871              	 .cfi_def_cfa_offset 4
+ 872 0018 BD46     	 mov sp,r7
+ 873              	.LCFI57:
+ 874              	 .cfi_def_cfa_register 13
+ 875              	 
+ 876 001a 5DF8047B 	 ldr r7,[sp],#4
+ 877              	.LCFI58:
+ 878              	 .cfi_restore 7
+ 879              	 .cfi_def_cfa_offset 0
+ 880 001e 7047     	 bx lr
+ 881              	 .cfi_endproc
+ 882              	.LFE186:
+ 884              	 .text
+ 885              	.Letext0:
+ 886              	 .file 2 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 887              	 .file 3 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 888              	 .file 4 "../SSC/Src/sdoserv.h"
+ 889              	 .file 5 "../SSC/Src/objdef.h"
+ 890              	 .file 6 "../SSC/Src/ryhandObjects.h"
+ 891              	 .file 7 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 892              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 ryhand.c
+    {standard input}:24     .data.RxpdoProcessDataMapping0x1600:00000000 RxpdoProcessDataMapping0x1600
+    {standard input}:21     .data.RxpdoProcessDataMapping0x1600:00000000 $d
+    {standard input}:44     .data.TxpdoProcessDataMapping0x1A00:00000000 TxpdoProcessDataMapping0x1A00
+    {standard input}:41     .data.TxpdoProcessDataMapping0x1A00:00000000 $d
+    {standard input}:64     .data.sRxPDOassign:00000000 sRxPDOassign
+    {standard input}:61     .data.sRxPDOassign:00000000 $d
+    {standard input}:72     .data.sTxPDOassign:00000000 sTxPDOassign
+    {standard input}:69     .data.sTxPDOassign:00000000 $d
+    {standard input}:80     .data.Txpdo0x6000:00000000 Txpdo0x6000
+    {standard input}:77     .data.Txpdo0x6000:00000000 $d
+    {standard input}:105    .data.Rxpdo0x7000:00000000 Rxpdo0x7000
+    {standard input}:102    .data.Rxpdo0x7000:00000000 $d
+    {standard input}:130    .data.DevInfo0x8000:00000000 DevInfo0x8000
+    {standard input}:127    .data.DevInfo0x8000:00000000 $d
+    {standard input}:160    .data.SimulateCANFD0x9000:00000000 SimulateCANFD0x9000
+    {standard input}:157    .data.SimulateCANFD0x9000:00000000 $d
+    {standard input}:183    .bss.ParamAction0x9001:00000000 ParamAction0x9001
+    {standard input}:180    .bss.ParamAction0x9001:00000000 $d
+    {standard input}:190    .data.ModularDeviceProfile0xF000:00000000 ModularDeviceProfile0xF000
+    {standard input}:187    .data.ModularDeviceProfile0xF000:00000000 $d
+    {standard input}:195    .text.APPL_AckErrorInd:00000000 $t
+    {standard input}:200    .text.APPL_AckErrorInd:00000000 APPL_AckErrorInd
+    {standard input}:237    .text.APPL_StartMailboxHandler:00000000 $t
+    {standard input}:242    .text.APPL_StartMailboxHandler:00000000 APPL_StartMailboxHandler
+    {standard input}:273    .text.APPL_StopMailboxHandler:00000000 $t
+    {standard input}:278    .text.APPL_StopMailboxHandler:00000000 APPL_StopMailboxHandler
+    {standard input}:309    .text.APPL_StartInputHandler:00000000 $t
+    {standard input}:314    .text.APPL_StartInputHandler:00000000 APPL_StartInputHandler
+    {standard input}:352    .text.APPL_StopInputHandler:00000000 $t
+    {standard input}:357    .text.APPL_StopInputHandler:00000000 APPL_StopInputHandler
+    {standard input}:388    .text.APPL_StartOutputHandler:00000000 $t
+    {standard input}:393    .text.APPL_StartOutputHandler:00000000 APPL_StartOutputHandler
+    {standard input}:424    .text.APPL_StopOutputHandler:00000000 $t
+    {standard input}:429    .text.APPL_StopOutputHandler:00000000 APPL_StopOutputHandler
+    {standard input}:460    .text.APPL_GenerateMapping:00000000 $t
+    {standard input}:465    .text.APPL_GenerateMapping:00000000 APPL_GenerateMapping
+    {standard input}:718    .text.APPL_GenerateMapping:00000164 $d
+    {standard input}:724    .text.APPL_InputMapping:00000000 $t
+    {standard input}:729    .text.APPL_InputMapping:00000000 APPL_InputMapping
+    {standard input}:764    .text.APPL_OutputMapping:00000000 $t
+    {standard input}:769    .text.APPL_OutputMapping:00000000 APPL_OutputMapping
+    {standard input}:804    .text.APPL_Application:00000000 $t
+    {standard input}:809    .text.APPL_Application:00000000 APPL_Application
+    {standard input}:837    .text.WriteSimulateCANFD:00000000 $t
+    {standard input}:842    .text.WriteSimulateCANFD:00000000 WriteSimulateCANFD
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+OBJ_GetObjectHandle
+OBJ_GetEntryOffset

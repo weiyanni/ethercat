@@ -69,9 +69,59 @@
   <nodes xsi:type="ApplicationModel:AppNode">
     <resource xsi:type="ResourceModel:App" href="APPS/GLOBAL_DMA/v4_0_10/GLOBAL_DMA_0.app#/"/>
   </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/E_EEPROM_XMC4/v4_0_20/E_EEPROM_XMC4_0.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/TIMER/v4_1_12/TIMER_0.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/GLOBAL_CCU4/v4_1_14/GLOBAL_CCU4_0.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/INTERRUPT/v4_0_10/INTERRUPT_0.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:PeripheralNode">
+    <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/fce/fce_0.dd#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:PeripheralNode">
+    <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/ecat0/ecat0_0.dd#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:PeripheralNode">
+    <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/port15/port15_15.dd#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:PeripheralNode">
+    <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/port14/port14_14.dd#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_0.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:PeripheralNode">
+    <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/eru1/eru1_1.dd#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_1.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_0.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_1.app#/"/>
+  </nodes>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.21" target="//@nodes.13"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.21" target="//@nodes.22"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.22" target="//@nodes.20"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.24" target="//@nodes.25"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.25" target="//@nodes.13"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.26" target="//@nodes.20"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.27" target="//@nodes.24"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.27" target="//@nodes.26"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.27" target="//@nodes.23"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.27" target="//@nodes.13"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.27" target="//@nodes.20"/>
   <hwConnections href="APPS/DIGITAL_IO/v4_0_18/DIGITAL_IO_0.app#//@connections.0"/>
   <hwConnections href="APPS/DIGITAL_IO/v4_0_18/DIGITAL_IO_0.app#//@connections.1"/>
   <hwConnections href="APPS/CLOCK_XMC4/v4_0_24/CLOCK_XMC4_0.app#//@connections.0"/>
@@ -131,4 +181,100 @@
   <hwConnections href="APPS/SPI_MASTER/v4_3_30/SPI_MASTER_0.app#//@connections.1"/>
   <hwConnections href="APPS/SPI_MASTER/v4_3_30/SPI_MASTER_0.app#//@connections.2"/>
   <hwConnections href="APPS/SPI_MASTER/v4_3_30/SPI_MASTER_0.app#//@connections.0"/>
+  <hwConnections href="APPS/TIMER/v4_1_12/TIMER_0.app#//@connections.0"/>
+  <hwConnections href="APPS/GLOBAL_CCU4/v4_1_14/GLOBAL_CCU4_0.app#//@connections.0"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.0"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.1"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.9"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.10"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.11"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.12"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.13"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.14"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.15"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.16"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.24"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.25"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.26"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.27"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.28"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.29"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.30"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.37"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.39"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.40"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.41"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.42"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.43"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.44"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.45"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.46"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.47"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.48"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.49"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.50"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.51"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.52"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.53"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.54"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.55"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.56"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.57"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.58"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.59"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.60"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.61"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.62"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.63"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.64"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.65"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.66"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.67"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.68"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.69"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.70"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.71"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.72"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.73"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.74"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.75"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.76"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.77"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.78"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.79"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.80"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.81"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.82"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.83"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.84"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.85"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.86"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.87"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.88"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.89"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.90"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.91"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.92"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.93"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.94"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.95"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.96"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.97"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.98"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.99"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.100"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.101"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.102"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.103"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.104"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.105"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.106"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.107"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.108"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.109"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.110"/>
+  <hwConnections href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_0.app#//@connections.0"/>
+  <hwConnections href="APPS/EVENT_GENERATOR/v4_1_16/EVENT_GENERATOR_1.app#//@connections.0"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.111"/>
+  <hwConnections href="APPS/ECAT_SSC/v4_0_30/ECAT_SSC_0.app#//@connections.112"/>
 </ApplicationModel:ApplicationData>

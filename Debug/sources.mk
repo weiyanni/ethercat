@@ -23,10 +23,16 @@ Dave/Generated/CLOCK_XMC4 \
 Dave/Generated/CPU_CTRL_XMC4 \
 Dave/Generated \
 Dave/Generated/DIGITAL_IO \
+Dave/Generated/ECAT_SSC \
+Dave/Generated/E_EEPROM_XMC4 \
+Dave/Generated/GLOBAL_CCU4 \
 Dave/Generated/GLOBAL_DMA \
+Dave/Generated/INTERRUPT \
 Dave/Generated/SPI_MASTER \
+Dave/Generated/TIMER \
 Libraries/Newlib \
 Libraries/XMCLib/src \
+SSC/Src \
 Startup \
 . \
 
