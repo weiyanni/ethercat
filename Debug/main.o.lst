@@ -1,0 +1,1238 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "main.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.XMC_GPIO_SetOutputHigh,"ax",%progbits
+  20              	 .align 2
+  21              	 .thumb
+  22              	 .thumb_func
+  24              	XMC_GPIO_SetOutputHigh:
+  25              	.LFB135:
+  26              	 .file 1 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_gpio.h"
+   1:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+   2:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @file xmc_gpio.h
+   3:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @date 2015-06-20
+   4:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   5:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @cond
+   6:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *****************************************************************************
+   7:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMClib v2.2.0 - XMC Peripheral Driver Library
+   8:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   9:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Copyright (c) 2015-2020, Infineon Technologies AG
+  10:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * All rights reserved.
+  11:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  12:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Boost Software License - Version 1.0 - August 17th, 2003
+  13:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  14:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Permission is hereby granted, free of charge, to any person or organization
+  15:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * obtaining a copy of the software and accompanying documentation covered by
+  16:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * this license (the "Software") to use, reproduce, display, distribute,
+  17:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * execute, and transmit the Software, and to prepare derivative works of the
+  18:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Software, and to permit third-parties to whom the Software is furnished to
+  19:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * do so, all subject to the following:
+  20:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  21:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * The copyright notices in the Software and this entire statement, including
+  22:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * the above license grant, this restriction and the following disclaimer,
+  23:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * must be included in all copies of the Software, in whole or in part, and
+  24:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * all derivative works of the Software, unless such copies or derivative
+  25:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * works are solely in the form of machine-executable object code generated by
+  26:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * a source language processor.
+  27:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  28:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  29:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  30:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+  31:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+  32:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+  33:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+  34:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * DEALINGS IN THE SOFTWARE.
+  35:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  36:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * To improve the quality of the software, users are encouraged to share
+  37:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * modifications, enhancements or bug fixes with Infineon Technologies AG
+  38:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * at XMCSupport@infineon.com.
+  39:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *****************************************************************************
+  40:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  41:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Change History
+  42:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * --------------
+  43:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  44:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-02-20:
+  45:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Initial draft<br>
+  46:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Documentation improved <br>
+  47:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  48:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-06-20:
+  49:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Removed version macros and declaration of GetDriverVersion API
+  50:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  51:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @endcond
+  52:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  53:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  54:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  55:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #ifndef XMC_GPIO_H
+  56:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_H
+  57:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  58:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  59:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * HEADER FILES
+  60:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  61:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  62:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc_common.h"
+  63:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  64:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  65:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup XMClib XMC Peripheral Library
+  66:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @{
+  67:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  68:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  69:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  70:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup GPIO
+  71:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @brief General Purpose Input Output (GPIO) driver for the XMC microcontroller family.
+  72:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  73:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * GPIO driver provide a generic and very flexible software interface for all standard digital I/O 
+  74:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Each port slice has individual interfaces for the operation as General Purpose I/O and it furthe
+  75:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * connectivity to the on-chip periphery and the control for the pad characteristics.
+  76:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  77:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * The driver is divided into Input and Output mode.
+  78:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  79:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Input mode features:
+  80:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Configuration structure XMC_GPIO_CONFIG_t and initialization function XMC_GPIO_Init()
+  81:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of weak pull-up or pull-down device. Configuration structure XMC_GPIO_MO
+  82:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+  83:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of input hysteresis. XMC_GPIO_SetInputHysteresis()
+  84:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  85:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  86:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  87:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Output mode features:
+  88:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of push pull/open drain and Alternate output. Configuration structure XM
+  89:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+  90:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of pad driver strength. Configuration structure XMC_GPIO_OUTPUT_STRENGTH
+  91:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  92:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  93:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of initial output level. Configuration structure XMC_GPIO_OUTPUT_LEVEL_t
+  94:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  95:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *@{
+  96:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  97:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  98:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  99:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * MACROS
+ 100:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 101:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 102:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Pos PORT0_IOCR0_PC0_Pos
+ 103:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Msk PORT0_IOCR0_PC0_Msk
+ 104:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 105:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Size 				(8U)
+ 106:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 107:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 108:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_OUTPUT_LEVEL(level) ((level == XMC_GPIO_OUTPUT_LEVEL_LOW) || \
+ 109:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****                                             (level == XMC_GPIO_OUTPUT_LEVEL_HIGH))
+ 110:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 111:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_HWCTRL(hwctrl) ((hwctrl == XMC_GPIO_HWCTRL_DISABLED) || \
+ 112:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL1) || \
+ 113:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL2))
+ 114:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 115:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 116:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * ENUMS
+ 117:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 118:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 119:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 120:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 121:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines output level of a pin. Use type \a XMC_GPIO_OUTPUT_LEVEL_t for this enum.
+ 122:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 123:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_OUTPUT_LEVEL
+ 124:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 125:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_LOW  = 0x10000U, /**<  Reset bit */
+ 126:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_HIGH = 0x1U, 	/**< Set bit  */
+ 127:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_OUTPUT_LEVEL_t;
+ 128:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 129:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 130:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines direct hardware control characteristics of the pin . Use type \a XMC_GPIO_HWCTRL_t for t
+ 131:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 132:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_HWCTRL
+ 133:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 134:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_DISABLED     = 0x0U, /**<  Software control only */
+ 135:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL1  = 0x1U, /**<  HWI0/HWO0 control path can override the software confi
+ 136:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL2  = 0x2U  /**<  HWI1/HWO1 control path can override the software confi
+ 137:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_HWCTRL_t;
+ 138:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 139:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 140:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * DEVICE FAMILY EXTENSIONS
+ 141:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 142:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 143:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #if UC_FAMILY == XMC1
+ 144:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc1_gpio.h"
+ 145:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #elif UC_FAMILY == XMC4
+ 146:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc4_gpio.h"
+ 147:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #else
+ 148:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #error "xmc_gpio.h: family device not supported"
+ 149:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 150:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 151:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 152:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * API PROTOTYPES
+ 153:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 154:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 155:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #ifdef __cplusplus
+ 156:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** extern "C" {
+ 157:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 158:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 159:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 160:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 161:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	  Constant pointer pointing to GPIO port, to access port registers like Pn_OUT,Pn_O
+ 162:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	  Port pin number.
+ 163:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  config GPIO configuration data structure. Refer data structure @ref XMC_GPIO_CONFIG_t fo
+ 164:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 165:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 166:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 167:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 168:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+ 169:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,hysteresis, push pull
+ 170:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for a selected \a po
+ 171:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \a config provides selected I/O settings. It configures hardware registers Pn_IOCR,Pn_OUT, Pn_OM
+ 172:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 173:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+ 174:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,push pull /open drain
+ 175:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for selected \a port
+ 176:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * It configures hardware registers Pn_IOCR,Pn_OUT,Pn_OMR,Pn_PDISC and Pn_PDR.\n
+ 177:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 178:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 179:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 180:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 181:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 182:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 183:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * This API is called in definition of DAVE_init by code generation and therefore should not be exp
+ 184:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * for the normal operation. Use other APIs only after DAVE_init is called successfully (returns DA
+ 185:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 186:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 187:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 188:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 189:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 190:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_Init(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_CONFIG_t *const c
+ 191:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 192:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 193:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 194:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	Constant pointer pointing to GPIO port, to access hardware register Pn_IOCR.
+ 195:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 196:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  mode input / output functionality selection. Refer @ref XMC_GPIO_MODE_t for valid values
+ 197:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 198:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 199:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 200:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 201:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets digital input and output driver functionality and characteristics of a GPIO port pin. It co
+ 202:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * registers Pn_IOCR. \a mode is initially configured during initialization in XMC_GPIO_Init(). Cal
+ 203:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * the port direction functionality as needed later in the program.
+ 204:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 205:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 206:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 207:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 208:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 209:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 210:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_SetMode(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_MODE_t mode);
+ 211:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 212:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 213:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 214:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 215:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	 Constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 216:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	 Port pin number.
+ 217:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  level output level selection. Refer @ref XMC_GPIO_OUTPUT_LEVEL_t for valid values.
+ 218:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 219:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 220:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 221:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 222:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Set port pin output level to high or low.It configures hardware registers Pn_OMR.\a level is ini
+ 223:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * configured during initialization in XMC_GPIO_Init(). Call this API to alter output level as need
+ 224:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 225:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 226:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputHigh(), XMC_GPIO_SetOutputLow().
+ 227:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 228:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 229:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 230:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 231:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 232:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 233:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 234:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLevel(XMC_GPIO_PORT_t *const port, const uint8_t pin, const 
+ 235:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 236:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 237:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid output level", XMC_GPIO_CHECK_OUTPUT_LEVEL(level));
+ 238:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 239:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)level << pin;
+ 240:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 241:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 242:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 243:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 244:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 245:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 246:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 247:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 248:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 249:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 250:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *  Sets port pin output to high. It configures hardware registers Pn_OMR.
+ 251:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 252:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *  \par<b>Related APIs:</b><BR>
+ 253:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputLow()
+ 254:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 255:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 256:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().\n
+ 257:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 258:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 259:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 260:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 261:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputHigh(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 262:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  27              	 .loc 1 262 0
+  28              	 .cfi_startproc
+  29              	 
+  30              	 
+  31              	 
+  32 0000 80B4     	 push {r7}
+  33              	.LCFI0:
+  34              	 .cfi_def_cfa_offset 4
+  35              	 .cfi_offset 7,-4
+  36 0002 83B0     	 sub sp,sp,#12
+  37              	.LCFI1:
+  38              	 .cfi_def_cfa_offset 16
+  39 0004 00AF     	 add r7,sp,#0
+  40              	.LCFI2:
+  41              	 .cfi_def_cfa_register 7
+  42 0006 7860     	 str r0,[r7,#4]
+  43 0008 0B46     	 mov r3,r1
+  44 000a FB70     	 strb r3,[r7,#3]
+ 263:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputHigh: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 264:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 265:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)0x1U << pin;
+  45              	 .loc 1 265 0
+  46 000c FB78     	 ldrb r3,[r7,#3]
+  47 000e 0122     	 movs r2,#1
+  48 0010 9A40     	 lsls r2,r2,r3
+  49 0012 7B68     	 ldr r3,[r7,#4]
+  50 0014 5A60     	 str r2,[r3,#4]
+ 266:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  51              	 .loc 1 266 0
+  52 0016 0C37     	 adds r7,r7,#12
+  53              	.LCFI3:
+  54              	 .cfi_def_cfa_offset 4
+  55 0018 BD46     	 mov sp,r7
+  56              	.LCFI4:
+  57              	 .cfi_def_cfa_register 13
+  58              	 
+  59 001a 5DF8047B 	 ldr r7,[sp],#4
+  60              	.LCFI5:
+  61              	 .cfi_restore 7
+  62              	 .cfi_def_cfa_offset 0
+  63 001e 7047     	 bx lr
+  64              	 .cfi_endproc
+  65              	.LFE135:
+  67              	 .section .text.XMC_GPIO_SetOutputLow,"ax",%progbits
+  68              	 .align 2
+  69              	 .thumb
+  70              	 .thumb_func
+  72              	XMC_GPIO_SetOutputLow:
+  73              	.LFB136:
+ 267:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 268:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 269:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 270:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 271:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	port pin number.
+ 272:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 273:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return  None
+ 274:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 275:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Description:</b><br>
+ 276:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets port pin output to low. It configures hardware registers Pn_OMR.\n
+ 277:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 278:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>>
+ 279:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_SetOutputHigh()
+ 280:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 281:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Note:</b><br>
+ 282:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 283:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 284:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 285:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 286:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 287:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLow(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 288:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  74              	 .loc 1 288 0
+  75              	 .cfi_startproc
+  76              	 
+  77              	 
+  78              	 
+  79 0000 80B4     	 push {r7}
+  80              	.LCFI6:
+  81              	 .cfi_def_cfa_offset 4
+  82              	 .cfi_offset 7,-4
+  83 0002 83B0     	 sub sp,sp,#12
+  84              	.LCFI7:
+  85              	 .cfi_def_cfa_offset 16
+  86 0004 00AF     	 add r7,sp,#0
+  87              	.LCFI8:
+  88              	 .cfi_def_cfa_register 7
+  89 0006 7860     	 str r0,[r7,#4]
+  90 0008 0B46     	 mov r3,r1
+  91 000a FB70     	 strb r3,[r7,#3]
+ 289:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLow: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 290:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 291:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10000U << pin;
+  92              	 .loc 1 291 0
+  93 000c FB78     	 ldrb r3,[r7,#3]
+  94 000e 4FF48032 	 mov r2,#65536
+  95 0012 9A40     	 lsls r2,r2,r3
+  96 0014 7B68     	 ldr r3,[r7,#4]
+  97 0016 5A60     	 str r2,[r3,#4]
+ 292:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  98              	 .loc 1 292 0
+  99 0018 0C37     	 adds r7,r7,#12
+ 100              	.LCFI9:
+ 101              	 .cfi_def_cfa_offset 4
+ 102 001a BD46     	 mov sp,r7
+ 103              	.LCFI10:
+ 104              	 .cfi_def_cfa_register 13
+ 105              	 
+ 106 001c 5DF8047B 	 ldr r7,[sp],#4
+ 107              	.LCFI11:
+ 108              	 .cfi_restore 7
+ 109              	 .cfi_def_cfa_offset 0
+ 110 0020 7047     	 bx lr
+ 111              	 .cfi_endproc
+ 112              	.LFE136:
+ 114 0022 00BF     	 .section .text.DIGITAL_IO_SetOutputHigh,"ax",%progbits
+ 115              	 .align 2
+ 116              	 .thumb
+ 117              	 .thumb_func
+ 119              	DIGITAL_IO_SetOutputHigh:
+ 120              	.LFB143:
+ 121              	 .file 2 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO/digital_io.h"
+   1:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /*
+   2:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   3:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @file digital_io.h
+   4:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @date 2021-01-08
+   5:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   6:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * NOTE:
+   7:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   8:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   9:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @cond
+  10:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  11:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DIGITAL_IO v4.0.18 - The DIGITAL_IO APP is used to configure a port pin as digital Input/Output.
+  12:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  13:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Copyright (c) 2015-2020, Infineon Technologies AG
+  14:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * All rights reserved.
+  15:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  16:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  17:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * following conditions are met:
+  18:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  19:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  20:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   disclaimer.
+  21:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  22:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  23:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  24:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  25:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  26:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   products derived from this software without specific prior written permission.
+  27:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  28:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  29:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  30:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  31:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  32:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  33:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  34:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  35:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  36:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  37:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * with Infineon Technologies AG (dave@infineon.com).
+  38:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  39:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  40:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Change History
+  41:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * --------------
+  42:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  43:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-02-16
+  44:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Initial version
+  45:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  46:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-04-22
+  47:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - XMC_ASSERT is added in static inline functions.<br>
+  48:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  49:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-06-20
+  50:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Version check added for XMCLib dependency.<br>
+  51:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  52:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-12-22
+  53:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Added hardware controlled IO feature.
+  54:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2016-07-08:
+  55:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Fixed incorrect case for an included header.<br>
+  56:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2021-01-08:
+  57:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Modified check for minimum XMCLib version
+  58:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  59:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @endcond
+  60:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  61:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  */
+  62:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  63:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+  64:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * HEADER FILES
+  65:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  66:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  67:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #ifndef DIGITAL_IO_H
+  68:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #define DIGITAL_IO_H
+  69:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  70:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #include "xmc_gpio.h"
+  71:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #include "DAVE_Common.h"
+  72:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #include "digital_io_conf.h"
+  73:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  74:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+  75:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * MACROS
+  76:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  77:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #define DIGITAL_IO_XMC_LIB_MAJOR_VERSION 2
+  78:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #define DIGITAL_IO_XMC_LIB_MINOR_VERSION 0
+  79:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #define DIGITAL_IO_XMC_LIB_PATCH_VERSION 0
+  80:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  81:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #if !((XMC_LIB_MAJOR_VERSION > DIGITAL_IO_XMC_LIB_MAJOR_VERSION) ||\
+  82:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****       ((XMC_LIB_MAJOR_VERSION == DIGITAL_IO_XMC_LIB_MAJOR_VERSION) && (XMC_LIB_MINOR_VERSION > DIGI
+  83:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****       ((XMC_LIB_MAJOR_VERSION == DIGITAL_IO_XMC_LIB_MAJOR_VERSION) && (XMC_LIB_MINOR_VERSION == DIG
+  84:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #error "DIGITAL_IO requires XMC Peripheral Library v2.0.0 or higher"
+  85:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #endif
+  86:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  87:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  /*************************************************************************************************
+  88:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * ENUMS
+  89:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  90:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  91:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+  92:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_enumerations
+  93:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+  94:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+  95:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  96:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+  97:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Initialization status of DIGITAL_IO APP.
+  98:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+  99:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** typedef enum DIGITAL_IO_STATUS
+ 100:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 101:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   DIGITAL_IO_STATUS_OK = 0U,/**< 0=Status OK */
+ 102:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   DIGITAL_IO_STATUS_FAILURE = 1U/**< 1=Status Failed */
+ 103:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** } DIGITAL_IO_STATUS_t;
+ 104:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 105:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 106:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @}
+ 107:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 108:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 109:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+ 110:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DATA STRUCTURES
+ 111:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+ 112:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 113:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_datastructures
+ 114:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+ 115:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 116:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 117:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 118:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Initialization data structure of DIGITAL_IO APP
+ 119:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 120:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** typedef struct DIGITAL_IO
+ 121:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 122:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_PORT_t *const gpio_port;             /**< port number */
+ 123:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   const XMC_GPIO_CONFIG_t gpio_config;          /**< mode, initial output level and pad driver stre
+ 124:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   const uint8_t gpio_pin;                       /**< pin number */
+ 125:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   const XMC_GPIO_HWCTRL_t hwctrl;               /**< Hardware port control */
+ 126:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** } DIGITAL_IO_t;
+ 127:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 128:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 129:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 130:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @}
+ 131:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 132:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 133:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 134:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+ 135:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  * API Prototypes
+ 136:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+ 137:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 138:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 139:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #ifdef __cplusplus
+ 140:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** extern "C" {
+ 141:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** #endif
+ 142:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 143:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 144:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_apidoc
+ 145:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+ 146:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 147:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 148:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 149:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 150:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 151:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Get DIGITAL_IO APP version
+ 152:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return DAVE_APP_VERSION_t APP version information (major, minor and patch number)
+ 153:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 154:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description: </b><br>
+ 155:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * The function can be used to check application software compatibility with a
+ 156:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * specific version of the APP.
+ 157:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 158:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 159:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 160:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 161:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include "DAVE.h"
+ 162:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 163:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 164:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 165:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t init_status;
+ 166:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_APP_VERSION_t version;
+ 167:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 168:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   // Initialize DIGITAL_IO APP:
+ 169:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   // DIGITAL_IO_Init() is called from within DAVE_Init().
+ 170:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   init_status = DAVE_Init();
+ 171:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(init_status == DAVE_STATUS_SUCCESS)
+ 172:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 173:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     version = DIGITAL_IO_GetAppVersion();
+ 174:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     if (version.major != 4U) {
+ 175:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // Probably, not the right version.
+ 176:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 177:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 178:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 179:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // More code here
+ 180:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1) {
+ 181:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 182:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 183:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     return (1);
+ 184:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  }
+ 185:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @endcode<BR>
+ 186:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 187:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 188:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** DAVE_APP_VERSION_t DIGITAL_IO_GetAppVersion(void);
+ 189:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 190:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 191:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 192:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to initialize the port pin as per UI settings.
+ 193:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 194:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return DIGITAL_IO_STATUS_t DIGITAL_IO APP status. Refer @ref DIGITAL_IO_STATUS_t structure for d
+ 195:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 196:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 197:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function initializes GPIO port registers IOCR,PDISC,OMR,PDR/PHCR to configure pin direction,
+ 198:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * and pad driver strength/hysteresis.
+ 199:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 200:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 201:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * None
+ 202:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 203:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 204:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 205:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include "DAVE.h" //Declarations from DAVE Code Generation (includes SFR declaration)
+ 206:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 207:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 208:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 209:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 210:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 211:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 212:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 213:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 214:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 215:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 216:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 217:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 218:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 219:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 220:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 221:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 222:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 223:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 224:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 225:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 226:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return 1U;
+ 227:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  }
+ 228:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 229:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 230:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 231:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** DIGITAL_IO_STATUS_t DIGITAL_IO_Init(const DIGITAL_IO_t *const handler);
+ 232:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 233:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 234:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 235:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to set port pin high.
+ 236:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 237:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 238:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 239:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 240:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to make port pin to high level
+ 241:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 242:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 243:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  DIGITAL_IO_SetOutputLow()
+ 244:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 245:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 246:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 247:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include "DAVE.h" //Declarations from DAVE Code Generation (includes SFR declaration)
+ 248:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 249:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 250:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 251:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 252:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 253:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 254:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 255:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 256:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 257:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 258:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 259:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 260:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 261:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 262:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 263:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 264:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 265:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DIGITAL_IO_SetOutputHigh(&DIGITAL_IO_0);
+ 266:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 267:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 268:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // Add application code here
+ 269:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 270:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 271:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 272:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 273:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 274:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 275:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 276:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputHigh(const DIGITAL_IO_t *const handler)
+ 277:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 122              	 .loc 2 277 0
+ 123              	 .cfi_startproc
+ 124              	 
+ 125              	 
+ 126 0000 80B5     	 push {r7,lr}
+ 127              	.LCFI12:
+ 128              	 .cfi_def_cfa_offset 8
+ 129              	 .cfi_offset 7,-8
+ 130              	 .cfi_offset 14,-4
+ 131 0002 82B0     	 sub sp,sp,#8
+ 132              	.LCFI13:
+ 133              	 .cfi_def_cfa_offset 16
+ 134 0004 00AF     	 add r7,sp,#0
+ 135              	.LCFI14:
+ 136              	 .cfi_def_cfa_register 7
+ 137 0006 7860     	 str r0,[r7,#4]
+ 278:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputHigh: handler null pointer", handler != NULL);
+ 279:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputHigh(handler->gpio_port, handler->gpio_pin);
+ 138              	 .loc 2 279 0
+ 139 0008 7B68     	 ldr r3,[r7,#4]
+ 140 000a 1A68     	 ldr r2,[r3]
+ 141 000c 7B68     	 ldr r3,[r7,#4]
+ 142 000e 1B7C     	 ldrb r3,[r3,#16]
+ 143 0010 1046     	 mov r0,r2
+ 144 0012 1946     	 mov r1,r3
+ 145 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputHigh
+ 280:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 146              	 .loc 2 280 0
+ 147 0018 0837     	 adds r7,r7,#8
+ 148              	.LCFI15:
+ 149              	 .cfi_def_cfa_offset 8
+ 150 001a BD46     	 mov sp,r7
+ 151              	.LCFI16:
+ 152              	 .cfi_def_cfa_register 13
+ 153              	 
+ 154 001c 80BD     	 pop {r7,pc}
+ 155              	 .cfi_endproc
+ 156              	.LFE143:
+ 158 001e 00BF     	 .section .text.DIGITAL_IO_SetOutputLow,"ax",%progbits
+ 159              	 .align 2
+ 160              	 .thumb
+ 161              	 .thumb_func
+ 163              	DIGITAL_IO_SetOutputLow:
+ 164              	.LFB144:
+ 281:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 282:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 283:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to reset port pin.
+ 284:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 285:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 286:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 287:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 288:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to make port pin to low level.
+ 289:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 290:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 291:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * DIGITAL_IO_SetOutputHigh()
+ 292:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 293:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 294:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 295:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  #include "DAVE.h" //Declarations from DAVE Code Generation (includes SFR declaration)
+ 296:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 297:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  int main(void)
+ 298:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  {
+ 299:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    DAVE_STATUS_t status;
+ 300:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_I
+ 301:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    if(status == DAVE_STATUS_SUCCESS)
+ 302:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 303:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG("DAVE Apps initialization success\n");
+ 304:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 305:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    else
+ 306:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 307:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 308:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *      while(1U)
+ 309:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *      {
+ 310:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *      }
+ 311:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 312:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    //Placeholder for user application code. The while loop below can be replaced with user applic
+ 313:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    DIGITAL_IO_SetOutputLow(&DIGITAL_IO_0);
+ 314:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    while(1U)
+ 315:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 316:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *      // Add application code here
+ 317:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 318:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 319:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 320:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 321:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 322:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 323:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 324:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputLow(const DIGITAL_IO_t *const handler)
+ 325:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 165              	 .loc 2 325 0
+ 166              	 .cfi_startproc
+ 167              	 
+ 168              	 
+ 169 0000 80B5     	 push {r7,lr}
+ 170              	.LCFI17:
+ 171              	 .cfi_def_cfa_offset 8
+ 172              	 .cfi_offset 7,-8
+ 173              	 .cfi_offset 14,-4
+ 174 0002 82B0     	 sub sp,sp,#8
+ 175              	.LCFI18:
+ 176              	 .cfi_def_cfa_offset 16
+ 177 0004 00AF     	 add r7,sp,#0
+ 178              	.LCFI19:
+ 179              	 .cfi_def_cfa_register 7
+ 180 0006 7860     	 str r0,[r7,#4]
+ 326:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputLow: handler null pointer", handler != NULL);
+ 327:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputLow(handler->gpio_port,handler->gpio_pin);
+ 181              	 .loc 2 327 0
+ 182 0008 7B68     	 ldr r3,[r7,#4]
+ 183 000a 1A68     	 ldr r2,[r3]
+ 184 000c 7B68     	 ldr r3,[r7,#4]
+ 185 000e 1B7C     	 ldrb r3,[r3,#16]
+ 186 0010 1046     	 mov r0,r2
+ 187 0012 1946     	 mov r1,r3
+ 188 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputLow
+ 328:D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 189              	 .loc 2 328 0
+ 190 0018 0837     	 adds r7,r7,#8
+ 191              	.LCFI20:
+ 192              	 .cfi_def_cfa_offset 8
+ 193 001a BD46     	 mov sp,r7
+ 194              	.LCFI21:
+ 195              	 .cfi_def_cfa_register 13
+ 196              	 
+ 197 001c 80BD     	 pop {r7,pc}
+ 198              	 .cfi_endproc
+ 199              	.LFE144:
+ 201              	 .global master_send_data
+ 202 001e 00BF     	 .section .bss.master_send_data,"aw",%nobits
+ 203              	 .align 2
+ 206              	master_send_data:
+ 207 0000 00000000 	 .space 6
+ 207      0000
+ 208              	 .comm master_rec_data,4,4
+ 209 0006 0000     	 .section .text.Delay_us,"ax",%progbits
+ 210              	 .align 2
+ 211              	 .global Delay_us
+ 212              	 .thumb
+ 213              	 .thumb_func
+ 215              	Delay_us:
+ 216              	.LFB330:
+ 217              	 .file 3 "../main.c"
+   1:../main.c     **** /*
+   2:../main.c     ****  * main.c
+   3:../main.c     ****  *
+   4:../main.c     ****  *  Created on: 2025 Dec 17 10:46:09
+   5:../main.c     ****  *  Author: Administrator
+   6:../main.c     ****  */
+   7:../main.c     **** 
+   8:../main.c     **** 
+   9:../main.c     **** 
+  10:../main.c     **** 
+  11:../main.c     **** #include "DAVE.h"                 //Declarations from DAVE Code Generation (includes SFR declaratio
+  12:../main.c     **** /**
+  13:../main.c     **** 
+  14:../main.c     ****  * @brief main() - Application entry point
+  15:../main.c     ****  *
+  16:../main.c     ****  * <b>Details of function</b><br>
+  17:../main.c     ****  * This routine is the application entry point. It is invoked by the device startup code. It is res
+  18:../main.c     ****  * invoking the APP initialization dispatcher routine - DAVE_Init() and hosting the place-holder fo
+  19:../main.c     ****  * code.
+  20:../main.c     ****  */
+  21:../main.c     **** #define BUFFER_SIZE                  6
+  22:../main.c     **** uint8_t master_send_data[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+  23:../main.c     **** uint32_t master_rec_data;
+  24:../main.c     **** typedef struct {
+  25:../main.c     ****     uint8_t byte[6];
+  26:../main.c     **** } SPI_Frame_t;
+  27:../main.c     **** #define TMC6460_CHIP_ID                 0x00            /* 芯片 ID 寄存器地址 */
+  28:../main.c     **** #define TMC6460_CHIP_ID_VALUE           0x36343630      /* 预期芯片 ID 值 */
+  29:../main.c     **** 
+  30:../main.c     **** /**
+  31:../main.c     ****  * @brief  简单延时
+  32:../main.c     ****  * @param  us: 延时微秒数（粗略估计，基于 XMC4300 @ 144MHz）
+  33:../main.c     ****  */
+  34:../main.c     ****  void Delay_us(uint32_t us)
+  35:../main.c     **** {
+ 218              	 .loc 3 35 0
+ 219              	 .cfi_startproc
+ 220              	 
+ 221              	 
+ 222              	 
+ 223 0000 80B4     	 push {r7}
+ 224              	.LCFI22:
+ 225              	 .cfi_def_cfa_offset 4
+ 226              	 .cfi_offset 7,-4
+ 227 0002 85B0     	 sub sp,sp,#20
+ 228              	.LCFI23:
+ 229              	 .cfi_def_cfa_offset 24
+ 230 0004 00AF     	 add r7,sp,#0
+ 231              	.LCFI24:
+ 232              	 .cfi_def_cfa_register 7
+ 233 0006 7860     	 str r0,[r7,#4]
+  36:../main.c     ****     volatile uint32_t count = us * 50;
+ 234              	 .loc 3 36 0
+ 235 0008 7B68     	 ldr r3,[r7,#4]
+ 236 000a 3222     	 movs r2,#50
+ 237 000c 02FB03F3 	 mul r3,r2,r3
+ 238 0010 FB60     	 str r3,[r7,#12]
+  37:../main.c     ****     while (count--);
+ 239              	 .loc 3 37 0
+ 240 0012 00BF     	 nop
+ 241              	.L6:
+ 242              	 .loc 3 37 0 is_stmt 0 discriminator 1
+ 243 0014 FB68     	 ldr r3,[r7,#12]
+ 244 0016 5A1E     	 subs r2,r3,#1
+ 245 0018 FA60     	 str r2,[r7,#12]
+ 246 001a 002B     	 cmp r3,#0
+ 247 001c FAD1     	 bne .L6
+  38:../main.c     **** }
+ 248              	 .loc 3 38 0 is_stmt 1
+ 249 001e 1437     	 adds r7,r7,#20
+ 250              	.LCFI25:
+ 251              	 .cfi_def_cfa_offset 4
+ 252 0020 BD46     	 mov sp,r7
+ 253              	.LCFI26:
+ 254              	 .cfi_def_cfa_register 13
+ 255              	 
+ 256 0022 5DF8047B 	 ldr r7,[sp],#4
+ 257              	.LCFI27:
+ 258              	 .cfi_restore 7
+ 259              	 .cfi_def_cfa_offset 0
+ 260 0026 7047     	 bx lr
+ 261              	 .cfi_endproc
+ 262              	.LFE330:
+ 264              	 .section .text.TMC6460_SPI_Read,"ax",%progbits
+ 265              	 .align 2
+ 266              	 .thumb
+ 267              	 .thumb_func
+ 269              	TMC6460_SPI_Read:
+ 270              	.LFB331:
+  39:../main.c     **** 
+  40:../main.c     **** /**
+  41:../main.c     ****  * @brief  SPI 读取寄存器 (保持不变)
+  42:../main.c     ****  */
+  43:../main.c     **** static uint32_t TMC6460_SPI_Read(uint16_t addr)
+  44:../main.c     **** {
+ 271              	 .loc 3 44 0
+ 272              	 .cfi_startproc
+ 273              	 
+ 274              	 
+ 275              	 
+ 276 0000 80B4     	 push {r7}
+ 277              	.LCFI28:
+ 278              	 .cfi_def_cfa_offset 4
+ 279              	 .cfi_offset 7,-4
+ 280 0002 83B0     	 sub sp,sp,#12
+ 281              	.LCFI29:
+ 282              	 .cfi_def_cfa_offset 16
+ 283 0004 00AF     	 add r7,sp,#0
+ 284              	.LCFI30:
+ 285              	 .cfi_def_cfa_register 7
+ 286 0006 0346     	 mov r3,r0
+ 287 0008 FB80     	 strh r3,[r7,#6]
+  45:../main.c     **** //    uint8_t tx_frame[6] = {0};
+  46:../main.c     **** //    uint8_t rx_frame[6] = {0};
+  47:../main.c     **** //
+  48:../main.c     **** //    /* 构造读命令帧 */
+  49:../main.c     **** //    tx_frame[0] = (addr >> 8) & 0x03;
+  50:../main.c     **** //    tx_frame[1] = addr & 0xFF;
+  51:../main.c     **** //
+  52:../main.c     **** //    /* 第一帧：发送读命令 */
+  53:../main.c     **** //    DIGITAL_IO_SetOutputLow(&CS_5);
+  54:../main.c     **** //    Delay_us(1);
+  55:../main.c     **** //    SPI_MASTER_Transfer(&SPI_MASTER_5, tx_frame, rx_frame, 6);
+  56:../main.c     **** //    while (SPI_MASTER_IsTxBusy(&SPI_MASTER_5));
+  57:../main.c     **** //    while (SPI_MASTER_IsRxBusy(&SPI_MASTER_5));
+  58:../main.c     **** //    DIGITAL_IO_SetOutputHigh(&CS_5);
+  59:../main.c     **** //    Delay_us(5);
+  60:../main.c     **** //
+  61:../main.c     **** //    /* 第二帧：获取返回数据 */
+  62:../main.c     **** //    tx_frame[0] = 0;
+  63:../main.c     **** //    tx_frame[1] = 0;
+  64:../main.c     **** //    DIGITAL_IO_SetOutputLow(&CS_5);
+  65:../main.c     **** //    Delay_us(1);
+  66:../main.c     **** //    SPI_MASTER_Transfer(&SPI_MASTER_5, tx_frame, rx_frame, 6);
+  67:../main.c     **** //    while (SPI_MASTER_IsTxBusy(&SPI_MASTER_5));
+  68:../main.c     **** //    while (SPI_MASTER_IsRxBusy(&SPI_MASTER_5));
+  69:../main.c     **** //    DIGITAL_IO_SetOutputHigh(&CS_5);
+  70:../main.c     **** //    Delay_us(5);
+  71:../main.c     **** //
+  72:../main.c     **** //    return ((uint32_t)rx_frame[2] << 24) |
+  73:../main.c     **** //           ((uint32_t)rx_frame[3] << 16) |
+  74:../main.c     **** //           ((uint32_t)rx_frame[4] << 8)  |
+  75:../main.c     **** //           ((uint32_t)rx_frame[5]);
+  76:../main.c     **** }
+ 288              	 .loc 3 76 0
+ 289 000a 1846     	 mov r0,r3
+ 290 000c 0C37     	 adds r7,r7,#12
+ 291              	.LCFI31:
+ 292              	 .cfi_def_cfa_offset 4
+ 293 000e BD46     	 mov sp,r7
+ 294              	.LCFI32:
+ 295              	 .cfi_def_cfa_register 13
+ 296              	 
+ 297 0010 5DF8047B 	 ldr r7,[sp],#4
+ 298              	.LCFI33:
+ 299              	 .cfi_restore 7
+ 300              	 .cfi_def_cfa_offset 0
+ 301 0014 7047     	 bx lr
+ 302              	 .cfi_endproc
+ 303              	.LFE331:
+ 305 0016 00BF     	 .section .text.DMA_SPI_Transfer,"ax",%progbits
+ 306              	 .align 2
+ 307              	 .global DMA_SPI_Transfer
+ 308              	 .thumb
+ 309              	 .thumb_func
+ 311              	DMA_SPI_Transfer:
+ 312              	.LFB332:
+  77:../main.c     **** 
+  78:../main.c     **** //片选引脚结构体
+  79:../main.c     **** typedef struct {
+  80:../main.c     ****     DIGITAL_IO_t *cs_pins[4];      // 最多支持4个片选
+  81:../main.c     ****     uint8_t cs_active_levels[4];   // 每个片选的有效电平
+  82:../main.c     ****     uint8_t cs_count;              // 实际使用的片选数量
+  83:../main.c     **** } SPI_MultiCS_Config;
+  84:../main.c     **** 
+  85:../main.c     **** /*
+  86:../main.c     ****  	 以DMA的方式进行spi通信
+  87:../main.c     ****  */
+  88:../main.c     **** void DMA_SPI_Transfer(uint8_t *tx_data, uint8_t *rx_data, uint32_t length) {
+ 313              	 .loc 3 88 0
+ 314              	 .cfi_startproc
+ 315              	 
+ 316              	 
+ 317              	 
+ 318 0000 80B4     	 push {r7}
+ 319              	.LCFI34:
+ 320              	 .cfi_def_cfa_offset 4
+ 321              	 .cfi_offset 7,-4
+ 322 0002 85B0     	 sub sp,sp,#20
+ 323              	.LCFI35:
+ 324              	 .cfi_def_cfa_offset 24
+ 325 0004 00AF     	 add r7,sp,#0
+ 326              	.LCFI36:
+ 327              	 .cfi_def_cfa_register 7
+ 328 0006 F860     	 str r0,[r7,#12]
+ 329 0008 B960     	 str r1,[r7,#8]
+ 330 000a 7A60     	 str r2,[r7,#4]
+  89:../main.c     **** //    // 配置DMA源地址和目的地址
+  90:../main.c     **** //    DMA_SetSourceAddress(&DMA_0, (uint32_t)tx_data);
+  91:../main.c     **** //    DMA_SetDestinationAddress(&DMA_0, (uint32_t)&SPI_MASTER_0->OUTR);
+  92:../main.c     **** //
+  93:../main.c     **** //    // 配置DMA传输数量
+  94:../main.c     **** //    DMA_SetBlockSize(&DMA_0, length);
+  95:../main.c     **** //
+  96:../main.c     **** //    // 启动DMA传输
+  97:../main.c     **** //    DMA_Enable(&DMA_0);
+  98:../main.c     **** //}
+  99:../main.c     **** //
+ 100:../main.c     **** //// DMA传输完成中断回调
+ 101:../main.c     **** //void DMA_TransferComplete(void) {
+ 102:../main.c     **** //    // 处理DMA传输完成
+ 103:../main.c     **** }
+ 331              	 .loc 3 103 0
+ 332 000c 1437     	 adds r7,r7,#20
+ 333              	.LCFI37:
+ 334              	 .cfi_def_cfa_offset 4
+ 335 000e BD46     	 mov sp,r7
+ 336              	.LCFI38:
+ 337              	 .cfi_def_cfa_register 13
+ 338              	 
+ 339 0010 5DF8047B 	 ldr r7,[sp],#4
+ 340              	.LCFI39:
+ 341              	 .cfi_restore 7
+ 342              	 .cfi_def_cfa_offset 0
+ 343 0014 7047     	 bx lr
+ 344              	 .cfi_endproc
+ 345              	.LFE332:
+ 347 0016 00BF     	 .section .text.main,"ax",%progbits
+ 348              	 .align 2
+ 349              	 .global main
+ 350              	 .thumb
+ 351              	 .thumb_func
+ 353              	main:
+ 354              	.LFB333:
+ 104:../main.c     **** 
+ 105:../main.c     **** int main(void)
+ 106:../main.c     **** {
+ 355              	 .loc 3 106 0
+ 356              	 .cfi_startproc
+ 357              	 
+ 358              	 
+ 359 0000 80B5     	 push {r7,lr}
+ 360              	.LCFI40:
+ 361              	 .cfi_def_cfa_offset 8
+ 362              	 .cfi_offset 7,-8
+ 363              	 .cfi_offset 14,-4
+ 364 0002 84B0     	 sub sp,sp,#16
+ 365              	.LCFI41:
+ 366              	 .cfi_def_cfa_offset 24
+ 367 0004 00AF     	 add r7,sp,#0
+ 368              	.LCFI42:
+ 369              	 .cfi_def_cfa_register 7
+ 107:../main.c     ****   DAVE_STATUS_t status;
+ 108:../main.c     ****   SPI_Frame_t  rx_frame;
+ 109:../main.c     ****   uint32_t chip_id;
+ 110:../main.c     **** 
+ 111:../main.c     ****   status = DAVE_Init();           /* Initialization of DAVE APPs  */
+ 370              	 .loc 3 111 0
+ 371 0006 FFF7FEFF 	 bl DAVE_Init
+ 372 000a 0346     	 mov r3,r0
+ 373 000c FB73     	 strb r3,[r7,#15]
+ 112:../main.c     **** 
+ 113:../main.c     ****   if (status != DAVE_STATUS_SUCCESS)
+ 374              	 .loc 3 113 0
+ 375 000e FB7B     	 ldrb r3,[r7,#15]
+ 376 0010 002B     	 cmp r3,#0
+ 377 0012 00D0     	 beq .L10
+ 378              	.L11:
+ 114:../main.c     ****   {
+ 115:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
+ 116:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
+ 117:../main.c     **** 
+ 118:../main.c     ****     while(1U)
+ 119:../main.c     ****     {
+ 120:../main.c     **** 
+ 121:../main.c     ****     }
+ 379              	 .loc 3 121 0 discriminator 1
+ 380 0014 FEE7     	 b .L11
+ 381              	.L10:
+ 122:../main.c     ****   }
+ 123:../main.c     ****   else
+ 124:../main.c     ****   {
+ 125:../main.c     **** 	  DIGITAL_IO_SetOutputLow(&LED);
+ 382              	 .loc 3 125 0
+ 383 0016 1648     	 ldr r0,.L15
+ 384 0018 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 126:../main.c     **** 	  Delay_us(200000);
+ 385              	 .loc 3 126 0
+ 386 001c 1548     	 ldr r0,.L15+4
+ 387 001e FFF7FEFF 	 bl Delay_us
+ 127:../main.c     **** 	  DIGITAL_IO_SetOutputHigh(&LED);
+ 388              	 .loc 3 127 0
+ 389 0022 1348     	 ldr r0,.L15
+ 390 0024 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 128:../main.c     **** 	  Delay_us(200000);
+ 391              	 .loc 3 128 0
+ 392 0028 1248     	 ldr r0,.L15+4
+ 393 002a FFF7FEFF 	 bl Delay_us
+ 129:../main.c     ****   }
+ 130:../main.c     **** 
+ 131:../main.c     ****   DIGITAL_IO_SetOutputHigh(&SLEEPN5);
+ 394              	 .loc 3 131 0
+ 395 002e 1248     	 ldr r0,.L15+8
+ 396 0030 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 132:../main.c     ****   Delay_us(4000);
+ 397              	 .loc 3 132 0
+ 398 0034 4FF47A60 	 mov r0,#4000
+ 399 0038 FFF7FEFF 	 bl Delay_us
+ 133:../main.c     **** 
+ 134:../main.c     ****   chip_id = TMC6460_SPI_Read(TMC6460_CHIP_ID);
+ 400              	 .loc 3 134 0
+ 401 003c 0020     	 movs r0,#0
+ 402 003e FFF7FEFF 	 bl TMC6460_SPI_Read
+ 403 0042 B860     	 str r0,[r7,#8]
+ 135:../main.c     **** 
+ 136:../main.c     ****     //master_rec_data = TMC6460_SPI_Read(TMC6460_CHIP_ID);
+ 137:../main.c     **** 
+ 138:../main.c     ****         if (chip_id != TMC6460_CHIP_ID_VALUE) {
+ 404              	 .loc 3 138 0
+ 405 0044 BB68     	 ldr r3,[r7,#8]
+ 406 0046 0D4A     	 ldr r2,.L15+12
+ 407 0048 9342     	 cmp r3,r2
+ 408 004a 0CD0     	 beq .L12
+ 409              	.L13:
+ 139:../main.c     ****             /* SPI 通信失败：LED 闪烁，卡死 */
+ 140:../main.c     ****             while (1) {
+ 141:../main.c     ****                 DIGITAL_IO_SetOutputLow(&LED);
+ 410              	 .loc 3 141 0 discriminator 1
+ 411 004c 0848     	 ldr r0,.L15
+ 412 004e FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 142:../main.c     ****                 Delay_us(200000);
+ 413              	 .loc 3 142 0 discriminator 1
+ 414 0052 0848     	 ldr r0,.L15+4
+ 415 0054 FFF7FEFF 	 bl Delay_us
+ 143:../main.c     ****                 DIGITAL_IO_SetOutputHigh(&LED);
+ 416              	 .loc 3 143 0 discriminator 1
+ 417 0058 0548     	 ldr r0,.L15
+ 418 005a FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 144:../main.c     ****                 Delay_us(200000);
+ 419              	 .loc 3 144 0 discriminator 1
+ 420 005e 0548     	 ldr r0,.L15+4
+ 421 0060 FFF7FEFF 	 bl Delay_us
+ 145:../main.c     ****             }
+ 422              	 .loc 3 145 0 discriminator 1
+ 423 0064 F2E7     	 b .L13
+ 424              	.L12:
+ 146:../main.c     ****         }
+ 147:../main.c     ****         /* SPI 通信成功：LED 常亮，继续执行 */
+ 148:../main.c     ****         DIGITAL_IO_SetOutputLow(&LED);
+ 425              	 .loc 3 148 0
+ 426 0066 0248     	 ldr r0,.L15
+ 427 0068 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 428              	.L14:
+ 149:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
+ 150:../main.c     ****   while(1U)
+ 151:../main.c     ****   {
+ 152:../main.c     **** //	  DIGITAL_IO_ToggleOutput(&LED); // toggles level at pin
+ 153:../main.c     **** //	  for(delay_count = 0;delay_count<0xfffff;delay_count++);
+ 154:../main.c     **** 
+ 155:../main.c     ****   }
+ 429              	 .loc 3 155 0 discriminator 2
+ 430 006c FEE7     	 b .L14
+ 431              	.L16:
+ 432 006e 00BF     	 .align 2
+ 433              	.L15:
+ 434 0070 00000000 	 .word LED
+ 435 0074 400D0300 	 .word 200000
+ 436 0078 00000000 	 .word SLEEPN5
+ 437 007c 30363436 	 .word 909391408
+ 438              	 .cfi_endproc
+ 439              	.LFE333:
+ 441              	 .text
+ 442              	.Letext0:
+ 443              	 .file 4 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 444              	 .file 5 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 445              	 .file 6 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 446              	 .file 7 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_usic.h"
+ 447              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_spi.h"
+ 448              	 .file 9 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DAVE.h"
+ 449              	 .file 10 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 450              	 .file 11 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
+ 451              	 .file 12 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+ 452              	 .file 13 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+    {standard input}:20     .text.XMC_GPIO_SetOutputHigh:00000000 $t
+    {standard input}:24     .text.XMC_GPIO_SetOutputHigh:00000000 XMC_GPIO_SetOutputHigh
+    {standard input}:68     .text.XMC_GPIO_SetOutputLow:00000000 $t
+    {standard input}:72     .text.XMC_GPIO_SetOutputLow:00000000 XMC_GPIO_SetOutputLow
+    {standard input}:115    .text.DIGITAL_IO_SetOutputHigh:00000000 $t
+    {standard input}:119    .text.DIGITAL_IO_SetOutputHigh:00000000 DIGITAL_IO_SetOutputHigh
+    {standard input}:159    .text.DIGITAL_IO_SetOutputLow:00000000 $t
+    {standard input}:163    .text.DIGITAL_IO_SetOutputLow:00000000 DIGITAL_IO_SetOutputLow
+    {standard input}:206    .bss.master_send_data:00000000 master_send_data
+    {standard input}:203    .bss.master_send_data:00000000 $d
+                            *COM*:00000004 master_rec_data
+    {standard input}:210    .text.Delay_us:00000000 $t
+    {standard input}:215    .text.Delay_us:00000000 Delay_us
+    {standard input}:265    .text.TMC6460_SPI_Read:00000000 $t
+    {standard input}:269    .text.TMC6460_SPI_Read:00000000 TMC6460_SPI_Read
+    {standard input}:306    .text.DMA_SPI_Transfer:00000000 $t
+    {standard input}:311    .text.DMA_SPI_Transfer:00000000 DMA_SPI_Transfer
+    {standard input}:348    .text.main:00000000 $t
+    {standard input}:353    .text.main:00000000 main
+    {standard input}:434    .text.main:00000070 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+DAVE_Init
+LED
+SLEEPN5
