@@ -758,7 +758,7 @@
  576 012c 00000000 	 .word aName0x9000
  577 0130 00000000 	 .word SimulateCANFD0x9000
  578 0134 00000000 	 .word 0
- 579 0138 00000000 	 .word WriteSimulateCANFD
+ 579 0138 00000000 	 .word 0
  580 013c 0000     	 .short 0
  581 013e 0000     	 .space 2
  582 0140 00000000 	 .word 0
@@ -842,15 +842,14 @@
  666 000f 00       	 .section .data.acDevicename,"aw",%progbits
  667              	 .align 2
  670              	acDevicename:
- 671 0000 44657848 	 .ascii "DexHand6\000"
- 671      616E6436 
- 671      00
+ 671 0000 72796861 	 .ascii "ryhand\000"
+ 671      6E6400
  672              	 .global sEntryDesc0x1008
- 673 0009 000000   	 .section .rodata.sEntryDesc0x1008,"a",%progbits
+ 673 0007 00       	 .section .rodata.sEntryDesc0x1008,"a",%progbits
  674              	 .align 2
  677              	sEntryDesc0x1008:
  678 0000 0900     	 .short 9
- 679 0002 4000     	 .short 64
+ 679 0002 3000     	 .short 48
  680 0004 0700     	 .short 7
  681              	 .global aName0x1008
  682 0006 0000     	 .section .rodata.aName0x1008,"a",%progbits
@@ -3690,7 +3689,6 @@ Txpdo0x6000
 Rxpdo0x7000
 DevInfo0x8000
 SimulateCANFD0x9000
-WriteSimulateCANFD
 ParamAction0x9001
 ModularDeviceProfile0xF000
 b32BitDc

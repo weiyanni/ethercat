@@ -4172,8 +4172,8 @@
  751              	 .section .rodata.SPI_MASTER_0_MOSI,"a",%progbits
  752              	 .align 2
  755              	SPI_MASTER_0_MOSI:
- 756 0000 00800248 	 .word 1208123392
- 757 0004 05       	 .byte 5
+ 756 0000 00820248 	 .word 1208123904
+ 757 0004 0E       	 .byte 14
  758 0005 000000   	 .space 3
  759              	 .global SPI_MASTER_0_MOSI_Config
  760              	 .section .data.SPI_MASTER_0_MOSI_Config,"aw",%progbits
@@ -4191,8 +4191,8 @@
  773              	 .section .rodata.SPI_MASTER_0_MISO,"a",%progbits
  774              	 .align 2
  777              	SPI_MASTER_0_MISO:
- 778 0000 00800248 	 .word 1208123392
- 779 0004 04       	 .byte 4
+ 778 0000 00820248 	 .word 1208123904
+ 779 0004 0F       	 .byte 15
  780 0005 000000   	 .space 3
  781              	 .global SPI_MASTER_0_MISO_Config
  782              	 .section .data.SPI_MASTER_0_MISO_Config,"aw",%progbits
@@ -4208,14 +4208,14 @@
  791              	 .section .rodata.SPI_MASTER_0_SCLKOUT,"a",%progbits
  792              	 .align 2
  795              	SPI_MASTER_0_SCLKOUT:
- 796 0000 00800248 	 .word 1208123392
- 797 0004 0B       	 .byte 11
+ 796 0000 00840248 	 .word 1208124416
+ 797 0004 00       	 .byte 0
  798 0005 000000   	 .space 3
  799              	 .global SPI_MASTER_0_SCLKOUT_Config
  800              	 .section .rodata.SPI_MASTER_0_SCLKOUT_Config,"a",%progbits
  801              	 .align 2
  804              	SPI_MASTER_0_SCLKOUT_Config:
- 805 0000 90       	 .byte -112
+ 805 0000 A0       	 .byte -96
  806 0001 000000   	 .space 3
  807 0004 01000000 	 .word 1
  808 0008 01       	 .byte 1
@@ -4329,8 +4329,8 @@
  912      00000000 
  912      00000000 
  913 001c 00       	 .byte 0
- 914 001d 00       	 .byte 0
- 915 001e 00       	 .byte 0
+ 914 001d 02       	 .byte 2
+ 915 001e 02       	 .byte 2
  916 001f 00       	 .byte 0
  917 0020 00       	 .byte 0
  918 0021 00       	 .byte 0
@@ -4491,8 +4491,8 @@
  132:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** /* Data Transmit pin from SPI_MASTER */
  133:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** const SPI_MASTER_GPIO_t SPI_MASTER_0_MOSI = 
  134:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** {
- 135:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .port = (XMC_GPIO_PORT_t *)PORT0_BASE,
- 136:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .pin  = (uint8_t)5
+ 135:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .port = (XMC_GPIO_PORT_t *)PORT2_BASE,
+ 136:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .pin  = (uint8_t)14
  137:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** };         
  138:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****                                       
  139:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** SPI_MASTER_GPIO_CONFIG_t SPI_MASTER_0_MOSI_Config = 
@@ -4509,8 +4509,8 @@
  150:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** /* Data Receive pin for SPI_MASTER */
  151:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** const SPI_MASTER_GPIO_t SPI_MASTER_0_MISO = 
  152:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** {
- 153:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .port = (XMC_GPIO_PORT_t *)PORT0_BASE,
- 154:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .pin  = (uint8_t)4
+ 153:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .port = (XMC_GPIO_PORT_t *)PORT2_BASE,
+ 154:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .pin  = (uint8_t)15
  155:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** };
  156:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
  157:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** SPI_MASTER_GPIO_CONFIG_t SPI_MASTER_0_MISO_Config = 
@@ -4524,15 +4524,15 @@
  165:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
  166:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** const SPI_MASTER_GPIO_t SPI_MASTER_0_SCLKOUT = 
  167:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** {
- 168:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .port = (XMC_GPIO_PORT_t *)PORT0_BASE,
- 169:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .pin  = (uint8_t)11
+ 168:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .port = (XMC_GPIO_PORT_t *)PORT4_BASE,
+ 169:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .pin  = (uint8_t)0
  170:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** };     
  171:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
  172:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** const SPI_MASTER_GPIO_CONFIG_t SPI_MASTER_0_SCLKOUT_Config = 
  173:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** { 
  174:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .port_config = 
  175:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   {
- 176:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     .mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT2,
+ 176:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     .mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT4,
  177:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     .output_level = XMC_GPIO_OUTPUT_LEVEL_HIGH,
  178:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     .output_strength = XMC_GPIO_OUTPUT_STRENGTH_STRONG_MEDIUM_EDGE
  179:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** }
@@ -4627,14 +4627,14 @@
  268:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .spi_master_mode = XMC_SPI_CH_MODE_STANDARD, /* spi master transmission mode */
  269:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .word_length     = 8U,
  270:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****                        
- 271:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   #ifdef USIC1_C0_DX0_P0_4
- 272:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .dx0_input = SPI_MASTER_INPUT_A,
+ 271:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   #ifdef USIC1_C0_DX0_P2_15
+ 272:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .dx0_input = SPI_MASTER_INPUT_C,
  273:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   #else
  274:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .dx0_input = SPI_MASTER_INPUT_INVALID,
  275:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   #endif
  276:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
- 277:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   #ifdef USIC1_C0_DX0_P0_5
- 278:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .dx0_input_half_duplex = SPI_MASTER_INPUT_A,
+ 277:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   #ifdef USIC1_C0_DX0_P2_14
+ 278:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .dx0_input_half_duplex = SPI_MASTER_INPUT_C,
  279:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   #else
  280:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   .dx0_input_half_duplex = SPI_MASTER_INPUT_INVALID,
  281:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   #endif
@@ -4779,19 +4779,19 @@
  339:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
  340:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****                
  341:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   /* Configure the input pin properties */
- 342:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT0_BASE, (uint8_t)4, &SPI_MASTER_0_MISO_Config.port_config);
+ 342:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT2_BASE, (uint8_t)15, &SPI_MASTER_0_MISO_Config.port_config);
  1026              	 .loc 3 342 0
  1027 0086 2248     	 ldr r0,.L20+32
- 1028 0088 0421     	 movs r1,#4
+ 1028 0088 0F21     	 movs r1,#15
  1029 008a 224A     	 ldr r2,.L20+36
  1030 008c FFF7FEFF 	 bl XMC_GPIO_Init
  343:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
  344:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   /* Configure the data input line selected */
- 345:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_SPI_CH_SetInputSource(XMC_SPI1_CH0, XMC_SPI_CH_INPUT_DIN0, (uint8_t)SPI_MASTER_INPUT_A);
+ 345:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_SPI_CH_SetInputSource(XMC_SPI1_CH0, XMC_SPI_CH_INPUT_DIN0, (uint8_t)SPI_MASTER_INPUT_C);
  1031              	 .loc 3 345 0
  1032 0090 1D48     	 ldr r0,.L20+24
  1033 0092 0021     	 movs r1,#0
- 1034 0094 0022     	 movs r2,#0
+ 1034 0094 0222     	 movs r2,#2
  1035 0096 FFF7FEFF 	 bl XMC_SPI_CH_SetInputSource
  346:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   /* Start the SPI_Channel */
  347:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_SPI_CH_Start(XMC_SPI1_CH0);
@@ -4800,19 +4800,19 @@
  1038 009c FFF7FEFF 	 bl XMC_SPI_CH_Start
  348:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
  349:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   /* Configure the output pin properties */
- 350:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT0_BASE, (uint8_t)5, &SPI_MASTER_0_MOSI_Config.port_config);
+ 350:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT2_BASE, (uint8_t)14, &SPI_MASTER_0_MOSI_Config.port_config);
  1039              	 .loc 3 350 0
  1040 00a0 1B48     	 ldr r0,.L20+32
- 1041 00a2 0521     	 movs r1,#5
+ 1041 00a2 0E21     	 movs r1,#14
  1042 00a4 1C4A     	 ldr r2,.L20+40
  1043 00a6 FFF7FEFF 	 bl XMC_GPIO_Init
  351:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     
  352:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   /* Initialize SPI SCLK out pin */
- 353:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT0_BASE, (uint8_t)11, &SPI_MASTER_0_SCLKOUT_Config.port_confi
+ 353:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT4_BASE, (uint8_t)0, &SPI_MASTER_0_SCLKOUT_Config.port_config
  1044              	 .loc 3 353 0
- 1045 00aa 1948     	 ldr r0,.L20+32
- 1046 00ac 0B21     	 movs r1,#11
- 1047 00ae 1B4A     	 ldr r2,.L20+44
+ 1045 00aa 1C48     	 ldr r0,.L20+44
+ 1046 00ac 0021     	 movs r1,#0
+ 1047 00ae 1C4A     	 ldr r2,.L20+48
  1048 00b0 FFF7FEFF 	 bl XMC_GPIO_Init
  354:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
  355:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   XMC_USIC_CH_SetInterruptNodePointer(XMC_SPI1_CH0,
@@ -4881,170 +4881,171 @@
  1094 0104 00000000 	 .word SPI_MASTER_0_DMA_rx_handler
  1095 0108 00000248 	 .word 1208090624
  1096 010c 00000000 	 .word SPI_MASTER_0_Channel_Config
- 1097 0110 00800248 	 .word 1208123392
+ 1097 0110 00820248 	 .word 1208123904
  1098 0114 00000000 	 .word SPI_MASTER_0_MISO_Config
  1099 0118 00000000 	 .word SPI_MASTER_0_MOSI_Config
- 1100 011c 00000000 	 .word SPI_MASTER_0_SCLKOUT_Config
- 1101              	 .cfi_endproc
- 1102              	.LFE326:
- 1104              	 .section .text.SPI_MASTER_0_DMA_tx_handler,"ax",%progbits
- 1105              	 .align 2
- 1106              	 .global SPI_MASTER_0_DMA_tx_handler
- 1107              	 .thumb
- 1108              	 .thumb_func
- 1110              	SPI_MASTER_0_DMA_tx_handler:
- 1111              	.LFB327:
+ 1100 011c 00840248 	 .word 1208124416
+ 1101 0120 00000000 	 .word SPI_MASTER_0_SCLKOUT_Config
+ 1102              	 .cfi_endproc
+ 1103              	.LFE326:
+ 1105              	 .section .text.SPI_MASTER_0_DMA_tx_handler,"ax",%progbits
+ 1106              	 .align 2
+ 1107              	 .global SPI_MASTER_0_DMA_tx_handler
+ 1108              	 .thumb
+ 1109              	 .thumb_func
+ 1111              	SPI_MASTER_0_DMA_tx_handler:
+ 1112              	.LFB327:
  373:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** /*Transmit ISR*/
  374:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** void SPI_MASTER_0_DMA_tx_handler(XMC_DMA_CH_EVENT_t event)
  375:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** {
- 1112              	 .loc 3 375 0
- 1113              	 .cfi_startproc
- 1114              	 
+ 1113              	 .loc 3 375 0
+ 1114              	 .cfi_startproc
  1115              	 
- 1116 0000 80B5     	 push {r7,lr}
- 1117              	.LCFI89:
- 1118              	 .cfi_def_cfa_offset 8
- 1119              	 .cfi_offset 7,-8
- 1120              	 .cfi_offset 14,-4
- 1121 0002 82B0     	 sub sp,sp,#8
- 1122              	.LCFI90:
- 1123              	 .cfi_def_cfa_offset 16
- 1124 0004 00AF     	 add r7,sp,#0
- 1125              	.LCFI91:
- 1126              	 .cfi_def_cfa_register 7
- 1127 0006 0346     	 mov r3,r0
- 1128 0008 FB71     	 strb r3,[r7,#7]
+ 1116              	 
+ 1117 0000 80B5     	 push {r7,lr}
+ 1118              	.LCFI89:
+ 1119              	 .cfi_def_cfa_offset 8
+ 1120              	 .cfi_offset 7,-8
+ 1121              	 .cfi_offset 14,-4
+ 1122 0002 82B0     	 sub sp,sp,#8
+ 1123              	.LCFI90:
+ 1124              	 .cfi_def_cfa_offset 16
+ 1125 0004 00AF     	 add r7,sp,#0
+ 1126              	.LCFI91:
+ 1127              	 .cfi_def_cfa_register 7
+ 1128 0006 0346     	 mov r3,r0
+ 1129 0008 FB71     	 strb r3,[r7,#7]
  376:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   if (event == XMC_DMA_CH_EVENT_TRANSFER_COMPLETE)
- 1129              	 .loc 3 376 0
- 1130 000a FB79     	 ldrb r3,[r7,#7]
- 1131 000c 012B     	 cmp r3,#1
- 1132 000e 0BD1     	 bne .L22
+ 1130              	 .loc 3 376 0
+ 1131 000a FB79     	 ldrb r3,[r7,#7]
+ 1132 000c 012B     	 cmp r3,#1
+ 1133 000e 0BD1     	 bne .L22
  377:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   {
  378:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     while(XMC_USIC_CH_GetTransmitBufferStatus(XMC_SPI1_CH0) == XMC_USIC_CH_TBUF_STATUS_BUSY);
- 1133              	 .loc 3 378 0
- 1134 0010 00BF     	 nop
- 1135              	.L24:
- 1136              	 .loc 3 378 0 is_stmt 0 discriminator 1
- 1137 0012 0748     	 ldr r0,.L25
- 1138 0014 FFF7FEFF 	 bl XMC_USIC_CH_GetTransmitBufferStatus
- 1139 0018 0346     	 mov r3,r0
- 1140 001a 802B     	 cmp r3,#128
- 1141 001c F9D0     	 beq .L24
+ 1134              	 .loc 3 378 0
+ 1135 0010 00BF     	 nop
+ 1136              	.L24:
+ 1137              	 .loc 3 378 0 is_stmt 0 discriminator 1
+ 1138 0012 0748     	 ldr r0,.L25
+ 1139 0014 FFF7FEFF 	 bl XMC_USIC_CH_GetTransmitBufferStatus
+ 1140 0018 0346     	 mov r3,r0
+ 1141 001a 802B     	 cmp r3,#128
+ 1142 001c F9D0     	 beq .L24
  379:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     SPI_MASTER_0.runtime->tx_busy = false;
- 1142              	 .loc 3 379 0 is_stmt 1
- 1143 001e 054B     	 ldr r3,.L25+4
- 1144 0020 9B68     	 ldr r3,[r3,#8]
- 1145 0022 0022     	 movs r2,#0
- 1146 0024 83F82020 	 strb r2,[r3,#32]
- 1147              	.L22:
+ 1143              	 .loc 3 379 0 is_stmt 1
+ 1144 001e 054B     	 ldr r3,.L25+4
+ 1145 0020 9B68     	 ldr r3,[r3,#8]
+ 1146 0022 0022     	 movs r2,#0
+ 1147 0024 83F82020 	 strb r2,[r3,#32]
+ 1148              	.L22:
  380:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   }
  381:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** }
- 1148              	 .loc 3 381 0
- 1149 0028 0837     	 adds r7,r7,#8
- 1150              	.LCFI92:
- 1151              	 .cfi_def_cfa_offset 8
- 1152 002a BD46     	 mov sp,r7
- 1153              	.LCFI93:
- 1154              	 .cfi_def_cfa_register 13
- 1155              	 
- 1156 002c 80BD     	 pop {r7,pc}
- 1157              	.L26:
- 1158 002e 00BF     	 .align 2
- 1159              	.L25:
- 1160 0030 00000248 	 .word 1208090624
- 1161 0034 00000000 	 .word SPI_MASTER_0
- 1162              	 .cfi_endproc
- 1163              	.LFE327:
- 1165              	 .section .text.SPI_MASTER_0_DMA_rx_handler,"ax",%progbits
- 1166              	 .align 2
- 1167              	 .global SPI_MASTER_0_DMA_rx_handler
- 1168              	 .thumb
- 1169              	 .thumb_func
- 1171              	SPI_MASTER_0_DMA_rx_handler:
- 1172              	.LFB328:
+ 1149              	 .loc 3 381 0
+ 1150 0028 0837     	 adds r7,r7,#8
+ 1151              	.LCFI92:
+ 1152              	 .cfi_def_cfa_offset 8
+ 1153 002a BD46     	 mov sp,r7
+ 1154              	.LCFI93:
+ 1155              	 .cfi_def_cfa_register 13
+ 1156              	 
+ 1157 002c 80BD     	 pop {r7,pc}
+ 1158              	.L26:
+ 1159 002e 00BF     	 .align 2
+ 1160              	.L25:
+ 1161 0030 00000248 	 .word 1208090624
+ 1162 0034 00000000 	 .word SPI_MASTER_0
+ 1163              	 .cfi_endproc
+ 1164              	.LFE327:
+ 1166              	 .section .text.SPI_MASTER_0_DMA_rx_handler,"ax",%progbits
+ 1167              	 .align 2
+ 1168              	 .global SPI_MASTER_0_DMA_rx_handler
+ 1169              	 .thumb
+ 1170              	 .thumb_func
+ 1172              	SPI_MASTER_0_DMA_rx_handler:
+ 1173              	.LFB328:
  382:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** 
  383:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** /*Receive ISR*/
  384:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** void SPI_MASTER_0_DMA_rx_handler(XMC_DMA_CH_EVENT_t event)
  385:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** {
- 1173              	 .loc 3 385 0
- 1174              	 .cfi_startproc
- 1175              	 
+ 1174              	 .loc 3 385 0
+ 1175              	 .cfi_startproc
  1176              	 
- 1177 0000 80B5     	 push {r7,lr}
- 1178              	.LCFI94:
- 1179              	 .cfi_def_cfa_offset 8
- 1180              	 .cfi_offset 7,-8
- 1181              	 .cfi_offset 14,-4
- 1182 0002 82B0     	 sub sp,sp,#8
- 1183              	.LCFI95:
- 1184              	 .cfi_def_cfa_offset 16
- 1185 0004 00AF     	 add r7,sp,#0
- 1186              	.LCFI96:
- 1187              	 .cfi_def_cfa_register 7
- 1188 0006 0346     	 mov r3,r0
- 1189 0008 FB71     	 strb r3,[r7,#7]
+ 1177              	 
+ 1178 0000 80B5     	 push {r7,lr}
+ 1179              	.LCFI94:
+ 1180              	 .cfi_def_cfa_offset 8
+ 1181              	 .cfi_offset 7,-8
+ 1182              	 .cfi_offset 14,-4
+ 1183 0002 82B0     	 sub sp,sp,#8
+ 1184              	.LCFI95:
+ 1185              	 .cfi_def_cfa_offset 16
+ 1186 0004 00AF     	 add r7,sp,#0
+ 1187              	.LCFI96:
+ 1188              	 .cfi_def_cfa_register 7
+ 1189 0006 0346     	 mov r3,r0
+ 1190 0008 FB71     	 strb r3,[r7,#7]
  386:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   if (event == XMC_DMA_CH_EVENT_TRANSFER_COMPLETE)
- 1190              	 .loc 3 386 0
- 1191 000a FB79     	 ldrb r3,[r7,#7]
- 1192 000c 012B     	 cmp r3,#1
- 1193 000e 12D1     	 bne .L27
+ 1191              	 .loc 3 386 0
+ 1192 000a FB79     	 ldrb r3,[r7,#7]
+ 1193 000c 012B     	 cmp r3,#1
+ 1194 000e 12D1     	 bne .L27
  387:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   {
  388:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     XMC_SPI_CH_DisableEvent(XMC_SPI1_CH0, (uint32_t)((uint32_t)XMC_SPI_CH_EVENT_STANDARD_RECEIVE | 
- 1194              	 .loc 3 388 0
- 1195 0010 0A48     	 ldr r0,.L29
- 1196 0012 4FF44041 	 mov r1,#49152
- 1197 0016 FFF7FEFF 	 bl XMC_SPI_CH_DisableEvent
+ 1195              	 .loc 3 388 0
+ 1196 0010 0A48     	 ldr r0,.L29
+ 1197 0012 4FF44041 	 mov r1,#49152
+ 1198 0016 FFF7FEFF 	 bl XMC_SPI_CH_DisableEvent
  389:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     SPI_MASTER_0.runtime->tx_data_dummy = false;
- 1198              	 .loc 3 389 0
- 1199 001a 094B     	 ldr r3,.L29+4
- 1200 001c 9B68     	 ldr r3,[r3,#8]
- 1201 001e 0022     	 movs r2,#0
- 1202 0020 83F82120 	 strb r2,[r3,#33]
+ 1199              	 .loc 3 389 0
+ 1200 001a 094B     	 ldr r3,.L29+4
+ 1201 001c 9B68     	 ldr r3,[r3,#8]
+ 1202 001e 0022     	 movs r2,#0
+ 1203 0020 83F82120 	 strb r2,[r3,#33]
  390:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     SPI_MASTER_0.runtime->rx_data_dummy = true;
- 1203              	 .loc 3 390 0
- 1204 0024 064B     	 ldr r3,.L29+4
- 1205 0026 9B68     	 ldr r3,[r3,#8]
- 1206 0028 0122     	 movs r2,#1
- 1207 002a 83F82220 	 strb r2,[r3,#34]
+ 1204              	 .loc 3 390 0
+ 1205 0024 064B     	 ldr r3,.L29+4
+ 1206 0026 9B68     	 ldr r3,[r3,#8]
+ 1207 0028 0122     	 movs r2,#1
+ 1208 002a 83F82220 	 strb r2,[r3,#34]
  391:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****     SPI_MASTER_0.runtime->rx_busy = false;
- 1208              	 .loc 3 391 0
- 1209 002e 044B     	 ldr r3,.L29+4
- 1210 0030 9B68     	 ldr r3,[r3,#8]
- 1211 0032 0022     	 movs r2,#0
- 1212 0034 DA77     	 strb r2,[r3,#31]
- 1213              	.L27:
+ 1209              	 .loc 3 391 0
+ 1210 002e 044B     	 ldr r3,.L29+4
+ 1211 0030 9B68     	 ldr r3,[r3,#8]
+ 1212 0032 0022     	 movs r2,#0
+ 1213 0034 DA77     	 strb r2,[r3,#31]
+ 1214              	.L27:
  392:../Dave/Generated/SPI_MASTER/spi_master_conf.c ****   }
  393:../Dave/Generated/SPI_MASTER/spi_master_conf.c **** }
- 1214              	 .loc 3 393 0
- 1215 0036 0837     	 adds r7,r7,#8
- 1216              	.LCFI97:
- 1217              	 .cfi_def_cfa_offset 8
- 1218 0038 BD46     	 mov sp,r7
- 1219              	.LCFI98:
- 1220              	 .cfi_def_cfa_register 13
- 1221              	 
- 1222 003a 80BD     	 pop {r7,pc}
- 1223              	.L30:
- 1224              	 .align 2
- 1225              	.L29:
- 1226 003c 00000248 	 .word 1208090624
- 1227 0040 00000000 	 .word SPI_MASTER_0
- 1228              	 .cfi_endproc
- 1229              	.LFE328:
- 1231              	 .text
- 1232              	.Letext0:
- 1233              	 .file 4 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1234              	 .file 5 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 1235              	 .file 6 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
- 1236              	 .file 7 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_gpio.h"
- 1237              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_gpio.h"
- 1238              	 .file 9 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_dma.h"
- 1239              	 .file 10 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/GLOBAL_DMA/global_dma.h"
- 1240              	 .file 11 "../Dave/Generated/SPI_MASTER/spi_master.h"
- 1241              	 .file 12 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
- 1242              	 .file 13 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
- 1243              	 .file 14 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
- 1244              	 .file 15 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/GLOBAL_DMA/global_dma_extern.h"
+ 1215              	 .loc 3 393 0
+ 1216 0036 0837     	 adds r7,r7,#8
+ 1217              	.LCFI97:
+ 1218              	 .cfi_def_cfa_offset 8
+ 1219 0038 BD46     	 mov sp,r7
+ 1220              	.LCFI98:
+ 1221              	 .cfi_def_cfa_register 13
+ 1222              	 
+ 1223 003a 80BD     	 pop {r7,pc}
+ 1224              	.L30:
+ 1225              	 .align 2
+ 1226              	.L29:
+ 1227 003c 00000248 	 .word 1208090624
+ 1228 0040 00000000 	 .word SPI_MASTER_0
+ 1229              	 .cfi_endproc
+ 1230              	.LFE328:
+ 1232              	 .text
+ 1233              	.Letext0:
+ 1234              	 .file 4 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1235              	 .file 5 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 1236              	 .file 6 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 1237              	 .file 7 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_gpio.h"
+ 1238              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 1239              	 .file 9 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_dma.h"
+ 1240              	 .file 10 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/GLOBAL_DMA/global_dma.h"
+ 1241              	 .file 11 "../Dave/Generated/SPI_MASTER/spi_master.h"
+ 1242              	 .file 12 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 1243              	 .file 13 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
+ 1244              	 .file 14 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+ 1245              	 .file 15 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/GLOBAL_DMA/global_dma_extern.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 spi_master_conf.c
     {standard input}:20     .text.XMC_USIC_CH_SetInputSource:00000000 $t
@@ -5104,12 +5105,12 @@ DEFINED SYMBOLS
     {standard input}:923    .data.SPI_MASTER_0:00000000 $d
     {standard input}:938    .text.SPI_MASTER_0_lInit:00000000 $t
     {standard input}:1089   .text.SPI_MASTER_0_lInit:000000f0 $d
-    {standard input}:1110   .text.SPI_MASTER_0_DMA_tx_handler:00000000 SPI_MASTER_0_DMA_tx_handler
-    {standard input}:1171   .text.SPI_MASTER_0_DMA_rx_handler:00000000 SPI_MASTER_0_DMA_rx_handler
-    {standard input}:1105   .text.SPI_MASTER_0_DMA_tx_handler:00000000 $t
-    {standard input}:1160   .text.SPI_MASTER_0_DMA_tx_handler:00000030 $d
-    {standard input}:1166   .text.SPI_MASTER_0_DMA_rx_handler:00000000 $t
-    {standard input}:1226   .text.SPI_MASTER_0_DMA_rx_handler:0000003c $d
+    {standard input}:1111   .text.SPI_MASTER_0_DMA_tx_handler:00000000 SPI_MASTER_0_DMA_tx_handler
+    {standard input}:1172   .text.SPI_MASTER_0_DMA_rx_handler:00000000 SPI_MASTER_0_DMA_rx_handler
+    {standard input}:1106   .text.SPI_MASTER_0_DMA_tx_handler:00000000 $t
+    {standard input}:1161   .text.SPI_MASTER_0_DMA_tx_handler:00000030 $d
+    {standard input}:1167   .text.SPI_MASTER_0_DMA_rx_handler:00000000 $t
+    {standard input}:1227   .text.SPI_MASTER_0_DMA_rx_handler:0000003c $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

@@ -132,8 +132,8 @@ static SPI_MASTER_STATUS_t SPI_MASTER_0_lInit(void);
 /* Data Transmit pin from SPI_MASTER */
 const SPI_MASTER_GPIO_t SPI_MASTER_0_MOSI = 
 {
-  .port = (XMC_GPIO_PORT_t *)PORT0_BASE,
-  .pin  = (uint8_t)5
+  .port = (XMC_GPIO_PORT_t *)PORT2_BASE,
+  .pin  = (uint8_t)14
 };         
                                       
 SPI_MASTER_GPIO_CONFIG_t SPI_MASTER_0_MOSI_Config = 
@@ -150,8 +150,8 @@ SPI_MASTER_GPIO_CONFIG_t SPI_MASTER_0_MOSI_Config =
 /* Data Receive pin for SPI_MASTER */
 const SPI_MASTER_GPIO_t SPI_MASTER_0_MISO = 
 {
-  .port = (XMC_GPIO_PORT_t *)PORT0_BASE,
-  .pin  = (uint8_t)4
+  .port = (XMC_GPIO_PORT_t *)PORT2_BASE,
+  .pin  = (uint8_t)15
 };
 
 SPI_MASTER_GPIO_CONFIG_t SPI_MASTER_0_MISO_Config = 
@@ -165,15 +165,15 @@ SPI_MASTER_GPIO_CONFIG_t SPI_MASTER_0_MISO_Config =
 
 const SPI_MASTER_GPIO_t SPI_MASTER_0_SCLKOUT = 
 {
-  .port = (XMC_GPIO_PORT_t *)PORT0_BASE,
-  .pin  = (uint8_t)11
+  .port = (XMC_GPIO_PORT_t *)PORT4_BASE,
+  .pin  = (uint8_t)0
 };     
 
 const SPI_MASTER_GPIO_CONFIG_t SPI_MASTER_0_SCLKOUT_Config = 
 { 
   .port_config = 
   {
-    .mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT2,
+    .mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT4,
     .output_level = XMC_GPIO_OUTPUT_LEVEL_HIGH,
     .output_strength = XMC_GPIO_OUTPUT_STRENGTH_STRONG_MEDIUM_EDGE
 }
@@ -268,14 +268,14 @@ SPI_MASTER_RUNTIME_t SPI_MASTER_0_runtime =
   .spi_master_mode = XMC_SPI_CH_MODE_STANDARD, /* spi master transmission mode */
   .word_length     = 8U,
                        
-  #ifdef USIC1_C0_DX0_P0_4
-  .dx0_input = SPI_MASTER_INPUT_A,
+  #ifdef USIC1_C0_DX0_P2_15
+  .dx0_input = SPI_MASTER_INPUT_C,
   #else
   .dx0_input = SPI_MASTER_INPUT_INVALID,
   #endif
 
-  #ifdef USIC1_C0_DX0_P0_5
-  .dx0_input_half_duplex = SPI_MASTER_INPUT_A,
+  #ifdef USIC1_C0_DX0_P2_14
+  .dx0_input_half_duplex = SPI_MASTER_INPUT_C,
   #else
   .dx0_input_half_duplex = SPI_MASTER_INPUT_INVALID,
   #endif
@@ -339,18 +339,18 @@ static SPI_MASTER_STATUS_t SPI_MASTER_0_lInit(void)
 
                
   /* Configure the input pin properties */
-  XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT0_BASE, (uint8_t)4, &SPI_MASTER_0_MISO_Config.port_config);
+  XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT2_BASE, (uint8_t)15, &SPI_MASTER_0_MISO_Config.port_config);
 
   /* Configure the data input line selected */
-  XMC_SPI_CH_SetInputSource(XMC_SPI1_CH0, XMC_SPI_CH_INPUT_DIN0, (uint8_t)SPI_MASTER_INPUT_A);
+  XMC_SPI_CH_SetInputSource(XMC_SPI1_CH0, XMC_SPI_CH_INPUT_DIN0, (uint8_t)SPI_MASTER_INPUT_C);
   /* Start the SPI_Channel */
   XMC_SPI_CH_Start(XMC_SPI1_CH0);
 
   /* Configure the output pin properties */
-  XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT0_BASE, (uint8_t)5, &SPI_MASTER_0_MOSI_Config.port_config);
+  XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT2_BASE, (uint8_t)14, &SPI_MASTER_0_MOSI_Config.port_config);
     
   /* Initialize SPI SCLK out pin */
-  XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT0_BASE, (uint8_t)11, &SPI_MASTER_0_SCLKOUT_Config.port_config);
+  XMC_GPIO_Init((XMC_GPIO_PORT_t *)PORT4_BASE, (uint8_t)0, &SPI_MASTER_0_SCLKOUT_Config.port_config);
 
   XMC_USIC_CH_SetInterruptNodePointer(XMC_SPI1_CH0,
                                       XMC_USIC_CH_INTERRUPT_NODE_POINTER_TRANSMIT_BUFFER,

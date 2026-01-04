@@ -892,7 +892,7 @@ VENDOR_ID: Object 0x1018 SI1 (Vendor ID)	 <br>
 An unique EtherCAT Vendor ID is required. Please find all valid Vendor IDs listed at www.ethercat.org/en/vendor_id_list.html.<br>
 If your company is not listed, please assign an ID for free at www.ethercat.org/memberarea/vendor_id.asp */
 #ifndef VENDOR_ID
-#define VENDOR_ID                                 0x00002A3F
+#define VENDOR_ID                                 0x2A3F
 #endif
 
 /** 
@@ -922,13 +922,13 @@ DEVICE_PROFILE_TYPE: Slave device type (Object 0x1000)  */
 /** 
 DEVICE_NAME: Name of the slave device (Object 0x1008) */
 #ifndef DEVICE_NAME
-#define DEVICE_NAME                               "DexHand6"
+#define DEVICE_NAME                               "ryhand"
 #endif
 
 /** 
 DEVICE_NAME_LEN: Length of 'DEVICE_NAME' without '\0' */
 #ifndef DEVICE_NAME_LEN
-#define DEVICE_NAME_LEN                           0x8
+#define DEVICE_NAME_LEN                           0x6
 #endif
 
 /** 

@@ -751,7 +751,6 @@ PROTO TOBJF000 ModularDeviceProfile0xF000
 
 
 
-PROTO UINT8 WriteSimulateCANFD(UINT16 index, UINT8 subindex, UINT32 dataSize, UINT16 MBXMEM * pData, UINT8 bCompleteAccess);
 
 
 #ifdef _OBJD_
@@ -771,7 +770,7 @@ TOBJECT    OBJMEM ApplicationObjDic[] = {
 /* Object 0x8000 */
 {NULL , NULL ,  0x8000 , {DEFTYPE_RECORD , 13 | (OBJCODE_REC << 8)} , asEntryDesc0x8000 , aName0x8000 , &DevInfo0x8000 , NULL , NULL , 0x0000 },
 /* Object 0x9000 */
-{NULL , NULL ,  0x9000 , {DEFTYPE_RECORD , 8 | (OBJCODE_REC << 8)} , asEntryDesc0x9000 , aName0x9000 , &SimulateCANFD0x9000 , NULL , WriteSimulateCANFD , 0x0000 },
+{NULL , NULL ,  0x9000 , {DEFTYPE_RECORD , 8 | (OBJCODE_REC << 8)} , asEntryDesc0x9000 , aName0x9000 , &SimulateCANFD0x9000 , NULL , NULL , 0x0000 },
 /* Object 0x9001 */
 {NULL , NULL ,  0x9001 , {DEFTYPE_UNSIGNED16 , 0 | (OBJCODE_VAR << 8)} , &sEntryDesc0x9001 , aName0x9001 , &ParamAction0x9001 , NULL , NULL , 0x0000 },
 /* Object 0xF000 */

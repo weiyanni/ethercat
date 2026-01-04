@@ -2700,9 +2700,10 @@
  717              	 .thumb_func
  719              	main:
  720              	.LFB436:
- 141:../main.c     **** int main(void)
- 142:../main.c     **** {
- 721              	 .loc 4 142 0
+ 141:../main.c     **** 
+ 142:../main.c     **** int main(void)
+ 143:../main.c     **** {
+ 721              	 .loc 4 143 0
  722              	 .cfi_startproc
  723              	 
  724              	 
@@ -2717,208 +2718,141 @@
  733 0004 00AF     	 add r7,sp,#0
  734              	.LCFI63:
  735              	 .cfi_def_cfa_register 7
- 143:../main.c     ****   DAVE_STATUS_t status;
- 144:../main.c     ****   uint32_t chip_id;
- 145:../main.c     **** 
- 146:../main.c     ****   status = DAVE_Init();           /* Initialization of DAVE APPs  */
- 736              	 .loc 4 146 0
+ 144:../main.c     ****   DAVE_STATUS_t status;
+ 145:../main.c     ****   uint32_t chip_id;
+ 146:../main.c     **** 
+ 147:../main.c     ****   status = DAVE_Init();           /* Initialization of DAVE APPs  */
+ 736              	 .loc 4 147 0
  737 0006 FFF7FEFF 	 bl DAVE_Init
  738 000a 0346     	 mov r3,r0
  739 000c FB71     	 strb r3,[r7,#7]
- 147:../main.c     **** 
- 148:../main.c     ****   if (status != DAVE_STATUS_SUCCESS)
- 740              	 .loc 4 148 0
- 741 000e FB79     	 ldrb r3,[r7,#7]
- 742 0010 002B     	 cmp r3,#0
- 743 0012 00D0     	 beq .L32
- 744              	.L33:
- 149:../main.c     ****   {
- 150:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
- 151:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
- 152:../main.c     **** 
- 153:../main.c     ****     while(1U)
- 154:../main.c     ****     {
- 155:../main.c     **** 
- 156:../main.c     ****     }
- 745              	 .loc 4 156 0 discriminator 1
- 746 0014 FEE7     	 b .L33
- 747              	.L32:
- 157:../main.c     ****   }
- 158:../main.c     ****   else
- 159:../main.c     ****   {
- 160:../main.c     **** 	  DIGITAL_IO_SetOutputLow(&LED);
- 748              	 .loc 4 160 0
- 749 0016 1848     	 ldr r0,.L37
- 750 0018 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 161:../main.c     **** 	  Delay_us(200000);
- 751              	 .loc 4 161 0
- 752 001c 1748     	 ldr r0,.L37+4
- 753 001e FFF7FEFF 	 bl Delay_us
- 162:../main.c     **** 	  DIGITAL_IO_SetOutputHigh(&LED);
- 754              	 .loc 4 162 0
- 755 0022 1548     	 ldr r0,.L37
- 756 0024 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
- 163:../main.c     **** 	  Delay_us(200000);
- 757              	 .loc 4 163 0
- 758 0028 1448     	 ldr r0,.L37+4
- 759 002a FFF7FEFF 	 bl Delay_us
- 164:../main.c     ****   }
- 165:../main.c     **** 
- 166:../main.c     ****   DIGITAL_IO_SetOutputHigh(&SLEEPN5);
- 760              	 .loc 4 166 0
- 761 002e 1448     	 ldr r0,.L37+8
- 762 0030 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
- 167:../main.c     ****   Delay_us(4000);
- 763              	 .loc 4 167 0
- 764 0034 4FF47A60 	 mov r0,#4000
- 765 0038 FFF7FEFF 	 bl Delay_us
- 168:../main.c     **** 
- 169:../main.c     ****   chip_id = SPI_TMC6460_ReadRegister(&SPI_MASTER_0, &CS_5, 0x00);
- 766              	 .loc 4 169 0
- 767 003c 1148     	 ldr r0,.L37+12
- 768 003e 1249     	 ldr r1,.L37+16
- 769 0040 0022     	 movs r2,#0
- 770 0042 FFF7FEFF 	 bl SPI_TMC6460_ReadRegister
- 771 0046 3860     	 str r0,[r7]
- 170:../main.c     **** 
- 171:../main.c     ****     //master_rec_data = TMC6460_SPI_Read(TMC6460_CHIP_ID);
- 172:../main.c     **** 
- 173:../main.c     ****         if (chip_id != TMC6460_CHIP_ID_VALUE)
- 772              	 .loc 4 173 0
- 773 0048 3B68     	 ldr r3,[r7]
- 774 004a 104A     	 ldr r2,.L37+20
- 775 004c 9342     	 cmp r3,r2
- 776 004e 0CD0     	 beq .L34
- 777              	.L35:
- 174:../main.c     ****         {
- 175:../main.c     ****             /* SPI 通信失败：LED 闪烁，卡死 */
- 176:../main.c     ****             while (1) {
- 177:../main.c     ****                 DIGITAL_IO_SetOutputLow(&LED);
- 778              	 .loc 4 177 0 discriminator 1
- 779 0050 0948     	 ldr r0,.L37
- 780 0052 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 178:../main.c     ****                 Delay_us(200000);
- 781              	 .loc 4 178 0 discriminator 1
- 782 0056 0948     	 ldr r0,.L37+4
- 783 0058 FFF7FEFF 	 bl Delay_us
- 179:../main.c     ****                 DIGITAL_IO_SetOutputHigh(&LED);
- 784              	 .loc 4 179 0 discriminator 1
- 785 005c 0648     	 ldr r0,.L37
- 786 005e FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
- 180:../main.c     ****                 Delay_us(200000);
- 787              	 .loc 4 180 0 discriminator 1
- 788 0062 0648     	 ldr r0,.L37+4
- 789 0064 FFF7FEFF 	 bl Delay_us
- 181:../main.c     ****             }
- 790              	 .loc 4 181 0 discriminator 1
- 791 0068 F2E7     	 b .L35
- 792              	.L34:
- 182:../main.c     ****         }
- 183:../main.c     ****         /* SPI 通信成功：LED 常亮，继续执行 */
- 184:../main.c     ****         DIGITAL_IO_SetOutputLow(&LED);
- 793              	 .loc 4 184 0
- 794 006a 0348     	 ldr r0,.L37
- 795 006c FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 796              	.L36:
- 185:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
- 186:../main.c     ****   while(1U)
- 187:../main.c     ****   {
- 188:../main.c     **** 	  MainLoop();
- 797              	 .loc 4 188 0 discriminator 1
- 798 0070 FFF7FEFF 	 bl MainLoop
- 189:../main.c     **** 
- 190:../main.c     ****   }
- 799              	 .loc 4 190 0 discriminator 1
- 800 0074 FCE7     	 b .L36
- 801              	.L38:
- 802 0076 00BF     	 .align 2
- 803              	.L37:
- 804 0078 00000000 	 .word LED
- 805 007c 400D0300 	 .word 200000
- 806 0080 00000000 	 .word SLEEPN5
- 807 0084 00000000 	 .word SPI_MASTER_0
- 808 0088 00000000 	 .word CS_5
- 809 008c 30363436 	 .word 909391408
- 810              	 .cfi_endproc
- 811              	.LFE436:
- 813              	 .section .text.ERU1_0_IRQHandler,"ax",%progbits
- 814              	 .align 2
- 815              	 .global ERU1_0_IRQHandler
- 816              	 .thumb
- 817              	 .thumb_func
- 819              	ERU1_0_IRQHandler:
- 820              	.LFB437:
- 191:../main.c     **** }
- 192:../main.c     **** 
- 193:../main.c     **** void SYNC0IRQHandler (void)
- 194:../main.c     **** {
- 821              	 .loc 4 194 0
- 822              	 .cfi_startproc
- 823              	 
- 824              	 
- 825 0000 80B5     	 push {r7,lr}
- 826              	.LCFI64:
- 827              	 .cfi_def_cfa_offset 8
- 828              	 .cfi_offset 7,-8
- 829              	 .cfi_offset 14,-4
- 830 0002 00AF     	 add r7,sp,#0
- 831              	.LCFI65:
- 832              	 .cfi_def_cfa_register 7
- 195:../main.c     **** 	Sync0_Isr();
- 833              	 .loc 4 195 0
- 834 0004 FFF7FEFF 	 bl Sync0_Isr
- 196:../main.c     **** }
- 835              	 .loc 4 196 0
- 836 0008 80BD     	 pop {r7,pc}
- 837              	 .cfi_endproc
- 838              	.LFE437:
- 840 000a 00BF     	 .section .text.ERU1_3_IRQHandler,"ax",%progbits
- 841              	 .align 2
- 842              	 .global ERU1_3_IRQHandler
- 843              	 .thumb
- 844              	 .thumb_func
- 846              	ERU1_3_IRQHandler:
- 847              	.LFB438:
- 197:../main.c     **** 
- 198:../main.c     **** void SYNC1IRQHandler (void)
- 199:../main.c     **** {
- 848              	 .loc 4 199 0
- 849              	 .cfi_startproc
- 850              	 
- 851              	 
- 852 0000 80B5     	 push {r7,lr}
- 853              	.LCFI66:
- 854              	 .cfi_def_cfa_offset 8
- 855              	 .cfi_offset 7,-8
- 856              	 .cfi_offset 14,-4
- 857 0002 00AF     	 add r7,sp,#0
- 858              	.LCFI67:
- 859              	 .cfi_def_cfa_register 7
- 200:../main.c     **** 	Sync1_Isr();
- 860              	 .loc 4 200 0
- 861 0004 FFF7FEFF 	 bl Sync1_Isr
- 201:../main.c     **** }
- 862              	 .loc 4 201 0
- 863 0008 80BD     	 pop {r7,pc}
- 864              	 .cfi_endproc
- 865              	.LFE438:
- 867 000a 00BF     	 .text
- 868              	.Letext0:
- 869              	 .file 5 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 870              	 .file 6 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 871              	 .file 7 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
- 872              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_gpio.h"
- 873              	 .file 9 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_dma.h"
- 874              	 .file 10 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/GLOBAL_DMA/global_dma.h"
- 875              	 .file 11 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_usic.h"
- 876              	 .file 12 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_spi.h"
- 877              	 .file 13 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DAVE.h"
- 878              	 .file 14 "../SSC/Src/ryhandObjects.h"
- 879              	 .file 15 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
- 880              	 .file 16 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
- 881              	 .file 17 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
- 882              	 .file 18 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
- 883              	 .file 19 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/SPI_MASTER/spi_master_extern.h"
+ 740              	.L32:
+ 148:../main.c     **** 
+ 149:../main.c     **** //  if (status != DAVE_STATUS_SUCCESS)
+ 150:../main.c     **** //  {
+ 151:../main.c     **** //    /* Placeholder for error handler code. The while loop below can be replaced with an user erro
+ 152:../main.c     **** //    XMC_DEBUG("DAVE APPs initialization failed\n");
+ 153:../main.c     **** //
+ 154:../main.c     **** //    while(1U)
+ 155:../main.c     **** //    {
+ 156:../main.c     **** //
+ 157:../main.c     **** //    }
+ 158:../main.c     **** //  }
+ 159:../main.c     **** //  else
+ 160:../main.c     **** //  {
+ 161:../main.c     **** //	  DIGITAL_IO_SetOutputLow(&LED);
+ 162:../main.c     **** //	  Delay_us(200000);
+ 163:../main.c     **** //	  DIGITAL_IO_SetOutputHigh(&LED);
+ 164:../main.c     **** //	  Delay_us(200000);
+ 165:../main.c     **** //  }
+ 166:../main.c     **** //
+ 167:../main.c     **** //  DIGITAL_IO_SetOutputHigh(&SLEEPN5);
+ 168:../main.c     **** //  Delay_us(4000);
+ 169:../main.c     **** //
+ 170:../main.c     **** //  chip_id = SPI_TMC6460_ReadRegister(&SPI_MASTER_0, &CS_5, 0x00);
+ 171:../main.c     **** //
+ 172:../main.c     **** //    //master_rec_data = TMC6460_SPI_Read(TMC6460_CHIP_ID);
+ 173:../main.c     **** //
+ 174:../main.c     **** //        if (chip_id != TMC6460_CHIP_ID_VALUE)
+ 175:../main.c     **** //        {
+ 176:../main.c     **** //            /* SPI 通信失败：LED 闪烁，卡死 */
+ 177:../main.c     **** //            while (1) {
+ 178:../main.c     **** //                DIGITAL_IO_SetOutputLow(&LED);
+ 179:../main.c     **** //                Delay_us(200000);
+ 180:../main.c     **** //                DIGITAL_IO_SetOutputHigh(&LED);
+ 181:../main.c     **** //                Delay_us(200000);
+ 182:../main.c     **** //            }
+ 183:../main.c     **** //        }
+ 184:../main.c     **** //        /* SPI 通信成功：LED 常亮，继续执行 */
+ 185:../main.c     **** //        DIGITAL_IO_SetOutputLow(&LED);
+ 186:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
+ 187:../main.c     ****   while(1U)
+ 188:../main.c     ****   {
+ 189:../main.c     **** 	  MainLoop();
+ 741              	 .loc 4 189 0 discriminator 1
+ 742 000e FFF7FEFF 	 bl MainLoop
+ 190:../main.c     **** 
+ 191:../main.c     ****   }
+ 743              	 .loc 4 191 0 discriminator 1
+ 744 0012 FCE7     	 b .L32
+ 745              	 .cfi_endproc
+ 746              	.LFE436:
+ 748              	 .section .text.ERU1_0_IRQHandler,"ax",%progbits
+ 749              	 .align 2
+ 750              	 .global ERU1_0_IRQHandler
+ 751              	 .thumb
+ 752              	 .thumb_func
+ 754              	ERU1_0_IRQHandler:
+ 755              	.LFB437:
+ 192:../main.c     **** }
+ 193:../main.c     **** 
+ 194:../main.c     **** void SYNC0IRQHandler (void)
+ 195:../main.c     **** {
+ 756              	 .loc 4 195 0
+ 757              	 .cfi_startproc
+ 758              	 
+ 759              	 
+ 760 0000 80B5     	 push {r7,lr}
+ 761              	.LCFI64:
+ 762              	 .cfi_def_cfa_offset 8
+ 763              	 .cfi_offset 7,-8
+ 764              	 .cfi_offset 14,-4
+ 765 0002 00AF     	 add r7,sp,#0
+ 766              	.LCFI65:
+ 767              	 .cfi_def_cfa_register 7
+ 196:../main.c     **** 	Sync0_Isr();
+ 768              	 .loc 4 196 0
+ 769 0004 FFF7FEFF 	 bl Sync0_Isr
+ 197:../main.c     **** }
+ 770              	 .loc 4 197 0
+ 771 0008 80BD     	 pop {r7,pc}
+ 772              	 .cfi_endproc
+ 773              	.LFE437:
+ 775 000a 00BF     	 .section .text.ERU1_3_IRQHandler,"ax",%progbits
+ 776              	 .align 2
+ 777              	 .global ERU1_3_IRQHandler
+ 778              	 .thumb
+ 779              	 .thumb_func
+ 781              	ERU1_3_IRQHandler:
+ 782              	.LFB438:
+ 198:../main.c     **** 
+ 199:../main.c     **** void SYNC1IRQHandler (void)
+ 200:../main.c     **** {
+ 783              	 .loc 4 200 0
+ 784              	 .cfi_startproc
+ 785              	 
+ 786              	 
+ 787 0000 80B5     	 push {r7,lr}
+ 788              	.LCFI66:
+ 789              	 .cfi_def_cfa_offset 8
+ 790              	 .cfi_offset 7,-8
+ 791              	 .cfi_offset 14,-4
+ 792 0002 00AF     	 add r7,sp,#0
+ 793              	.LCFI67:
+ 794              	 .cfi_def_cfa_register 7
+ 201:../main.c     **** 	Sync1_Isr();
+ 795              	 .loc 4 201 0
+ 796 0004 FFF7FEFF 	 bl Sync1_Isr
+ 202:../main.c     **** }
+ 797              	 .loc 4 202 0
+ 798 0008 80BD     	 pop {r7,pc}
+ 799              	 .cfi_endproc
+ 800              	.LFE438:
+ 802 000a 00BF     	 .text
+ 803              	.Letext0:
+ 804              	 .file 5 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 805              	 .file 6 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 806              	 .file 7 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 807              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 808              	 .file 9 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_dma.h"
+ 809              	 .file 10 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/GLOBAL_DMA/global_dma.h"
+ 810              	 .file 11 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_usic.h"
+ 811              	 .file 12 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_spi.h"
+ 812              	 .file 13 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Dave/Generated/DAVE.h"
+ 813              	 .file 14 "../SSC/Src/ryhandObjects.h"
+ 814              	 .file 15 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 815              	 .file 16 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
+ 816              	 .file 17 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
     {standard input}:20     .text.XMC_GPIO_SetOutputLevel:00000000 $t
@@ -2949,20 +2883,15 @@ DEFINED SYMBOLS
     {standard input}:572    .text.SPI_TMC6460_ReadRegister:00000000 SPI_TMC6460_ReadRegister
     {standard input}:714    .text.main:00000000 $t
     {standard input}:719    .text.main:00000000 main
-    {standard input}:804    .text.main:00000078 $d
-    {standard input}:814    .text.ERU1_0_IRQHandler:00000000 $t
-    {standard input}:819    .text.ERU1_0_IRQHandler:00000000 ERU1_0_IRQHandler
-    {standard input}:841    .text.ERU1_3_IRQHandler:00000000 $t
-    {standard input}:846    .text.ERU1_3_IRQHandler:00000000 ERU1_3_IRQHandler
+    {standard input}:749    .text.ERU1_0_IRQHandler:00000000 $t
+    {standard input}:754    .text.ERU1_0_IRQHandler:00000000 ERU1_0_IRQHandler
+    {standard input}:776    .text.ERU1_3_IRQHandler:00000000 $t
+    {standard input}:781    .text.ERU1_3_IRQHandler:00000000 ERU1_3_IRQHandler
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 SPI_MASTER_Transfer
 DAVE_Init
 MainLoop
-LED
-SLEEPN5
-SPI_MASTER_0
-CS_5
 Sync0_Isr
 Sync1_Isr

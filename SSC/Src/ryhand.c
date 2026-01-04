@@ -260,13 +260,6 @@ UINT16 APPL_GenerateMapping(UINT16 *pInputSize,UINT16 *pOutputSize)
     return result;
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////
-/**
-\param      pData  pointer to input process data
-
-\brief      This function will copies the inputs from the local memory to the ESC memory
-            to the hardware
-*////////////////////////////////////////////////////////////////////////////////////////
 void APPL_InputMapping(UINT16* pData)
 {
     if (pData != NULL)
@@ -292,6 +285,7 @@ void APPL_OutputMapping(UINT16* pData)
         memcpy(&Rxpdo0x7000.Txlen_1, pData, sizeof(Rxpdo0x7000) - sizeof(UINT16));
     }
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////
 /**
 \brief    This function will called from the synchronisation ISR 
@@ -299,7 +293,7 @@ void APPL_OutputMapping(UINT16* pData)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_Application(void)
 {
-	process_app(&Rxpdo0x7000, &Txpdo0x6000);
+	//process_app(&Rxpdo0x7000,Txpdo0x6000);
 }
 
 #if EXPLICIT_DEVICE_ID

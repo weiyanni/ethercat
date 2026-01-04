@@ -15,8 +15,8 @@
 		</Groups>
 		<Devices>
 			<Device Physics="YY">
-				<Type ProductCode="#x00050004" RevisionNo="#x00000001">DexHand6</Type>
-				<Name>DexHand6</Name>
+				<Type ProductCode="#x00050004" RevisionNo="#x00000001">ryhand</Type>
+				<Name>ryhand</Name>
 				<Info>
 					<StateMachine>
 						<Timeout>
@@ -43,8 +43,8 @@
 								<BitSize>32</BitSize>
 							</DataType>
 							<DataType>
-								<Name>STRING(8)</Name>
-								<BitSize>64</BitSize>
+								<Name>STRING(6)</Name>
+								<BitSize>48</BitSize>
 							</DataType>
 							<DataType>
 								<Name>USINT</Name>
@@ -73,10 +73,6 @@
 							<DataType>
 								<Name>STRING(32)</Name>
 								<BitSize>256</BitSize>
-							</DataType>
-							<DataType>
-								<Name>STRING(6)</Name>
-								<BitSize>48</BitSize>
 							</DataType>
 							<DataType>
 								<Name>STRING(64)</Name>
@@ -1464,10 +1460,10 @@
 							<Object>
 								<Index>#x1008</Index>
 								<Name>Device name</Name>
-								<Type>STRING(8)</Type>
-								<BitSize>64</BitSize>
+								<Type>STRING(6)</Type>
+								<BitSize>48</BitSize>
 								<Info>
-									<DefaultData>44657848616E6436</DefaultData>
+									<DefaultData>727968616E64</DefaultData>
 								</Info>
 								<Flags>
 									<Access>ro</Access>

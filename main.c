@@ -138,6 +138,7 @@ typedef struct {
 
      return reg_value;
  }
+
 int main(void)
 {
   DAVE_STATUS_t status;
@@ -145,43 +146,43 @@ int main(void)
 
   status = DAVE_Init();           /* Initialization of DAVE APPs  */
 
-  if (status != DAVE_STATUS_SUCCESS)
-  {
-    /* Placeholder for error handler code. The while loop below can be replaced with an user error handler. */
-    XMC_DEBUG("DAVE APPs initialization failed\n");
-
-    while(1U)
-    {
-
-    }
-  }
-  else
-  {
-	  DIGITAL_IO_SetOutputLow(&LED);
-	  Delay_us(200000);
-	  DIGITAL_IO_SetOutputHigh(&LED);
-	  Delay_us(200000);
-  }
-
-  DIGITAL_IO_SetOutputHigh(&SLEEPN5);
-  Delay_us(4000);
-
-  chip_id = SPI_TMC6460_ReadRegister(&SPI_MASTER_0, &CS_5, 0x00);
-
-    //master_rec_data = TMC6460_SPI_Read(TMC6460_CHIP_ID);
-
-        if (chip_id != TMC6460_CHIP_ID_VALUE)
-        {
-            /* SPI 通信失败：LED 闪烁，卡死 */
-            while (1) {
-                DIGITAL_IO_SetOutputLow(&LED);
-                Delay_us(200000);
-                DIGITAL_IO_SetOutputHigh(&LED);
-                Delay_us(200000);
-            }
-        }
-        /* SPI 通信成功：LED 常亮，继续执行 */
-        DIGITAL_IO_SetOutputLow(&LED);
+//  if (status != DAVE_STATUS_SUCCESS)
+//  {
+//    /* Placeholder for error handler code. The while loop below can be replaced with an user error handler. */
+//    XMC_DEBUG("DAVE APPs initialization failed\n");
+//
+//    while(1U)
+//    {
+//
+//    }
+//  }
+//  else
+//  {
+//	  DIGITAL_IO_SetOutputLow(&LED);
+//	  Delay_us(200000);
+//	  DIGITAL_IO_SetOutputHigh(&LED);
+//	  Delay_us(200000);
+//  }
+//
+//  DIGITAL_IO_SetOutputHigh(&SLEEPN5);
+//  Delay_us(4000);
+//
+//  chip_id = SPI_TMC6460_ReadRegister(&SPI_MASTER_0, &CS_5, 0x00);
+//
+//    //master_rec_data = TMC6460_SPI_Read(TMC6460_CHIP_ID);
+//
+//        if (chip_id != TMC6460_CHIP_ID_VALUE)
+//        {
+//            /* SPI 通信失败：LED 闪烁，卡死 */
+//            while (1) {
+//                DIGITAL_IO_SetOutputLow(&LED);
+//                Delay_us(200000);
+//                DIGITAL_IO_SetOutputHigh(&LED);
+//                Delay_us(200000);
+//            }
+//        }
+//        /* SPI 通信成功：LED 常亮，继续执行 */
+//        DIGITAL_IO_SetOutputLow(&LED);
   /* Placeholder for user application code. The while loop below can be replaced with user application code. */
   while(1U)
   {
