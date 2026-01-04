@@ -82,7 +82,7 @@ const DIGITAL_IO_t SLEEPN5 =
 const DIGITAL_IO_t CS_5 =
 {
   .gpio_port = XMC_GPIO_PORT4,
-  .gpio_pin = 0U,
+  .gpio_pin = 1U,
   .gpio_config = {
     .mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL,
     .output_level = XMC_GPIO_OUTPUT_LEVEL_HIGH,

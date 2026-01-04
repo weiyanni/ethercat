@@ -16,10 +16,10 @@
   16              	 .text
   17              	.Ltext0:
   18              	 .cfi_sections .debug_frame
-  19              	 .global TIMER_0_config
-  20              	 .section .data.TIMER_0_config,"aw",%progbits
+  19              	 .global TIMER_1_config
+  20              	 .section .data.TIMER_1_config,"aw",%progbits
   21              	 .align 2
-  24              	TIMER_0_config:
+  24              	TIMER_1_config:
   25 0000 00       	 .byte 0
   26 0001 00       	 .byte 0
   27 0002 00       	 .byte 0
@@ -27,10 +27,10 @@
   29 0004 02       	 .byte 2
   30 0005 00       	 .byte 0
   31 0006 0000     	 .space 2
-  32              	 .global TIMER_0
-  33              	 .section .data.TIMER_0,"aw",%progbits
+  32              	 .global TIMER_1
+  33              	 .section .data.TIMER_1,"aw",%progbits
   34              	 .align 2
-  37              	TIMER_0:
+  37              	TIMER_1:
   38 0000 A0860100 	 .word 100000
   39 0004 3435E358 	 .word 1491285300
   40 0008 0A000000 	 .word 10
@@ -39,7 +39,7 @@
   43 0014 00040140 	 .word 1073808384
   44 0018 03       	 .byte 3
   45 0019 000000   	 .space 3
-  46 001c 00000000 	 .word TIMER_0_config
+  46 001c 00000000 	 .word TIMER_1_config
   47 0020 01       	 .byte 1
   48 0021 00       	 .byte 0
   49 0022 9F8C     	 .short -29537
@@ -63,10 +63,10 @@
   67              	 .file 12 "../Dave/Generated/TIMER/timer_conf.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 timer_conf.c
-    {standard input}:24     .data.TIMER_0_config:00000000 TIMER_0_config
-    {standard input}:21     .data.TIMER_0_config:00000000 $d
-    {standard input}:37     .data.TIMER_0:00000000 TIMER_0
-    {standard input}:34     .data.TIMER_0:00000000 $d
+    {standard input}:24     .data.TIMER_1_config:00000000 TIMER_1_config
+    {standard input}:21     .data.TIMER_1_config:00000000 $d
+    {standard input}:37     .data.TIMER_1:00000000 TIMER_1
+    {standard input}:34     .data.TIMER_1:00000000 $d
 
 UNDEFINED SYMBOLS
 GLOBAL_CCU4_0

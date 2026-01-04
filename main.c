@@ -9,6 +9,7 @@
 
 
 #include "DAVE.h"                 //Declarations from DAVE Code Generation (includes SFR declaration)
+#include "SSC/Src/ryhandObjects.h"
 /**
 
  * @brief main() - Application entry point
@@ -27,6 +28,8 @@ typedef struct {
 #define TMC6460_CHIP_ID                 0x00            /* 芯片 ID 寄存器地址 */
 #define TMC6460_CHIP_ID_VALUE           0x36343630      /* 预期芯片 ID 值 */
 
+#define P_LED3 P0_2
+#define MAP2LEVEL(x) ((x==0)?XMC_GPIO_OUTPUT_LEVEL_LOW:XMC_GPIO_OUTPUT_LEVEL_HIGH)
 /**
  * @brief  简单延时
  * @param  us: 延时微秒数（粗略估计，基于 XMC4300 @ 144MHz）
@@ -40,7 +43,7 @@ typedef struct {
  void process_app(TOBJ7000 *Rxpdo, TOBJ6000 *Txpdo)
  {
    /* OUTPUT PROCESSING */
-   XMC_GPIO_SetOutputLevel(P_LED3, MAP2LEVEL(OUT_GENERIC->OUT_GEN_Bit1));
+   XMC_GPIO_SetOutputLevel(P_LED3, MAP2LEVEL(Rxpdo->TxData_1));
  }
 
  /**
@@ -182,7 +185,7 @@ int main(void)
   /* Placeholder for user application code. The while loop below can be replaced with user application code. */
   while(1U)
   {
-
+	  MainLoop();
 
   }
 }

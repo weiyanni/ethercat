@@ -16,27 +16,27 @@
   16              	 .text
   17              	.Ltext0:
   18              	 .cfi_sections .debug_frame
-  19              	 .global INTERRUPT_0
-  20              	 .section .rodata.INTERRUPT_0,"a",%progbits
+  19              	 .global INT_SYNC_1
+  20              	 .section .rodata.INT_SYNC_1,"a",%progbits
   21              	 .align 2
-  24              	INTERRUPT_0:
-  25 0000 31       	 .byte 49
-  26 0001 3F       	 .byte 63
+  24              	INT_SYNC_1:
+  25 0000 08       	 .byte 8
+  26 0001 01       	 .byte 1
   27 0002 00       	 .byte 0
   28 0003 01       	 .byte 1
-  29              	 .global INT_SYNC_1
-  30              	 .section .rodata.INT_SYNC_1,"a",%progbits
+  29              	 .global INT_SYNC_0
+  30              	 .section .rodata.INT_SYNC_0,"a",%progbits
   31              	 .align 2
-  34              	INT_SYNC_1:
+  34              	INT_SYNC_0:
   35 0000 05       	 .byte 5
-  36 0001 3F       	 .byte 63
+  36 0001 00       	 .byte 0
   37 0002 00       	 .byte 0
   38 0003 01       	 .byte 1
-  39              	 .global INT_SYNC_0
-  40              	 .section .rodata.INT_SYNC_0,"a",%progbits
+  39              	 .global INTERRUPT_0
+  40              	 .section .rodata.INTERRUPT_0,"a",%progbits
   41              	 .align 2
-  44              	INT_SYNC_0:
-  45 0000 08       	 .byte 8
+  44              	INTERRUPT_0:
+  45 0000 31       	 .byte 49
   46 0001 3F       	 .byte 63
   47 0002 00       	 .byte 0
   48 0003 01       	 .byte 1
@@ -51,11 +51,11 @@
   57              	 .file 7 "../Dave/Generated/INTERRUPT/interrupt_conf.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 interrupt_conf.c
-    {standard input}:24     .rodata.INTERRUPT_0:00000000 INTERRUPT_0
-    {standard input}:21     .rodata.INTERRUPT_0:00000000 $d
-    {standard input}:34     .rodata.INT_SYNC_1:00000000 INT_SYNC_1
-    {standard input}:31     .rodata.INT_SYNC_1:00000000 $d
-    {standard input}:44     .rodata.INT_SYNC_0:00000000 INT_SYNC_0
-    {standard input}:41     .rodata.INT_SYNC_0:00000000 $d
+    {standard input}:24     .rodata.INT_SYNC_1:00000000 INT_SYNC_1
+    {standard input}:21     .rodata.INT_SYNC_1:00000000 $d
+    {standard input}:34     .rodata.INT_SYNC_0:00000000 INT_SYNC_0
+    {standard input}:31     .rodata.INT_SYNC_0:00000000 $d
+    {standard input}:44     .rodata.INTERRUPT_0:00000000 INTERRUPT_0
+    {standard input}:41     .rodata.INTERRUPT_0:00000000 $d
 
 NO UNDEFINED SYMBOLS

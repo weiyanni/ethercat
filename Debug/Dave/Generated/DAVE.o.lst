@@ -116,7 +116,7 @@
   72:../Dave/Generated/DAVE.c ****      /** @Initialization of APPs Init Functions */
   73:../Dave/Generated/DAVE.c ****      init_status = (DAVE_STATUS_t)CLOCK_XMC4_Init(&CLOCK_XMC4_0);
   46              	 .loc 1 73 0
-  47 000a 2D48     	 ldr r0,.L13
+  47 000a 3148     	 ldr r0,.L14
   48 000c FFF7FEFF 	 bl CLOCK_XMC4_Init
   49 0010 0346     	 mov r3,r0
   50 0012 FB71     	 strb r3,[r7,#7]
@@ -130,7 +130,7 @@
   77:../Dave/Generated/DAVE.c **** 	 /**  Initialization of DIGITAL_IO APP instance LED */
   78:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)DIGITAL_IO_Init(&LED); 
   55              	 .loc 1 78 0
-  56 001a 2A48     	 ldr r0,.L13+4
+  56 001a 2E48     	 ldr r0,.L14+4
   57 001c FFF7FEFF 	 bl DIGITAL_IO_Init
   58 0020 0346     	 mov r3,r0
   59 0022 FB71     	 strb r3,[r7,#7]
@@ -145,7 +145,7 @@
   82:../Dave/Generated/DAVE.c **** 	 /**  Initialization of DIGITAL_IO APP instance SLEEPN5 */
   83:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)DIGITAL_IO_Init(&SLEEPN5); 
   65              	 .loc 1 83 0
-  66 002a 2748     	 ldr r0,.L13+8
+  66 002a 2B48     	 ldr r0,.L14+8
   67 002c FFF7FEFF 	 bl DIGITAL_IO_Init
   68 0030 0346     	 mov r3,r0
   69 0032 FB71     	 strb r3,[r7,#7]
@@ -160,7 +160,7 @@
   87:../Dave/Generated/DAVE.c **** 	 /**  Initialization of DIGITAL_IO APP instance CS_5 */
   88:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)DIGITAL_IO_Init(&CS_5); 
   75              	 .loc 1 88 0
-  76 003a 2448     	 ldr r0,.L13+12
+  76 003a 2848     	 ldr r0,.L14+12
   77 003c FFF7FEFF 	 bl DIGITAL_IO_Init
   78 0040 0346     	 mov r3,r0
   79 0042 FB71     	 strb r3,[r7,#7]
@@ -175,7 +175,7 @@
   92:../Dave/Generated/DAVE.c **** 	 /**  Initialization of SPI_MASTER APP instance SPI_MASTER_0 */
   93:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)SPI_MASTER_Init(&SPI_MASTER_0); 
   85              	 .loc 1 93 0
-  86 004a 2148     	 ldr r0,.L13+16
+  86 004a 2548     	 ldr r0,.L14+16
   87 004c FFF7FEFF 	 bl SPI_MASTER_Init
   88 0050 0346     	 mov r3,r0
   89 0052 FB71     	 strb r3,[r7,#7]
@@ -187,11 +187,11 @@
   93 0056 002B     	 cmp r3,#0
   94 0058 04D1     	 bne .L6
   96:../Dave/Generated/DAVE.c ****   {
-  97:../Dave/Generated/DAVE.c **** 	 /**  Initialization of ECAT_SSC APP instance ECAT_SSC_0 */
-  98:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)ECAT_SSC_Init(&ECAT_SSC_0); 
+  97:../Dave/Generated/DAVE.c **** 	 /**  Initialization of EVENT_DETECTOR APP instance ED_SYNC_1 */
+  98:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)EVENT_DETECTOR_Init(&ED_SYNC_1); 
   95              	 .loc 1 98 0
-  96 005a 1E48     	 ldr r0,.L13+20
-  97 005c FFF7FEFF 	 bl ECAT_SSC_Init
+  96 005a 2248     	 ldr r0,.L14+20
+  97 005c FFF7FEFF 	 bl EVENT_DETECTOR_Init
   98 0060 0346     	 mov r3,r0
   99 0062 FB71     	 strb r3,[r7,#7]
  100              	.L6:
@@ -202,11 +202,11 @@
  103 0066 002B     	 cmp r3,#0
  104 0068 04D1     	 bne .L7
  101:../Dave/Generated/DAVE.c ****   {
- 102:../Dave/Generated/DAVE.c **** 	 /**  Initialization of EVENT_DETECTOR APP instance ED_SYNC_1 */
- 103:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)EVENT_DETECTOR_Init(&ED_SYNC_1); 
+ 102:../Dave/Generated/DAVE.c **** 	 /**  Initialization of EVENT_GENERATOR APP instance EG_SYNC_0 */
+ 103:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)EVENT_GENERATOR_Init(&EG_SYNC_0); 
  105              	 .loc 1 103 0
- 106 006a 1B48     	 ldr r0,.L13+24
- 107 006c FFF7FEFF 	 bl EVENT_DETECTOR_Init
+ 106 006a 1F48     	 ldr r0,.L14+24
+ 107 006c FFF7FEFF 	 bl EVENT_GENERATOR_Init
  108 0070 0346     	 mov r3,r0
  109 0072 FB71     	 strb r3,[r7,#7]
  110              	.L7:
@@ -217,10 +217,10 @@
  113 0076 002B     	 cmp r3,#0
  114 0078 04D1     	 bne .L8
  106:../Dave/Generated/DAVE.c ****   {
- 107:../Dave/Generated/DAVE.c **** 	 /**  Initialization of EVENT_GENERATOR APP instance EG_SYNC_0 */
- 108:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)EVENT_GENERATOR_Init(&EG_SYNC_0); 
+ 107:../Dave/Generated/DAVE.c **** 	 /**  Initialization of EVENT_GENERATOR APP instance EG_SYNC_1 */
+ 108:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)EVENT_GENERATOR_Init(&EG_SYNC_1); 
  115              	 .loc 1 108 0
- 116 007a 1848     	 ldr r0,.L13+28
+ 116 007a 1C48     	 ldr r0,.L14+28
  117 007c FFF7FEFF 	 bl EVENT_GENERATOR_Init
  118 0080 0346     	 mov r3,r0
  119 0082 FB71     	 strb r3,[r7,#7]
@@ -232,11 +232,11 @@
  123 0086 002B     	 cmp r3,#0
  124 0088 04D1     	 bne .L9
  111:../Dave/Generated/DAVE.c ****   {
- 112:../Dave/Generated/DAVE.c **** 	 /**  Initialization of EVENT_GENERATOR APP instance EG_SYNC_1 */
- 113:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)EVENT_GENERATOR_Init(&EG_SYNC_1); 
+ 112:../Dave/Generated/DAVE.c **** 	 /**  Initialization of INTERRUPT APP instance INT_SYNC_1 */
+ 113:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&INT_SYNC_1); 
  125              	 .loc 1 113 0
- 126 008a 1548     	 ldr r0,.L13+32
- 127 008c FFF7FEFF 	 bl EVENT_GENERATOR_Init
+ 126 008a 1948     	 ldr r0,.L14+32
+ 127 008c FFF7FEFF 	 bl INTERRUPT_Init
  128 0090 0346     	 mov r3,r0
  129 0092 FB71     	 strb r3,[r7,#7]
  130              	.L9:
@@ -247,10 +247,10 @@
  133 0096 002B     	 cmp r3,#0
  134 0098 04D1     	 bne .L10
  116:../Dave/Generated/DAVE.c ****   {
- 117:../Dave/Generated/DAVE.c **** 	 /**  Initialization of INTERRUPT APP instance INT_SYNC_1 */
- 118:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&INT_SYNC_1); 
+ 117:../Dave/Generated/DAVE.c **** 	 /**  Initialization of INTERRUPT APP instance INT_SYNC_0 */
+ 118:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&INT_SYNC_0); 
  135              	 .loc 1 118 0
- 136 009a 1248     	 ldr r0,.L13+36
+ 136 009a 1648     	 ldr r0,.L14+36
  137 009c FFF7FEFF 	 bl INTERRUPT_Init
  138 00a0 0346     	 mov r3,r0
  139 00a2 FB71     	 strb r3,[r7,#7]
@@ -262,103 +262,120 @@
  143 00a6 002B     	 cmp r3,#0
  144 00a8 04D1     	 bne .L11
  121:../Dave/Generated/DAVE.c ****   {
- 122:../Dave/Generated/DAVE.c **** 	 /**  Initialization of INTERRUPT APP instance INT_SYNC_0 */
- 123:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&INT_SYNC_0); 
+ 122:../Dave/Generated/DAVE.c **** 	 /**  Initialization of EVENT_DETECTOR APP instance ED_SYNC_0 */
+ 123:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)EVENT_DETECTOR_Init(&ED_SYNC_0); 
  145              	 .loc 1 123 0
- 146 00aa 0F48     	 ldr r0,.L13+40
- 147 00ac FFF7FEFF 	 bl INTERRUPT_Init
+ 146 00aa 1348     	 ldr r0,.L14+40
+ 147 00ac FFF7FEFF 	 bl EVENT_DETECTOR_Init
  148 00b0 0346     	 mov r3,r0
  149 00b2 FB71     	 strb r3,[r7,#7]
  150              	.L11:
- 124:../Dave/Generated/DAVE.c ****    }  
- 125:../Dave/Generated/DAVE.c ****   return init_status;
+ 124:../Dave/Generated/DAVE.c ****    } 
+ 125:../Dave/Generated/DAVE.c ****   if (init_status == DAVE_STATUS_SUCCESS)
  151              	 .loc 1 125 0
  152 00b4 FB79     	 ldrb r3,[r7,#7]
- 126:../Dave/Generated/DAVE.c **** } /**  End of function DAVE_Init */
- 153              	 .loc 1 126 0
- 154 00b6 1846     	 mov r0,r3
- 155 00b8 0837     	 adds r7,r7,#8
- 156              	.LCFI3:
- 157              	 .cfi_def_cfa_offset 8
- 158 00ba BD46     	 mov sp,r7
- 159              	.LCFI4:
- 160              	 .cfi_def_cfa_register 13
- 161              	 
- 162 00bc 80BD     	 pop {r7,pc}
- 163              	.L14:
- 164 00be 00BF     	 .align 2
- 165              	.L13:
- 166 00c0 00000000 	 .word CLOCK_XMC4_0
- 167 00c4 00000000 	 .word LED
- 168 00c8 00000000 	 .word SLEEPN5
- 169 00cc 00000000 	 .word CS_5
- 170 00d0 00000000 	 .word SPI_MASTER_0
- 171 00d4 00000000 	 .word ECAT_SSC_0
- 172 00d8 00000000 	 .word ED_SYNC_1
- 173 00dc 00000000 	 .word EG_SYNC_0
- 174 00e0 00000000 	 .word EG_SYNC_1
- 175 00e4 00000000 	 .word INT_SYNC_1
- 176 00e8 00000000 	 .word INT_SYNC_0
- 177              	 .cfi_endproc
- 178              	.LFE432:
- 180              	 .text
- 181              	.Letext0:
- 182              	 .file 2 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 183              	 .file 3 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 184              	 .file 4 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
- 185              	 .file 5 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_gpio.h"
- 186              	 .file 6 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_gpio.h"
- 187              	 .file 7 "../Dave/Generated/DIGITAL_IO/digital_io.h"
- 188              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_scu.h"
- 189              	 .file 9 "../Dave/Generated/CLOCK_XMC4/clock_xmc4.h"
- 190              	 .file 10 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_dma.h"
- 191              	 .file 11 "../Dave/Generated/GLOBAL_DMA/global_dma.h"
- 192              	 .file 12 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_usic.h"
- 193              	 .file 13 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_spi.h"
- 194              	 .file 14 "../Dave/Generated/SPI_MASTER/spi_master.h"
- 195              	 .file 15 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_ccu4.h"
- 196              	 .file 16 "../Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
- 197              	 .file 17 "../Dave/Generated/TIMER/timer.h"
- 198              	 .file 18 "../Dave/Generated/INTERRUPT/interrupt.h"
- 199              	 .file 19 "../Dave/Generated/E_EEPROM_XMC4/e_eeprom_xmc4.h"
- 200              	 .file 20 "../Dave/Generated/ECAT_SSC/ecat_ssc.h"
- 201              	 .file 21 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_eru.h"
- 202              	 .file 22 "../Dave/Generated/EVENT_DETECTOR/event_detector.h"
- 203              	 .file 23 "../Dave/Generated/EVENT_GENERATOR/event_generator.h"
- 204              	 .file 24 "../Dave/Generated/DAVE.h"
- 205              	 .file 25 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
- 206              	 .file 26 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
- 207              	 .file 27 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
- 208              	 .file 28 "../Dave/Generated/DIGITAL_IO/digital_io_extern.h"
- 209              	 .file 29 "../Dave/Generated/CLOCK_XMC4/clock_xmc4_extern.h"
- 210              	 .file 30 "../Dave/Generated/SPI_MASTER/spi_master_extern.h"
- 211              	 .file 31 "../Dave/Generated/INTERRUPT/interrupt_extern.h"
- 212              	 .file 32 "../Dave/Generated/ECAT_SSC/ecat_ssc_extern.h"
- 213              	 .file 33 "../Dave/Generated/EVENT_DETECTOR/event_detector_extern.h"
- 214              	 .file 34 "../Dave/Generated/EVENT_GENERATOR/event_generator_extern.h"
+ 153 00b6 002B     	 cmp r3,#0
+ 154 00b8 04D1     	 bne .L12
+ 126:../Dave/Generated/DAVE.c ****   {
+ 127:../Dave/Generated/DAVE.c **** 	 /**  Initialization of ECAT_SSC APP instance ECAT_SSC_0 */
+ 128:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)ECAT_SSC_Init(&ECAT_SSC_0); 
+ 155              	 .loc 1 128 0
+ 156 00ba 1048     	 ldr r0,.L14+44
+ 157 00bc FFF7FEFF 	 bl ECAT_SSC_Init
+ 158 00c0 0346     	 mov r3,r0
+ 159 00c2 FB71     	 strb r3,[r7,#7]
+ 160              	.L12:
+ 129:../Dave/Generated/DAVE.c ****    }  
+ 130:../Dave/Generated/DAVE.c ****   return init_status;
+ 161              	 .loc 1 130 0
+ 162 00c4 FB79     	 ldrb r3,[r7,#7]
+ 131:../Dave/Generated/DAVE.c **** } /**  End of function DAVE_Init */
+ 163              	 .loc 1 131 0
+ 164 00c6 1846     	 mov r0,r3
+ 165 00c8 0837     	 adds r7,r7,#8
+ 166              	.LCFI3:
+ 167              	 .cfi_def_cfa_offset 8
+ 168 00ca BD46     	 mov sp,r7
+ 169              	.LCFI4:
+ 170              	 .cfi_def_cfa_register 13
+ 171              	 
+ 172 00cc 80BD     	 pop {r7,pc}
+ 173              	.L15:
+ 174 00ce 00BF     	 .align 2
+ 175              	.L14:
+ 176 00d0 00000000 	 .word CLOCK_XMC4_0
+ 177 00d4 00000000 	 .word LED
+ 178 00d8 00000000 	 .word SLEEPN5
+ 179 00dc 00000000 	 .word CS_5
+ 180 00e0 00000000 	 .word SPI_MASTER_0
+ 181 00e4 00000000 	 .word ED_SYNC_1
+ 182 00e8 00000000 	 .word EG_SYNC_0
+ 183 00ec 00000000 	 .word EG_SYNC_1
+ 184 00f0 00000000 	 .word INT_SYNC_1
+ 185 00f4 00000000 	 .word INT_SYNC_0
+ 186 00f8 00000000 	 .word ED_SYNC_0
+ 187 00fc 00000000 	 .word ECAT_SSC_0
+ 188              	 .cfi_endproc
+ 189              	.LFE432:
+ 191              	 .text
+ 192              	.Letext0:
+ 193              	 .file 2 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 194              	 .file 3 "d:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 195              	 .file 4 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/XMC4300.h"
+ 196              	 .file 5 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_gpio.h"
+ 197              	 .file 6 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 198              	 .file 7 "../Dave/Generated/DIGITAL_IO/digital_io.h"
+ 199              	 .file 8 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc4_scu.h"
+ 200              	 .file 9 "../Dave/Generated/CLOCK_XMC4/clock_xmc4.h"
+ 201              	 .file 10 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_dma.h"
+ 202              	 .file 11 "../Dave/Generated/GLOBAL_DMA/global_dma.h"
+ 203              	 .file 12 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_usic.h"
+ 204              	 .file 13 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_spi.h"
+ 205              	 .file 14 "../Dave/Generated/SPI_MASTER/spi_master.h"
+ 206              	 .file 15 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_eru.h"
+ 207              	 .file 16 "../Dave/Generated/EVENT_DETECTOR/event_detector.h"
+ 208              	 .file 17 "../Dave/Generated/EVENT_GENERATOR/event_generator.h"
+ 209              	 .file 18 "../Dave/Generated/INTERRUPT/interrupt.h"
+ 210              	 .file 19 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/XMCLib/inc/xmc_ccu4.h"
+ 211              	 .file 20 "../Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
+ 212              	 .file 21 "../Dave/Generated/TIMER/timer.h"
+ 213              	 .file 22 "../Dave/Generated/E_EEPROM_XMC4/e_eeprom_xmc4.h"
+ 214              	 .file 23 "../Dave/Generated/ECAT_SSC/ecat_ssc.h"
+ 215              	 .file 24 "../Dave/Generated/DAVE.h"
+ 216              	 .file 25 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 217              	 .file 26 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Include/core_cm4.h"
+ 218              	 .file 27 "D:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/workspace/LED_test/Libraries/CMSIS/Infineon/XMC4300_series/Include/system_XMC4300.h"
+ 219              	 .file 28 "../Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+ 220              	 .file 29 "../Dave/Generated/CLOCK_XMC4/clock_xmc4_extern.h"
+ 221              	 .file 30 "../Dave/Generated/SPI_MASTER/spi_master_extern.h"
+ 222              	 .file 31 "../Dave/Generated/EVENT_DETECTOR/event_detector_extern.h"
+ 223              	 .file 32 "../Dave/Generated/EVENT_GENERATOR/event_generator_extern.h"
+ 224              	 .file 33 "../Dave/Generated/INTERRUPT/interrupt_extern.h"
+ 225              	 .file 34 "../Dave/Generated/ECAT_SSC/ecat_ssc_extern.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 DAVE.c
     {standard input}:20     .text.DAVE_Init:00000000 $t
     {standard input}:25     .text.DAVE_Init:00000000 DAVE_Init
-    {standard input}:166    .text.DAVE_Init:000000c0 $d
+    {standard input}:176    .text.DAVE_Init:000000d0 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 CLOCK_XMC4_Init
 DIGITAL_IO_Init
 SPI_MASTER_Init
-ECAT_SSC_Init
 EVENT_DETECTOR_Init
 EVENT_GENERATOR_Init
 INTERRUPT_Init
+ECAT_SSC_Init
 CLOCK_XMC4_0
 LED
 SLEEPN5
 CS_5
 SPI_MASTER_0
-ECAT_SSC_0
 ED_SYNC_1
 EG_SYNC_0
 EG_SYNC_1
 INT_SYNC_1
 INT_SYNC_0
+ED_SYNC_0
+ECAT_SSC_0

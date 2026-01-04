@@ -349,6 +349,7 @@
         <Path/>
         <Path>\Dave\Generated</Path>
         <Path>\Libraries</Path>
+        <Path>\SSC\Src</Path>
     </Include_Path>
     <Preprocessor_Symbols>
         <Assembler_Symbol>XMC4300_F100x256=</Assembler_Symbol>

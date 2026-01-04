@@ -66,5 +66,8 @@
 /* Extern declaration of EVENT_DETECTOR APP handle */
 extern EVENT_DETECTOR_t ED_SYNC_1;
 	
+/* Extern declaration of EVENT_DETECTOR APP handle */
+extern EVENT_DETECTOR_t ED_SYNC_0;
+	
 #endif /* EVENT_DETECTOR_EXTERN_H */
 

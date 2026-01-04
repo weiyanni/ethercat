@@ -269,21 +269,29 @@ UINT16 APPL_GenerateMapping(UINT16 *pInputSize,UINT16 *pOutputSize)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_InputMapping(UINT16* pData)
 {
-	memcpy(pData,&(((UINT16 *)&Txpdo0x6000)[1]),SIZEOF(Txpdo0x6000)-2);
+    if (pData != NULL)
+    {
+        // 直接拷贝整个结构体内容 (Txpdo0x6000 -> ESC Buffer)
+        // 此时 Txpdo0x6000 里的数据已经在 APPL_Application 里准备好了
+        memcpy(pData, &Txpdo0x6000.Rxlen_1, sizeof(Txpdo0x6000) - sizeof(UINT16));
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /**
-\param      pData  pointer to output process data
-
-\brief    This function will copies the outputs from the ESC memory to the local memory
-            to the hardware
-*////////////////////////////////////////////////////////////////////////////////////////
+ \brief      Copies the outputs from the ESC memory to the local memory
+ \note       【纯粹的搬运工】只负责把硬件数据拷回 Rxpdo 结构体
+*/
+/////////////////////////////////////////////////////////////////////////////////////////
 void APPL_OutputMapping(UINT16* pData)
 {
-	memcpy(&(((UINT16 *)&Rxpdo0x7000)[1]),pData,SIZEOF(Rxpdo0x7000)-2);
+    if (pData != NULL)
+    {
+        // 直接拷贝整个结构体内容 (ESC Buffer -> Rxpdo0x7000)
+        // 拷贝完后，APPL_Application 会去读取它
+        memcpy(&Rxpdo0x7000.Txlen_1, pData, sizeof(Rxpdo0x7000) - sizeof(UINT16));
+    }
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////
 /**
 \brief    This function will called from the synchronisation ISR 
@@ -291,7 +299,7 @@ void APPL_OutputMapping(UINT16* pData)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_Application(void)
 {
-	process_app(&Rxpdo0x7000,Txpdo0x6000);
+	process_app(&Rxpdo0x7000, &Txpdo0x6000);
 }
 
 #if EXPLICIT_DEVICE_ID

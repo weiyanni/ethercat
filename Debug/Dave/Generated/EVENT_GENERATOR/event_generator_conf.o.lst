@@ -30,7 +30,7 @@
   34 0000 00400440 	 .word 1074020352
   35 0004 00000000 	 .word EG_SYNC_0_OGU_Config
   36 0008 00000000 	 .word 0
-  37 000c 03       	 .byte 3
+  37 000c 00       	 .byte 0
   38 000d 00       	 .byte 0
   39 000e 0000     	 .space 2
   40              	 .global EG_SYNC_1_OGU_Config
@@ -47,7 +47,7 @@
   55 0000 00400440 	 .word 1074020352
   56 0004 00000000 	 .word EG_SYNC_1_OGU_Config
   57 0008 00000000 	 .word 0
-  58 000c 00       	 .byte 0
+  58 000c 03       	 .byte 3
   59 000d 00       	 .byte 0
   60 000e 0000     	 .space 2
   61              	 .text

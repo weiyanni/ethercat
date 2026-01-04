@@ -54,7 +54,7 @@
 const ECAT_SSC_t ECAT_SSC_0 =
 {
   .eeprom = &E_EEPROM_XMC4_0,
-  .timer = &TIMER_0,
+  .timer = &TIMER_1,
   .timer_irqhandler = &INTERRUPT_0
 };
 

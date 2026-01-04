@@ -64,25 +64,25 @@
 #include "SPI_MASTER/spi_master.h"
   
 
+#include "EVENT_DETECTOR/event_detector.h"
+  
+
+#include "EVENT_GENERATOR/event_generator.h"
+  
+
+#include "INTERRUPT/interrupt.h"
+  
+
 #include "GLOBAL_CCU4/global_ccu4.h"
   
 
 #include "TIMER/timer.h"
   
 
-#include "INTERRUPT/interrupt.h"
-  
-
 #include "E_EEPROM_XMC4/e_eeprom_xmc4.h"
   
 
 #include "ECAT_SSC/ecat_ssc.h"
-  
-
-#include "EVENT_DETECTOR/event_detector.h"
-  
-
-#include "EVENT_GENERATOR/event_generator.h"
   
 	
 

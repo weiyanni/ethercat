@@ -21,7 +21,7 @@
   21              	 .align 2
   24              	ECAT_SSC_0:
   25 0000 00000000 	 .word E_EEPROM_XMC4_0
-  26 0004 00000000 	 .word TIMER_0
+  26 0004 00000000 	 .word TIMER_1
   27 0008 00000000 	 .word INTERRUPT_0
   28              	 .text
   29              	.Letext0:
@@ -49,5 +49,5 @@ DEFINED SYMBOLS
 
 UNDEFINED SYMBOLS
 E_EEPROM_XMC4_0
-TIMER_0
+TIMER_1
 INTERRUPT_0

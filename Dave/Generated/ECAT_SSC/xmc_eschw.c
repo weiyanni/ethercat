@@ -87,7 +87,7 @@
 #define ECAT_PHY_RESET        P2_10
 
 /* EtherCAT slave physical layer Port 0 pin configurations */
-#define ECAT_P0_LINK_STATUS   P4_1
+#define ECAT_P0_LINK_STATUS   P1_15
 #define ECAT_P0_RXD3          P5_7
 #define ECAT_P0_RXD2          P5_2
 #define ECAT_P0_RXD1          P5_1
@@ -179,7 +179,7 @@ UINT16 HW_Init(void)
   port_control.port0.rx_clk = XMC_ECAT_PORT0_CTRL_RX_CLK_P1_1;
   port_control.port0.rx_dv = XMC_ECAT_PORT0_CTRL_RX_DV_P1_9;
   port_control.port0.rx_err = XMC_ECAT_PORT0_CTRL_RX_ERR_P2_6;
-  port_control.port0.link = XMC_ECAT_PORT0_CTRL_LINK_P4_1;
+  port_control.port0.link = XMC_ECAT_PORT0_CTRL_LINK_P1_15;
   port_control.port0.tx_clk = XMC_ECAT_PORT0_CTRL_TX_CLK_P1_0;
   port_control.port0.tx_shift = XMC_ECAT_PORT0_CTRL_TX_SHIFT_0NS; 
   /* If an ESC MII interface is not used, RX_CLK, RXD, RX_ER, and especially RX_DV have to be tied to GND.                   For this purpose you can select a input position in register ECAT0_CONPx of these signals which are not connected to a pin on the XMC4800 */

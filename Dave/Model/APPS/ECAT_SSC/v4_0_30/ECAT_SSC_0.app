@@ -116,10 +116,10 @@
   <virtualSignals name="p1_tx_clk_signal" URI="http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_p1_tx_clk" hwSignal="pin" hwResource="//@hwResources.71"/>
   <virtualSignals name="p1_tx_ena_signal" URI="http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_p1_tx_ena" hwSignal="pin" hwResource="//@hwResources.72"/>
   <requiredApps URI="http://resources/4.0.30/app/ECAT_SSC/0/appres_timer" requiredAppName="TIMER">
-    <downwardMapList xsi:type="ResourceModel:App" href="../../TIMER/v4_1_12/TIMER_0.app#/"/>
+    <downwardMapList xsi:type="ResourceModel:App" href="../../TIMER/v4_1_12/TIMER_1.app#/"/>
   </requiredApps>
   <requiredApps URI="http://resources/4.0.30/app/ECAT_SSC/0/appres_interrupt" requiredAppName="INTERRUPT">
-    <downwardMapList xsi:type="ResourceModel:App" href="../../INTERRUPT/v4_0_10/INTERRUPT_0.app#/"/>
+    <downwardMapList xsi:type="ResourceModel:App" href="../../INTERRUPT/v4_0_10/INTERRUPT_4.app#/"/>
   </requiredApps>
   <requiredApps URI="http://resources/4.0.30/app/ECAT_SSC/0/appres_eeprom" requiredAppName="E_EEPROM_XMC4" requiringMode="SHARABLE">
     <downwardMapList xsi:type="ResourceModel:App" href="../../E_EEPROM_XMC4/v4_0_20/E_EEPROM_XMC4_0.app#/"/>
@@ -146,7 +146,7 @@
   <hwResources name="led_link_act_p0" URI="http://resources/4.0.30/app/ECAT_SSC/0/hwres_port_pad_led_link_act_p0" resourceGroupUri="" required="false" mResGrpUri="port/p/*/pad/*"/>
   <hwResources name="led_link_act_p1" URI="http://resources/4.0.30/app/ECAT_SSC/0/hwres_port_pad_led_link_act_p1" resourceGroupUri="" required="false" mResGrpUri="port/p/*/pad/*"/>
   <hwResources name="p0_link" URI="http://resources/4.0.30/app/ECAT_SSC/0/hwres_port_pad_p0_link" resourceGroupUri="port/p/*/pad/*" mResGrpUri="port/p/*/pad/*">
-    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/port4/port4_4.dd#//@provided.6"/>
+    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/port1/port1_1.dd#//@provided.0"/>
   </hwResources>
   <hwResources name="p0_rx_clk" URI="http://resources/4.0.30/app/ECAT_SSC/0/hwres_port_pad_p0_rx_clk" resourceGroupUri="port/p/*/pad/*" mResGrpUri="port/p/*/pad/*">
     <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/port1/port1_1.dd#//@provided.15"/>
@@ -237,7 +237,7 @@
     <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/DEVICEPACKAGE/DEVICEPACKAGE_0.dd#//@provided.12"/>
   </hwResources>
   <hwResources name="p0_link" URI="http://resources/4.0.30/app/ECAT_SSC/0/__pin_hwres_port_pad_p0_link" resourceGroupUri="devicepackage/0/*" mResGrpUri="devicepackage/0/*">
-    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/DEVICEPACKAGE/DEVICEPACKAGE_0.dd#//@provided.19"/>
+    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/DEVICEPACKAGE/DEVICEPACKAGE_0.dd#//@provided.4"/>
   </hwResources>
   <hwResources name="p1_rxd0" URI="http://resources/4.0.30/app/ECAT_SSC/0/__pin_hwres_port_pad_p1_rxd0" resourceGroupUri="" required="false" mResGrpUri="devicepackage/0/*"/>
   <hwResources name="p1_rxd1" URI="http://resources/4.0.30/app/ECAT_SSC/0/__pin_hwres_port_pad_p1_rxd1" resourceGroupUri="" required="false" mResGrpUri="devicepackage/0/*"/>
@@ -310,15 +310,15 @@
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_ecat_p1_txd3/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_txd3" systemDefined="true" sourceSignal="ecat_p1_txd3" targetSignal="port_pad_p1_txd3" required="false" srcVirtualSignal="//@virtualSignals.75" targetVirtualSignal="//@virtualSignals.34"/>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_tx_clk/http://resources/4.0.30/app/ECAT_SSC/0/vs_ecat_p1_tx_clk" systemDefined="true" sourceSignal="port_pad_p1_tx_clk" targetSignal="ecat_p1_tx_clk" required="false" srcVirtualSignal="//@virtualSignals.35" targetVirtualSignal="//@virtualSignals.76"/>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_ecat_p1_tx_ena/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_tx_ena" systemDefined="true" sourceSignal="ecat_p1_tx_ena" targetSignal="port_pad_p1_tx_ena" required="false" srcVirtualSignal="//@virtualSignals.77" targetVirtualSignal="//@virtualSignals.36"/>
-  <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_timer_ccu4_period_match_interrupt/http://resources/4.0.30/app/ECAT_SSC/0/vs_nvic_signal_in" systemDefined="true" sourceSignal="event_time_interval" targetSignal="sr_irq" proxySrcVirtualSignalUri="http://resources/4.1.12/app/TIMER/0/vs_timer_ccu4_period_match_interrupt" proxyTargetVirtualSignalUri="http://resources/4.0.10/app/INTERRUPT/0/vs_nvic_signal_in" containingProxySignal="true">
-    <downwardMapList xsi:type="ResourceModel:VirtualSignal" href="../../TIMER/v4_1_12/TIMER_0.app#//@virtualSignals.0"/>
-    <downwardMapList xsi:type="ResourceModel:VirtualSignal" href="../../INTERRUPT/v4_0_10/INTERRUPT_0.app#//@virtualSignals.0"/>
-    <srcVirtualSignal href="../../TIMER/v4_1_12/TIMER_0.app#//@virtualSignals.0"/>
-    <targetVirtualSignal href="../../INTERRUPT/v4_0_10/INTERRUPT_0.app#//@virtualSignals.0"/>
+  <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_timer_ccu4_period_match_interrupt/http://resources/4.0.30/app/ECAT_SSC/0/vs_nvic_signal_in" systemDefined="true" sourceSignal="event_time_interval" targetSignal="sr_irq" proxySrcVirtualSignalUri="http://resources/4.1.12/app/TIMER/1/vs_timer_ccu4_period_match_interrupt" proxyTargetVirtualSignalUri="http://resources/4.0.10/app/INTERRUPT/4/vs_nvic_signal_in" containingProxySignal="true">
+    <downwardMapList xsi:type="ResourceModel:VirtualSignal" href="../../TIMER/v4_1_12/TIMER_1.app#//@virtualSignals.0"/>
+    <downwardMapList xsi:type="ResourceModel:VirtualSignal" href="../../INTERRUPT/v4_0_10/INTERRUPT_4.app#//@virtualSignals.0"/>
+    <srcVirtualSignal href="../../TIMER/v4_1_12/TIMER_1.app#//@virtualSignals.0"/>
+    <targetVirtualSignal href="../../INTERRUPT/v4_0_10/INTERRUPT_4.app#//@virtualSignals.0"/>
   </connections>
-  <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_timer_ccu8_period_match_interrupt/http://resources/4.0.30/app/ECAT_SSC/0/vs_nvic_signal_in" systemDefined="true" sourceSignal="event_time_interval" targetSignal="sr_irq" required="false" proxySrcVirtualSignalUri="http://resources/4.1.12/app/TIMER/0/vs_timer_ccu8_period_match_interrupt" proxyTargetVirtualSignalUri="http://resources/4.0.10/app/INTERRUPT/0/vs_nvic_signal_in" containingProxySignal="true">
-    <srcVirtualSignal href="../../TIMER/v4_1_12/TIMER_0.app#//@virtualSignals.1"/>
-    <targetVirtualSignal href="../../INTERRUPT/v4_0_10/INTERRUPT_0.app#//@virtualSignals.0"/>
+  <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_timer_ccu8_period_match_interrupt/http://resources/4.0.30/app/ECAT_SSC/0/vs_nvic_signal_in" systemDefined="true" sourceSignal="event_time_interval" targetSignal="sr_irq" required="false" proxySrcVirtualSignalUri="http://resources/4.1.12/app/TIMER/1/vs_timer_ccu8_period_match_interrupt" proxyTargetVirtualSignalUri="http://resources/4.0.10/app/INTERRUPT/4/vs_nvic_signal_in" containingProxySignal="true">
+    <srcVirtualSignal href="../../TIMER/v4_1_12/TIMER_1.app#//@virtualSignals.1"/>
+    <targetVirtualSignal href="../../INTERRUPT/v4_0_10/INTERRUPT_4.app#//@virtualSignals.0"/>
   </connections>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_phy_clk25/http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_phy_clk25" systemDefined="true" sourceSignal="port_pad_phy_clk25" targetSignal="phy_clk25_signal" srcVirtualSignal="//@virtualSignals.0" targetVirtualSignal="//@virtualSignals.78"/>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_phy_clk25/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_phy_clk25" systemDefined="true" sourceSignal="phy_clk25_signal" targetSignal="port_pad_phy_clk25" srcVirtualSignal="//@virtualSignals.78" targetVirtualSignal="//@virtualSignals.0"/>
@@ -392,6 +392,10 @@
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_p1_tx_clk/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_tx_clk" systemDefined="true" sourceSignal="p1_tx_clk_signal" targetSignal="port_pad_p1_tx_clk" srcVirtualSignal="//@virtualSignals.112" targetVirtualSignal="//@virtualSignals.35"/>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_tx_ena/http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_p1_tx_ena" systemDefined="true" sourceSignal="port_pad_p1_tx_ena" targetSignal="p1_tx_ena_signal" srcVirtualSignal="//@virtualSignals.36" targetVirtualSignal="//@virtualSignals.113"/>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/__pin_vs_port_pad_p1_tx_ena/http://resources/4.0.30/app/ECAT_SSC/0/vs_port_pad_p1_tx_ena" systemDefined="true" sourceSignal="p1_tx_ena_signal" targetSignal="port_pad_p1_tx_ena" srcVirtualSignal="//@virtualSignals.113" targetVirtualSignal="//@virtualSignals.36"/>
+  <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_ecat_sync0/http://resources/4.0.8/app/EVENT_DETECTOR/2/vs_event_detector_input_B" sourceSignal="sync_out_0" targetSignal="signal_b" srcVirtualSignal="//@virtualSignals.48">
+    <downwardMapList xsi:type="ResourceModel:VirtualSignal" href="../../EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_2.app#//@virtualSignals.1"/>
+    <targetVirtualSignal href="../../EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_2.app#//@virtualSignals.1"/>
+  </connections>
   <connections URI="http://resources/4.0.30/app/ECAT_SSC/0/http://resources/4.0.30/app/ECAT_SSC/0/vs_ecat_sync1/http://resources/4.0.8/app/EVENT_DETECTOR/1/vs_event_detector_input_A" sourceSignal="sync_out_1" targetSignal="signal_a" srcVirtualSignal="//@virtualSignals.49">
     <downwardMapList xsi:type="ResourceModel:VirtualSignal" href="../../EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_1.app#//@virtualSignals.0"/>
     <targetVirtualSignal href="../../EVENT_DETECTOR/v4_0_8/EVENT_DETECTOR_1.app#//@virtualSignals.0"/>

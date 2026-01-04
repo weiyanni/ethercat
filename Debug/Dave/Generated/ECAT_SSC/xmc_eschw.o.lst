@@ -4277,7 +4277,7 @@
   87:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** #define ECAT_PHY_RESET        P2_10
   88:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
   89:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** /* EtherCAT slave physical layer Port 0 pin configurations */
-  90:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** #define ECAT_P0_LINK_STATUS   P4_1
+  90:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** #define ECAT_P0_LINK_STATUS   P1_15
   91:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** #define ECAT_P0_RXD3          P5_7
   92:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** #define ECAT_P0_RXD2          P5_2
   93:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** #define ECAT_P0_RXD1          P5_1
@@ -4379,7 +4379,7 @@
  640              	 .loc 6 157 0
  641 001c 3B1D     	 adds r3,r7,#4
  642 001e 8B48     	 ldr r0,.L33+8
- 643 0020 0121     	 movs r1,#1
+ 643 0020 0F21     	 movs r1,#15
  644 0022 1A46     	 mov r2,r3
  645 0024 FFF7FEFF 	 bl XMC_GPIO_Init
  158:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_RXD3, &gpio_config);
@@ -4413,28 +4413,28 @@
  162:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_RX_DV, &gpio_config);
  670              	 .loc 6 162 0
  671 0058 3B1D     	 adds r3,r7,#4
- 672 005a 7E48     	 ldr r0,.L33+16
+ 672 005a 7C48     	 ldr r0,.L33+8
  673 005c 0921     	 movs r1,#9
  674 005e 1A46     	 mov r2,r3
  675 0060 FFF7FEFF 	 bl XMC_GPIO_Init
  163:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_RX_CLK, &gpio_config);
  676              	 .loc 6 163 0
  677 0064 3B1D     	 adds r3,r7,#4
- 678 0066 7B48     	 ldr r0,.L33+16
+ 678 0066 7948     	 ldr r0,.L33+8
  679 0068 0121     	 movs r1,#1
  680 006a 1A46     	 mov r2,r3
  681 006c FFF7FEFF 	 bl XMC_GPIO_Init
  164:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_RX_ERR, &gpio_config);
  682              	 .loc 6 164 0
  683 0070 3B1D     	 adds r3,r7,#4
- 684 0072 7948     	 ldr r0,.L33+20
+ 684 0072 7848     	 ldr r0,.L33+16
  685 0074 0621     	 movs r1,#6
  686 0076 1A46     	 mov r2,r3
  687 0078 FFF7FEFF 	 bl XMC_GPIO_Init
  165:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_TX_CLK, &gpio_config);
  688              	 .loc 6 165 0
  689 007c 3B1D     	 adds r3,r7,#4
- 690 007e 7548     	 ldr r0,.L33+16
+ 690 007e 7348     	 ldr r0,.L33+8
  691 0080 0021     	 movs r1,#0
  692 0082 1A46     	 mov r2,r3
  693 0084 FFF7FEFF 	 bl XMC_GPIO_Init
@@ -4447,7 +4447,7 @@
  169:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P1_LINK_STATUS, &gpio_config);
  697              	 .loc 6 169 0
  698 008c 3B1D     	 adds r3,r7,#4
- 699 008e 7348     	 ldr r0,.L33+24
+ 699 008e 7248     	 ldr r0,.L33+20
  700 0090 0321     	 movs r1,#3
  701 0092 1A46     	 mov r2,r3
  702 0094 FFF7FEFF 	 bl XMC_GPIO_Init
@@ -4516,251 +4516,251 @@
  753 00fa 0122     	 movs r2,#1
  754 00fc 62F30103 	 bfi r3,r2,#0,#2
  755 0100 7B75     	 strb r3,[r7,#21]
- 182:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port0.link = XMC_ECAT_PORT0_CTRL_LINK_P4_1;
+ 182:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port0.link = XMC_ECAT_PORT0_CTRL_LINK_P1_15;
  756              	 .loc 6 182 0
  757 0102 BB7D     	 ldrb r3,[r7,#22]
- 758 0104 6FF30103 	 bfc r3,#0,#2
- 759 0108 BB75     	 strb r3,[r7,#22]
+ 758 0104 0122     	 movs r2,#1
+ 759 0106 62F30103 	 bfi r3,r2,#0,#2
+ 760 010a BB75     	 strb r3,[r7,#22]
  183:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port0.tx_clk = XMC_ECAT_PORT0_CTRL_TX_CLK_P1_0;
- 760              	 .loc 6 183 0
- 761 010a FB7D     	 ldrb r3,[r7,#23]
- 762 010c 6FF30513 	 bfc r3,#4,#2
- 763 0110 FB75     	 strb r3,[r7,#23]
+ 761              	 .loc 6 183 0
+ 762 010c FB7D     	 ldrb r3,[r7,#23]
+ 763 010e 6FF30513 	 bfc r3,#4,#2
+ 764 0112 FB75     	 strb r3,[r7,#23]
  184:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port0.tx_shift = XMC_ECAT_PORT0_CTRL_TX_SHIFT_0NS; 
- 764              	 .loc 6 184 0
- 765 0112 FB7D     	 ldrb r3,[r7,#23]
- 766 0114 6FF38713 	 bfc r3,#6,#2
- 767 0118 FB75     	 strb r3,[r7,#23]
+ 765              	 .loc 6 184 0
+ 766 0114 FB7D     	 ldrb r3,[r7,#23]
+ 767 0116 6FF38713 	 bfc r3,#6,#2
+ 768 011a FB75     	 strb r3,[r7,#23]
  185:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   /* If an ESC MII interface is not used, RX_CLK, RXD, RX_ER, and especially RX_DV have to be tied 
  186:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.rxd0 = 3;
- 768              	 .loc 6 186 0
- 769 011a 3B7E     	 ldrb r3,[r7,#24]
- 770 011c 43F00303 	 orr r3,r3,#3
- 771 0120 3B76     	 strb r3,[r7,#24]
+ 769              	 .loc 6 186 0
+ 770 011c 3B7E     	 ldrb r3,[r7,#24]
+ 771 011e 43F00303 	 orr r3,r3,#3
+ 772 0122 3B76     	 strb r3,[r7,#24]
  187:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.rxd1 = 3;
- 772              	 .loc 6 187 0
- 773 0122 3B7E     	 ldrb r3,[r7,#24]
- 774 0124 43F00C03 	 orr r3,r3,#12
- 775 0128 3B76     	 strb r3,[r7,#24]
+ 773              	 .loc 6 187 0
+ 774 0124 3B7E     	 ldrb r3,[r7,#24]
+ 775 0126 43F00C03 	 orr r3,r3,#12
+ 776 012a 3B76     	 strb r3,[r7,#24]
  188:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.rxd2 = 3;
- 776              	 .loc 6 188 0
- 777 012a 3B7E     	 ldrb r3,[r7,#24]
- 778 012c 43F03003 	 orr r3,r3,#48
- 779 0130 3B76     	 strb r3,[r7,#24]
+ 777              	 .loc 6 188 0
+ 778 012c 3B7E     	 ldrb r3,[r7,#24]
+ 779 012e 43F03003 	 orr r3,r3,#48
+ 780 0132 3B76     	 strb r3,[r7,#24]
  189:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.rxd3 = 3;
- 780              	 .loc 6 189 0
- 781 0132 3B7E     	 ldrb r3,[r7,#24]
- 782 0134 43F0C003 	 orr r3,r3,#192
- 783 0138 3B76     	 strb r3,[r7,#24]
+ 781              	 .loc 6 189 0
+ 782 0134 3B7E     	 ldrb r3,[r7,#24]
+ 783 0136 43F0C003 	 orr r3,r3,#192
+ 784 013a 3B76     	 strb r3,[r7,#24]
  190:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.rx_clk = 3;
- 784              	 .loc 6 190 0
- 785 013a 7B7E     	 ldrb r3,[r7,#25]
- 786 013c 43F03003 	 orr r3,r3,#48
- 787 0140 7B76     	 strb r3,[r7,#25]
+ 785              	 .loc 6 190 0
+ 786 013c 7B7E     	 ldrb r3,[r7,#25]
+ 787 013e 43F03003 	 orr r3,r3,#48
+ 788 0142 7B76     	 strb r3,[r7,#25]
  191:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.rx_dv = 3;
- 788              	 .loc 6 191 0
- 789 0142 7B7E     	 ldrb r3,[r7,#25]
- 790 0144 43F00C03 	 orr r3,r3,#12
- 791 0148 7B76     	 strb r3,[r7,#25]
+ 789              	 .loc 6 191 0
+ 790 0144 7B7E     	 ldrb r3,[r7,#25]
+ 791 0146 43F00C03 	 orr r3,r3,#12
+ 792 014a 7B76     	 strb r3,[r7,#25]
  192:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.rx_err = 3;
- 792              	 .loc 6 192 0
- 793 014a 7B7E     	 ldrb r3,[r7,#25]
- 794 014c 43F00303 	 orr r3,r3,#3
- 795 0150 7B76     	 strb r3,[r7,#25]
+ 793              	 .loc 6 192 0
+ 794 014c 7B7E     	 ldrb r3,[r7,#25]
+ 795 014e 43F00303 	 orr r3,r3,#3
+ 796 0152 7B76     	 strb r3,[r7,#25]
  193:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.link = XMC_ECAT_PORT1_CTRL_LINK_P15_3;
- 796              	 .loc 6 193 0
- 797 0152 BB7E     	 ldrb r3,[r7,#26]
- 798 0154 0122     	 movs r2,#1
- 799 0156 62F30103 	 bfi r3,r2,#0,#2
- 800 015a BB76     	 strb r3,[r7,#26]
+ 797              	 .loc 6 193 0
+ 798 0154 BB7E     	 ldrb r3,[r7,#26]
+ 799 0156 0122     	 movs r2,#1
+ 800 0158 62F30103 	 bfi r3,r2,#0,#2
+ 801 015c BB76     	 strb r3,[r7,#26]
  194:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.tx_clk = 3;
- 801              	 .loc 6 194 0
- 802 015c FB7E     	 ldrb r3,[r7,#27]
- 803 015e 43F03003 	 orr r3,r3,#48
- 804 0162 FB76     	 strb r3,[r7,#27]
+ 802              	 .loc 6 194 0
+ 803 015e FB7E     	 ldrb r3,[r7,#27]
+ 804 0160 43F03003 	 orr r3,r3,#48
+ 805 0164 FB76     	 strb r3,[r7,#27]
  195:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   port_control.port1.tx_shift = XMC_ECAT_PORT1_CTRL_TX_SHIFT_0NS;
- 805              	 .loc 6 195 0
- 806 0164 FB7E     	 ldrb r3,[r7,#27]
- 807 0166 6FF38713 	 bfc r3,#6,#2
- 808 016a FB76     	 strb r3,[r7,#27]
+ 806              	 .loc 6 195 0
+ 807 0166 FB7E     	 ldrb r3,[r7,#27]
+ 808 0168 6FF38713 	 bfc r3,#6,#2
+ 809 016c FB76     	 strb r3,[r7,#27]
  196:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_ECAT_SetPortControl(port_control);
- 809              	 .loc 6 196 0
- 810 016c 07F11003 	 add r3,r7,#16
- 811 0170 93E80700 	 ldmia r3,{r0,r1,r2}
- 812 0174 FFF7FEFF 	 bl XMC_ECAT_SetPortControl
+ 810              	 .loc 6 196 0
+ 811 016e 07F11003 	 add r3,r7,#16
+ 812 0172 93E80700 	 ldmia r3,{r0,r1,r2}
+ 813 0176 FFF7FEFF 	 bl XMC_ECAT_SetPortControl
  197:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  198:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   /* EtherCAT slave enable and intialization using LLD function */
  199:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_ECAT_Init((XMC_ECAT_CONFIG_t *)(void*)aEepromData);
- 813              	 .loc 6 199 0
- 814 0178 3348     	 ldr r0,.L33+4
- 815 017a FFF7FEFF 	 bl XMC_ECAT_Init
+ 814              	 .loc 6 199 0
+ 815 017a 3348     	 ldr r0,.L33+4
+ 816 017c FFF7FEFF 	 bl XMC_ECAT_Init
  200:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  201:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   /* EtherCAT slave physical layer pin configurations */
  202:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.output_level = XMC_GPIO_OUTPUT_LEVEL_LOW;
- 816              	 .loc 6 202 0
- 817 017e 4FF48033 	 mov r3,#65536
- 818 0182 BB60     	 str r3,[r7,#8]
+ 817              	 .loc 6 202 0
+ 818 0180 4FF48033 	 mov r3,#65536
+ 819 0184 BB60     	 str r3,[r7,#8]
  203:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.output_strength = XMC_GPIO_OUTPUT_STRENGTH_STRONG_SOFT_EDGE;
- 819              	 .loc 6 203 0
- 820 0184 0223     	 movs r3,#2
- 821 0186 3B73     	 strb r3,[r7,#12]
+ 820              	 .loc 6 203 0
+ 821 0186 0223     	 movs r3,#2
+ 822 0188 3B73     	 strb r3,[r7,#12]
  204:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT1;
- 822              	 .loc 6 204 0
- 823 0188 8823     	 movs r3,#136
- 824 018a 3B71     	 strb r3,[r7,#4]
+ 823              	 .loc 6 204 0
+ 824 018a 8823     	 movs r3,#136
+ 825 018c 3B71     	 strb r3,[r7,#4]
  205:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_TXD3, &gpio_config);
- 825              	 .loc 6 205 0
- 826 018c 3B1D     	 adds r3,r7,#4
- 827 018e 3148     	 ldr r0,.L33+16
- 828 0190 0221     	 movs r1,#2
- 829 0192 1A46     	 mov r2,r3
- 830 0194 FFF7FEFF 	 bl XMC_GPIO_Init
+ 826              	 .loc 6 205 0
+ 827 018e 3B1D     	 adds r3,r7,#4
+ 828 0190 2E48     	 ldr r0,.L33+8
+ 829 0192 0221     	 movs r1,#2
+ 830 0194 1A46     	 mov r2,r3
+ 831 0196 FFF7FEFF 	 bl XMC_GPIO_Init
  206:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT1;
- 831              	 .loc 6 206 0
- 832 0198 8823     	 movs r3,#136
- 833 019a 3B71     	 strb r3,[r7,#4]
+ 832              	 .loc 6 206 0
+ 833 019a 8823     	 movs r3,#136
+ 834 019c 3B71     	 strb r3,[r7,#4]
  207:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_TXD2, &gpio_config);
- 834              	 .loc 6 207 0
- 835 019c 3B1D     	 adds r3,r7,#4
- 836 019e 2D48     	 ldr r0,.L33+16
- 837 01a0 0821     	 movs r1,#8
- 838 01a2 1A46     	 mov r2,r3
- 839 01a4 FFF7FEFF 	 bl XMC_GPIO_Init
+ 835              	 .loc 6 207 0
+ 836 019e 3B1D     	 adds r3,r7,#4
+ 837 01a0 2A48     	 ldr r0,.L33+8
+ 838 01a2 0821     	 movs r1,#8
+ 839 01a4 1A46     	 mov r2,r3
+ 840 01a6 FFF7FEFF 	 bl XMC_GPIO_Init
  208:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT1;
- 840              	 .loc 6 208 0
- 841 01a8 8823     	 movs r3,#136
- 842 01aa 3B71     	 strb r3,[r7,#4]
+ 841              	 .loc 6 208 0
+ 842 01aa 8823     	 movs r3,#136
+ 843 01ac 3B71     	 strb r3,[r7,#4]
  209:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_TXD1, &gpio_config);
- 843              	 .loc 6 209 0
- 844 01ac 3B1D     	 adds r3,r7,#4
- 845 01ae 2948     	 ldr r0,.L33+16
- 846 01b0 0721     	 movs r1,#7
- 847 01b2 1A46     	 mov r2,r3
- 848 01b4 FFF7FEFF 	 bl XMC_GPIO_Init
+ 844              	 .loc 6 209 0
+ 845 01ae 3B1D     	 adds r3,r7,#4
+ 846 01b0 2648     	 ldr r0,.L33+8
+ 847 01b2 0721     	 movs r1,#7
+ 848 01b4 1A46     	 mov r2,r3
+ 849 01b6 FFF7FEFF 	 bl XMC_GPIO_Init
  210:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT1;
- 849              	 .loc 6 210 0
- 850 01b8 8823     	 movs r3,#136
- 851 01ba 3B71     	 strb r3,[r7,#4]
+ 850              	 .loc 6 210 0
+ 851 01ba 8823     	 movs r3,#136
+ 852 01bc 3B71     	 strb r3,[r7,#4]
  211:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_TXD0, &gpio_config);
- 852              	 .loc 6 211 0
- 853 01bc 3B1D     	 adds r3,r7,#4
- 854 01be 2548     	 ldr r0,.L33+16
- 855 01c0 0621     	 movs r1,#6
- 856 01c2 1A46     	 mov r2,r3
- 857 01c4 FFF7FEFF 	 bl XMC_GPIO_Init
+ 853              	 .loc 6 211 0
+ 854 01be 3B1D     	 adds r3,r7,#4
+ 855 01c0 2248     	 ldr r0,.L33+8
+ 856 01c2 0621     	 movs r1,#6
+ 857 01c4 1A46     	 mov r2,r3
+ 858 01c6 FFF7FEFF 	 bl XMC_GPIO_Init
  212:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT1;
- 858              	 .loc 6 212 0
- 859 01c8 8823     	 movs r3,#136
- 860 01ca 3B71     	 strb r3,[r7,#4]
+ 859              	 .loc 6 212 0
+ 860 01ca 8823     	 movs r3,#136
+ 861 01cc 3B71     	 strb r3,[r7,#4]
  213:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_P0_TX_EN, &gpio_config);
- 861              	 .loc 6 213 0
- 862 01cc 3B1D     	 adds r3,r7,#4
- 863 01ce 2148     	 ldr r0,.L33+16
- 864 01d0 0321     	 movs r1,#3
- 865 01d2 1A46     	 mov r2,r3
- 866 01d4 FFF7FEFF 	 bl XMC_GPIO_Init
+ 862              	 .loc 6 213 0
+ 863 01ce 3B1D     	 adds r3,r7,#4
+ 864 01d0 1E48     	 ldr r0,.L33+8
+ 865 01d2 0321     	 movs r1,#3
+ 866 01d4 1A46     	 mov r2,r3
+ 867 01d6 FFF7FEFF 	 bl XMC_GPIO_Init
  214:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  215:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT4;
- 867              	 .loc 6 215 0
- 868 01d8 A023     	 movs r3,#160
- 869 01da 3B71     	 strb r3,[r7,#4]
+ 868              	 .loc 6 215 0
+ 869 01da A023     	 movs r3,#160
+ 870 01dc 3B71     	 strb r3,[r7,#4]
  216:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_CLK25, &gpio_config);
- 870              	 .loc 6 216 0
- 871 01dc 3B1D     	 adds r3,r7,#4
- 872 01de 1D48     	 ldr r0,.L33+16
- 873 01e0 0D21     	 movs r1,#13
- 874 01e2 1A46     	 mov r2,r3
- 875 01e4 FFF7FEFF 	 bl XMC_GPIO_Init
+ 871              	 .loc 6 216 0
+ 872 01de 3B1D     	 adds r3,r7,#4
+ 873 01e0 1A48     	 ldr r0,.L33+8
+ 874 01e2 0D21     	 movs r1,#13
+ 875 01e4 1A46     	 mov r2,r3
+ 876 01e6 FFF7FEFF 	 bl XMC_GPIO_Init
  217:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  218:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT3;
- 876              	 .loc 6 218 0
- 877 01e8 9823     	 movs r3,#152
- 878 01ea 3B71     	 strb r3,[r7,#4]
+ 877              	 .loc 6 218 0
+ 878 01ea 9823     	 movs r3,#152
+ 879 01ec 3B71     	 strb r3,[r7,#4]
  219:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_GPIO_Init(ECAT_PHY_RESET, &gpio_config);
- 879              	 .loc 6 219 0
- 880 01ec 3B1D     	 adds r3,r7,#4
- 881 01ee 1A48     	 ldr r0,.L33+20
- 882 01f0 0A21     	 movs r1,#10
- 883 01f2 1A46     	 mov r2,r3
- 884 01f4 FFF7FEFF 	 bl XMC_GPIO_Init
+ 880              	 .loc 6 219 0
+ 881 01ee 3B1D     	 adds r3,r7,#4
+ 882 01f0 1848     	 ldr r0,.L33+16
+ 883 01f2 0A21     	 movs r1,#10
+ 884 01f4 1A46     	 mov r2,r3
+ 885 01f6 FFF7FEFF 	 bl XMC_GPIO_Init
  220:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  221:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   /* Disable all supported sync manager channels */
  222:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   for (i = 0U; i < MAX_SYNC_MAN; i++)
- 885              	 .loc 6 222 0
- 886 01f8 0023     	 movs r3,#0
- 887 01fa FB77     	 strb r3,[r7,#31]
- 888 01fc 06E0     	 b .L30
- 889              	.L31:
+ 886              	 .loc 6 222 0
+ 887 01fa 0023     	 movs r3,#0
+ 888 01fc FB77     	 strb r3,[r7,#31]
+ 889 01fe 06E0     	 b .L30
+ 890              	.L31:
  223:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   {
  224:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****     XMC_ECAT_DisableSyncManChannel(i);
- 890              	 .loc 6 224 0 discriminator 3
- 891 01fe FB7F     	 ldrb r3,[r7,#31]
- 892 0200 1846     	 mov r0,r3
- 893 0202 FFF7FEFF 	 bl XMC_ECAT_DisableSyncManChannel
+ 891              	 .loc 6 224 0 discriminator 3
+ 892 0200 FB7F     	 ldrb r3,[r7,#31]
+ 893 0202 1846     	 mov r0,r3
+ 894 0204 FFF7FEFF 	 bl XMC_ECAT_DisableSyncManChannel
  222:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   {
- 894              	 .loc 6 222 0 discriminator 3
- 895 0206 FB7F     	 ldrb r3,[r7,#31]
- 896 0208 0133     	 adds r3,r3,#1
- 897 020a FB77     	 strb r3,[r7,#31]
- 898              	.L30:
+ 895              	 .loc 6 222 0 discriminator 3
+ 896 0208 FB7F     	 ldrb r3,[r7,#31]
+ 897 020a 0133     	 adds r3,r3,#1
+ 898 020c FB77     	 strb r3,[r7,#31]
+ 899              	.L30:
  222:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   {
- 899              	 .loc 6 222 0 is_stmt 0 discriminator 1
- 900 020c FB7F     	 ldrb r3,[r7,#31]
- 901 020e 072B     	 cmp r3,#7
- 902 0210 F5D9     	 bls .L31
+ 900              	 .loc 6 222 0 is_stmt 0 discriminator 1
+ 901 020e FB7F     	 ldrb r3,[r7,#31]
+ 902 0210 072B     	 cmp r3,#7
+ 903 0212 F5D9     	 bls .L31
  225:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   }
  226:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  227:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   /* EtherCAT slave event disable */
  228:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   XMC_ECAT_DisableEvent(0xffffffffU);
- 903              	 .loc 6 228 0 is_stmt 1
- 904 0212 4FF0FF30 	 mov r0,#-1
- 905 0216 FFF7FEFF 	 bl XMC_ECAT_DisableEvent
+ 904              	 .loc 6 228 0 is_stmt 1
+ 905 0214 4FF0FF30 	 mov r0,#-1
+ 906 0218 FFF7FEFF 	 bl XMC_ECAT_DisableEvent
  229:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  230:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   /* ECAT interrupt priority settings */
  231:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   NVIC_SetPriority(ECAT0_0_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),
- 906              	 .loc 6 231 0
- 907 021a FFF7FEFF 	 bl __NVIC_GetPriorityGrouping
- 908 021e 0346     	 mov r3,r0
- 909 0220 1846     	 mov r0,r3
- 910 0222 3F21     	 movs r1,#63
- 911 0224 0022     	 movs r2,#0
- 912 0226 FFF7FEFF 	 bl NVIC_EncodePriority
- 913 022a 0346     	 mov r3,r0
- 914 022c 6D20     	 movs r0,#109
- 915 022e 1946     	 mov r1,r3
- 916 0230 FFF7FEFF 	 bl __NVIC_SetPriority
+ 907              	 .loc 6 231 0
+ 908 021c FFF7FEFF 	 bl __NVIC_GetPriorityGrouping
+ 909 0220 0346     	 mov r3,r0
+ 910 0222 1846     	 mov r0,r3
+ 911 0224 3F21     	 movs r1,#63
+ 912 0226 0022     	 movs r2,#0
+ 913 0228 FFF7FEFF 	 bl NVIC_EncodePriority
+ 914 022c 0346     	 mov r3,r0
+ 915 022e 6D20     	 movs r0,#109
+ 916 0230 1946     	 mov r1,r3
+ 917 0232 FFF7FEFF 	 bl __NVIC_SetPriority
  232:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****                                                      63U,
  233:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****                                                      0U));
  234:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  235:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   /* EtherCAT slave interrupt enable */
  236:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   ENABLE_ESC_INT();
- 917              	 .loc 6 236 0
- 918 0234 FFF7FEFF 	 bl ENABLE_ESC_INT
+ 918              	 .loc 6 236 0
+ 919 0236 FFF7FEFF 	 bl ENABLE_ESC_INT
  237:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** 
  238:../Dave/Generated/ECAT_SSC/xmc_eschw.c ****   return ((uint16_t)0U);
- 919              	 .loc 6 238 0
- 920 0238 0023     	 movs r3,#0
+ 920              	 .loc 6 238 0
+ 921 023a 0023     	 movs r3,#0
  239:../Dave/Generated/ECAT_SSC/xmc_eschw.c **** }
- 921              	 .loc 6 239 0
- 922 023a 1846     	 mov r0,r3
- 923 023c 2037     	 adds r7,r7,#32
- 924              	.LCFI57:
- 925              	 .cfi_def_cfa_offset 8
- 926 023e BD46     	 mov sp,r7
- 927              	.LCFI58:
- 928              	 .cfi_def_cfa_register 13
- 929              	 
- 930 0240 80BD     	 pop {r7,pc}
- 931              	.L34:
- 932 0242 00BF     	 .align 2
- 933              	.L33:
- 934 0244 00000000 	 .word pEEPROM
- 935 0248 00000000 	 .word aEepromData
- 936 024c 00840248 	 .word 1208124416
- 937 0250 00850248 	 .word 1208124672
- 938 0254 00810248 	 .word 1208123648
- 939 0258 00820248 	 .word 1208123904
- 940 025c 008F0248 	 .word 1208127232
+ 922              	 .loc 6 239 0
+ 923 023c 1846     	 mov r0,r3
+ 924 023e 2037     	 adds r7,r7,#32
+ 925              	.LCFI57:
+ 926              	 .cfi_def_cfa_offset 8
+ 927 0240 BD46     	 mov sp,r7
+ 928              	.LCFI58:
+ 929              	 .cfi_def_cfa_register 13
+ 930              	 
+ 931 0242 80BD     	 pop {r7,pc}
+ 932              	.L34:
+ 933              	 .align 2
+ 934              	.L33:
+ 935 0244 00000000 	 .word pEEPROM
+ 936 0248 00000000 	 .word aEepromData
+ 937 024c 00810248 	 .word 1208123648
+ 938 0250 00850248 	 .word 1208124672
+ 939 0254 00820248 	 .word 1208123904
+ 940 0258 008F0248 	 .word 1208127232
  941              	 .cfi_endproc
  942              	.LFE193:
  944              	 .section .text.HW_Release,"ax",%progbits
@@ -5504,7 +5504,7 @@ DEFINED SYMBOLS
     {standard input}:601    .text.HW_Init:00000000 $t
     {standard input}:606    .text.HW_Init:00000000 HW_Init
     {standard input}:1401   .text.ENABLE_ESC_INT:00000000 ENABLE_ESC_INT
-    {standard input}:934    .text.HW_Init:00000244 $d
+    {standard input}:935    .text.HW_Init:00000244 $d
     {standard input}:945    .text.HW_Release:00000000 $t
     {standard input}:950    .text.HW_Release:00000000 HW_Release
     {standard input}:978    .text.HW_RestartTarget:00000000 $t

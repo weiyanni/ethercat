@@ -56,21 +56,21 @@
  * MACROS
  **********************************************************************************************************************/
 	
+#define SYNC1IRQHandler IRQ_Hdlr_8
+		
+#define SYNC0IRQHandler IRQ_Hdlr_5
+		
 #define ecat_ssc_timer_handler IRQ_Hdlr_49
-		
-#define SYNC1IRQHandler IRQ_Hdlr_5
-		
-#define SYNC0IRQHandler IRQ_Hdlr_8
 		
 /***********************************************************************************************************************
  * EXTERN DECLARATIONS
 ***********************************************************************************************************************/
 	
-extern const INTERRUPT_t INTERRUPT_0; 
-	
 extern const INTERRUPT_t INT_SYNC_1; 
 	
 extern const INTERRUPT_t INT_SYNC_0; 
+	
+extern const INTERRUPT_t INTERRUPT_0; 
 	
 #endif  /* INTERRUPT_EXTERN_H */
 
